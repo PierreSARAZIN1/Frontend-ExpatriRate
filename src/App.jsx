@@ -7,8 +7,6 @@ import Sign_in from 'pages/Sign_in';
 
 const App = () => {
 
-  console.log(useLocation().pathname);
-
   return (
     <>
     {useLocation().pathname !="/"? <Navbar/>:null}
