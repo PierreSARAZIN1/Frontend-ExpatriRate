@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Card from '../../components/Card';
+import HeroBanner from 'components/Hero-banner';
 import {API_URL} from "../../stores/api_url";
+import style from './style.css';
 
 
 
@@ -27,14 +29,15 @@ const Home = () => {
     )
 
   return (
-    <>
+    <main>
+        <HeroBanner/>
         {isLoading ?
         null
         :
             citiesList.map(city => <>{<Card city={city} key={city.id}/>}</>)
         }
 
-    </>
+    </main>
   );
 };
 

@@ -1,0 +1,30 @@
+.background-video {
+    height: clamp(700px, 50vh, 1200px);
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    z-index: -2;
+}
+
+.text-banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+svg {
+    position: absolute;
+    bottom: 0;
+}
+
+.divSVG {
+    height: 10vh;
+}
+
+.heroBanner {
+    height: clamp(700px, 50vh, 1200px);
+    overflow: hidden;
+    position: relative;
+}
