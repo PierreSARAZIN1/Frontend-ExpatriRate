@@ -18,17 +18,10 @@ body {
     background-color: #f3f4f5;
 }
 
-
-/* body::-webkit-scrollbar {
-    width: 12px;
+.gridCards {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    row-gap: 20px;
+    justify-items: center;
 }
-
-body::-webkit-scrollbar-track {
-    background: none;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: grey;
-    border-radius: 90px;
-    border: none;
-} */
