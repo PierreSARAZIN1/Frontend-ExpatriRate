@@ -34,7 +34,7 @@ const Home = () => {
         {isLoading ?
         null
         :
-            citiesList.map(city => <>{<Card city={city} key={city.id}/>}</>)
+            <div className="gridCards">{citiesList.map(city => <>{<Card city={city} key={city.id}/>}</>)}</div>
         }
 
     </main>
