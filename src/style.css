@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 :root {
     --primary: #0AC710;
 }
@@ -12,4 +14,5 @@
 
 body {
     margin: 0px 2vw;
+    font-family: 'Varela Round', sans-serif;
 }
