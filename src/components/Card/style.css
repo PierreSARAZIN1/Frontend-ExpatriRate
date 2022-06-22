@@ -1,0 +1,48 @@
+.card {
+    width: 275px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 15px;
+    color: white;
+    text-shadow: black 1px 1px;
+    font-size: 30px;
+    position: relative;
+
+
+}
+
+
+.card img {
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card:hover{
+    filter: blur(1px);
+    filter: brightness(80%);
+    transition: all 0.5s;
+}
+
+.cardsFlex {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px;
+    height: 40px;
+}
+.cardTexts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(320px - 50px - 50px);
+    font-size: 50px;
+}
+
+
+.cardTextCountry {
+    font-size: 35px;
+}
