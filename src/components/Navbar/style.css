@@ -17,6 +17,7 @@ nav ul li {
     border: none;
     color: black;
     margin: 10px;
+    cursor: pointer;
 }
 
 nav ul li a {

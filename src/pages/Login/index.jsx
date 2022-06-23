@@ -38,8 +38,8 @@ const Login = () => {
         return response.json()
         })
       .then((response) => {
-          setUserId(response.id);
-          Cookies.set('id', response.id);
+        setUserId(response.user.id);
+          Cookies.set('id', response.user.id);
           navigate('/');
       })
     
