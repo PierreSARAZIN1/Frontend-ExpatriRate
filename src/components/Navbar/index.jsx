@@ -51,7 +51,7 @@ const Navbar = () => {
   :
     <>
      <li>
-        <Link to={"/profil/" + id}>Profil</Link>
+        <Link to={"/profile/" + id}>Profil</Link>
       </li>
       <li onClick={logout}>
         Deconnexion
