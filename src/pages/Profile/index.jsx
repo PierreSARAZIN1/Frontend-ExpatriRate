@@ -4,12 +4,13 @@ import EditProfile from '../../components/Edit-Profile';
 import { useAtomValue, useAtom } from 'jotai';
 import { userIdAtom, jwtAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 
 const Profile = () => {
 
+  const idParams = useParams().id
   const navigate = useNavigate()
   const [jwt, setJwt] = useAtom(jwtAtom);
   const [id, setId] = useAtom(userIdAtom);
@@ -17,9 +18,17 @@ const Profile = () => {
   const [modifyProfile, setModifyProfile] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(
+    () => {
+      if(jwt == ""){
+        navigate('/sign_in')
+      }else if (id !== idParams) {
+        navigate('/profile/'+ id)
+      }
+    }, []
+  )
 
-
-    useEffect(
+  useEffect(
       () => {
           fetch(API_URL + '/member-data', {
               method: 'get',
