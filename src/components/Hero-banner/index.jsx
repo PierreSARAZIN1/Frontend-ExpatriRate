@@ -5,7 +5,7 @@ const HeroBanner = () => {
   return (
     <>
     <div className='heroBanner'>
-        <video className="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg%22%3E">
+        <video className="background-video" autoPlay loop muted>
           <source src="https://player.vimeo.com/external/330412624.sd.mp4?s=853ea7644708b7986c992689dd351b0413d7b3ca&profile_id=&oauth2_token_id=57447761" type="video/mp4"></source>
         </video>
         <div className='text-banner'>

@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import './style.css';
 
 const Card = ({city}) => {
     console.log(city);
     return (
-        <>
         <div className="card">
+            <Link to={"/city/" + city.id}>
 
 
             <div className="textElement">
@@ -23,9 +24,8 @@ const Card = ({city}) => {
             </div>
             </div>
             <img src={city.picture} className="cardPicture" alt="Image of our City"></img>
+            </Link>
         </div>
-
-</>
 )
     ;
 };
