@@ -63,7 +63,7 @@ const EditProfile = () => {
             pattern={newPassword}
             onChange={(e) => setNewPasswordConfirmation(e.target.value)} 
           />
-        <button type="submit">Submit</button>
+        <button className='btn btn-primary' type="submit">Submit</button>
       </form>
       </>
   );
