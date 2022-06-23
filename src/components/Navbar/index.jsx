@@ -45,8 +45,10 @@ const Navbar = () => {
       <div className={location.pathname == '/'? 'logoflexabsolute' : 'logoflex' } onClick={shownavabar}>
          <img src="https://cliply.co/wp-content/uploads/2021/02/392102850_EARTH_EMOJI_400px.gif" alt="" />
          <i class="fa-solid fa-angle-down"></i>
-      </div>
+      </div> 
       {show? 
+      <>
+      <div className='modalquit' onClick={shownavabar}></div>
         <ul className={location.pathname == '/'? 'absolute' : '' }>
           <li>
             <Link to="/">🗺️ &nbsp;Accueil</Link>
@@ -81,6 +83,7 @@ const Navbar = () => {
         </li>
           
         </ul>
+      </>
     :
     null
     }
