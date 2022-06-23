@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <>
-    {useLocation().pathname !="/"? <Navbar/>:null}
+    <Navbar/>
       
       <Routes>
         <Route path="/" element={<Home/>}/> 
