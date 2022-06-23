@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 :root {
     --primary: #0AC710;
+    --light-grey: #f3f4f5;
+    --info: #0abbd6;
+    --danger: #d60a0d;
 }
 
 *,
@@ -15,7 +18,7 @@
 body {
     margin: 0;
     font-family: 'Varela Round', sans-serif;
-    background-color: #f3f4f5;
+    background-color: var(--light-grey);
 }
 
 .gridCards {
@@ -24,4 +27,69 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
     row-gap: 20px;
     justify-items: center;
+}
+
+.btn {
+    height: 30px;
+    min-width: 60px;
+    background-color: none;
+    border: none;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--light-grey);
+}
+
+.btn-primary:hover {
+    background-color: var(--light-grey);
+    color: var(--primary);
+    border: solid;
+    cursor: pointer;
+    border-color: var(--primary);
+}
+
+.btn-secondary {
+    background-color: var(--light-grey);
+    color: var(--primary);
+    border: solid;
+    border-color: var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: var(--light-grey);
+    cursor: pointer;
+}
+
+.btn-info {
+    background-color: var(--info);
+    color: var(--light-grey);
+}
+
+.btn-info:hover {
+    background-color: var(--light-grey);
+    color: var(--info);
+    cursor: context-menu;
+    border-color: #0abbd6;
+    border: solid;
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    color: var(--light-grey);
+}
+
+.btn-danger:hover {
+    background-color: var(--light-grey);
+    color: var(--danger);
+    cursor: pointer;
+    border-color: var(--danger);
+    border: solid;
 }

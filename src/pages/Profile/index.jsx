@@ -62,13 +62,13 @@ const Profile = () => {
     <>
       <h1>Bonjour {user.email}</h1>
       <button 
-        className=''
+        className='btn btn-secondary'
         onClick = {() => {setModifyProfile(!modifyProfile)} }>
         Modifier mon Mot de Passe
       </button>
       {modifyProfile? <EditProfile/> : null}
       <button 
-      className="" 
+      className="btn btn-danger" 
       onClick={() => {
           if(window.confirm('êtes vous sur de supprimer votre compte ?'))
           {deleteaccount()};

@@ -66,7 +66,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)} 
           />
 
-        <button type="submit">Submit</button>
+        <button className='btn btn-primary' type="submit">Submit</button>
       </form>
       {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:null}
       <br />
