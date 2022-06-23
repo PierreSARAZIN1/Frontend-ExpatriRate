@@ -1,5 +1,4 @@
-
-nav{
+nav {
     background-color: transparent;
 }
 
@@ -13,7 +12,7 @@ nav img {
     color: white;
 }
 
-.logoflexabsolute{
+.logoflexabsolute {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +21,7 @@ nav img {
     z-index: 3;
 }
 
-.logoflex{
+.logoflex {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -30,66 +29,72 @@ nav img {
     z-index: 3;
 }
 
-.logoflex i, .logoflexabsolute i{
-    color:white;
+.logoflex i,
+.logoflexabsolute i {
+    color: white;
     text-shadow: black 1px 1px;
 }
 
-nav ul li{
-    list-style: none;   
+nav ul li {
+    list-style: none;
     margin: 8px 0;
     padding: 3px 0 3px 15px;
 }
 
-nav ul li:hover{
+nav ul li:hover {
     background-color: #0AC710;
     padding: 3px 20px 3px 15px;
     border-radius: 25px;
 }
 
-nav ul p{
+nav ul p {
     margin: 35px 0 0 0;
     font-style: italic;
 }
 
-nav ul li a{
-
+nav ul li a {
     text-decoration: none;
     color: black;
-
 }
 
-nav ul{
+nav ul {
     position: absolute;
     z-index: 3;
     /*background-color: white;
     border-radius: 15px;
     -webkit-box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.27); 
     box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.27);   
-    */ 
+    */
     padding: 20px 35px;
-    
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur( 20px );
-    -webkit-backdrop-filter: blur( 20px );
+    backdrop-filter: blur( 20px);
+    -webkit-backdrop-filter: blur( 20px);
     border-radius: 10px;
-
     margin-left: 10px;
     animation-fill-mode: forwards;
     animation: showup 0.5s ease;
 }
 
-.absolute{
+.modalquit {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.absolute {
     margin-top: 65px;
 }
 
 @keyframes showup {
     0% {
-     transform: translateX(-100px);
-     opacity: 0;
+        transform: translateX(-100px);
+        opacity: 0;
     }
-    100%{
+    100% {
         transform: translateX(0px);
         opacity: 100;
     }
