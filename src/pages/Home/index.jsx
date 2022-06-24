@@ -8,7 +8,7 @@ import style from './style.css';
 
 const Home = () => {
 
-    const [citiesList, setCitiesList] = useState(" ");
+    const [citiesList, setCitiesList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [page, setPage] = useState(6);
 
@@ -22,8 +22,8 @@ const Home = () => {
             })
                 .then((response) => response.json())
                 .then((response) => {
-                    // console.log(response);
-                    setCitiesList(response);
+                    console.log(response);
+                    setCitiesList(response)
                     setIsLoading(false);
                 })
 
@@ -38,7 +38,7 @@ const Home = () => {
         :
         <>
             <div className="gridCards">
-                {citiesList.slice(0,page).map(city => <>{<Card city={city} key={city.id}/>}</>)}
+                {citiesList.slice(0,page).map(city => <>{<Card city={city} key={city.city.id}/>}</>)}
             </div>
 
             {citiesList.length > page? 

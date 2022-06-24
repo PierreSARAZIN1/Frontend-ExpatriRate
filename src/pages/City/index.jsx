@@ -37,9 +37,9 @@ const City = () => {
             })
                 .then((response) => response.json())
                 .then((response) =>{
-                    setCity(response);
-                    setCityName(response.name.toLowerCase());
-                    fetch(API_COST + response.name, {
+                    setCity(response.city);
+                    setCityName(response.city.name.toLowerCase());
+                    fetch(API_COST + response.city.name, {
                     })
                         .then((response) => response.json())
                         .then((response) => {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAtomValue } from 'jotai';
 import { adminAtom, jwtAtom } from 'stores/user';
 import { useNavigate } from 'react-router-dom';
@@ -10,6 +10,7 @@ const CreateCity = () => {
   const navigate = useNavigate();
   const admin = useAtomValue(adminAtom);
   const jwt = useAtomValue(jwtAtom);
+  const [countries, setCountries]= useState([])
 
 
   useEffect(
@@ -19,6 +20,21 @@ const CreateCity = () => {
       }
     }, []
   )
+
+  useEffect(
+    () => {
+        fetch(API_URL + '/countries', {
+            method: 'get',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+            .then((response) => response.json())
+            .then((response) =>{
+                setCountries(response)
+            })
+    }, []
+)
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -36,6 +52,8 @@ const CreateCity = () => {
     const internet = Number(form.elements.internet.value);
     const safety = Number(form.elements.safety.value);
     const french_speaking = form.elements.french_speaking.checked;
+    const country_id = Number(form.elements.countriesList.value);
+
 
     const data = {
       "city":{
@@ -50,10 +68,10 @@ const CreateCity = () => {
         "healthcare": healthcare,
         "internet" : internet,
         "safety" : safety,
-        "french_speaking" : french_speaking
+        "french_speaking" : french_speaking,
+        "country_id" : country_id
       }
     }
-
 
     fetch(API_URL + '/cities', {
       method: 'post',
@@ -172,6 +190,10 @@ const CreateCity = () => {
           type='checkbox'
           id='french_speaking'
         />
+
+        <select id="countriesList">
+          {countries.map(country => <option value={country.country.id}>{country.country.name}</option>) }
+        </select>
               
         <button type='submit'>Créer ville</button>
       </form>
