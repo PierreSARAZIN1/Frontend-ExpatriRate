@@ -22,7 +22,6 @@ const Home = () => {
             })
                 .then((response) => response.json())
                 .then((response) => {
-                    console.log(response);
                     setCitiesList(response)
                     setIsLoading(false);
                 })
@@ -38,7 +37,7 @@ const Home = () => {
         :
         <>
             <div className="gridCards">
-                {citiesList.slice(0,page).map(city => <>{<Card city={city} key={city.city.id}/>}</>)}
+                {citiesList.slice(0,page).map(city => <Card city={city} key={city.city.id}/>)}
             </div>
 
             {citiesList.length > page? 
