@@ -41,11 +41,9 @@ const Login = () => {
       .then((response) => {
         setUserId(response.user.id);
         Cookies.set('id', response.user.id);
-        setAdmin(response.user.admin);
-        Cookies.set('admin', response.user.admin);
-        console.log(response.user.admin)
-        console.log(typeof response.user.admin)
-          navigate('/');
+        setAdmin(response.user.admin.toString());
+        Cookies.set('admin', response.user.admin.toString());
+        navigate('/');
       })
     
   }

@@ -32,10 +32,10 @@ const Navbar = () => {
     .then((response) => {
       setJwt('');
       setId('');
-      setAdmin(false);
+      setAdmin("false");
       Cookies.set('id', "")
       Cookies.set('token', "")
-      Cookies.set('admin', false)
+      Cookies.set('admin', "false")
       navigate('/')
     })
   }
@@ -43,7 +43,8 @@ const Navbar = () => {
   const shownavabar = () => {
     setShow(!show);
   }
-   
+  console.log("🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓");
+  console.log(admin)
   return (
     <nav>
       <div className={location.pathname == '/'? 'logoflexabsolute' : 'logoflex' } onClick={shownavabar}>
@@ -86,7 +87,7 @@ const Navbar = () => {
           <Link to="/city/4">⛩ &nbsp;Seoul</Link>
         </li>
 
-    {admin == "false"? 
+    {admin == "true"? 
     <>
       <p>Dashboard administrateur</p>
       <li onClick={shownavabar}>

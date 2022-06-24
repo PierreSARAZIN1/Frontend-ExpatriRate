@@ -42,8 +42,8 @@ const Sign_in = () => {
       .then((response) => {
           setUserId(response.id);
           Cookies.set('id', response.id);
-          setAdmin(response.user.admin);
-          Cookies.set('admin', response.user.admin);
+          setAdmin(response.user.admin.toString());
+          Cookies.set('admin', response.user.admin.toString());
           navigate('/');
       })
     
