@@ -10,6 +10,8 @@ const Home = () => {
 
     const [citiesList, setCitiesList] = useState(" ");
     const [isLoading, setIsLoading] = useState(true);
+    const [page, setPage] = useState(6);
+
     useEffect(
         () => {
             fetch(API_URL + '/cities', {
@@ -34,7 +36,19 @@ const Home = () => {
         {isLoading ?
         null
         :
-            <div className="gridCards">{citiesList.map(city => <>{<Card city={city} key={city.id}/>}</>)}</div>
+        <>
+            <div className="gridCards">
+                {citiesList.slice(0,page).map(city => <>{<Card city={city} key={city.id}/>}</>)}
+            </div>
+
+            {citiesList.length > page? 
+                <div className='wrapper'>
+                    <button className='btn btn-primary showmore' onClick={()=> setPage(page + 6)}>Show more</button> 
+                </div>
+                
+            : null}
+        </>
+            
         }
 
     </main>
