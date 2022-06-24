@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useSetAtom } from 'jotai';
+import { useSetAtom, useAtom } from 'jotai';
 import Cookies from 'js-cookie'
 import { userIdAtom, jwtAtom, adminAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
@@ -13,8 +13,17 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const setUserId = useSetAtom(userIdAtom);
-  const setJwt = useSetAtom(jwtAtom);
+  const [jwt, setJwt] = useAtom(jwtAtom);
   const setAdmin = useSetAtom(adminAtom);
+
+
+  useEffect(
+    () =>{
+      if(jwt != ""){
+        navigate('/');
+      }
+    },[]
+  )
 
 
   const submitData = (e) => {
