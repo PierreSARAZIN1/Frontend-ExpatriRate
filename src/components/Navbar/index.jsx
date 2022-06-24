@@ -76,7 +76,7 @@ const Navbar = () => {
       </>
     }
 
-        <p>Top 3 des Pays pour s'expatrier</p>
+        <p>Top 3 des Villes pour s'expatrier</p>
         <li onClick={shownavabar}>
           <Link to="/city/1">🥖 &nbsp;Paris</Link>
         </li>
