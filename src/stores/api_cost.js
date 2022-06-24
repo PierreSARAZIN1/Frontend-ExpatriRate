@@ -1,0 +1,1 @@
+export const API_COST = "https://apicost.herokuapp.com/";
