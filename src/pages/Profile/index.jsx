@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import style from './style.css';
 import EditProfile from '../../components/Edit-Profile';
 import { useAtomValue, useAtom } from 'jotai';
-import { userIdAtom, jwtAtom } from '../../stores/user';
+import { userIdAtom, jwtAtom, adminAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 import { useNavigate, useParams } from 'react-router-dom';
 import Cookies from 'js-cookie';
@@ -13,6 +13,7 @@ const Profile = () => {
   const idParams = useParams().id
   const navigate = useNavigate()
   const [jwt, setJwt] = useAtom(jwtAtom);
+  const [admin, setAdmin] = useAtom(adminAtom);
   const [id, setId] = useAtom(userIdAtom);
   const [user, setUser] = useState("");
   const [modifyProfile, setModifyProfile] = useState(false);
@@ -60,8 +61,10 @@ const Profile = () => {
     .then((response) => {
       setJwt('');
       setId('');
-      Cookies.set('id', "")
-      Cookies.set('token', "")
+      setAdmin("false");
+      Cookies.set('id', "");
+      Cookies.set('token', "");
+      Cookies.set('admin', "false");
       navigate('/')
     })
   }

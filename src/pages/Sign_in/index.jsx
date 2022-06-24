@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useSetAtom, useAtom } from 'jotai';
 import Cookies from 'js-cookie'
-import { userIdAtom, jwtAtom } from '../../stores/user';
+import { userIdAtom, jwtAtom, adminAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 import { useNavigate } from 'react-router-dom';
 
@@ -15,6 +15,7 @@ const Sign_in = () => {
   const navigate = useNavigate();
   const setUserId = useSetAtom(userIdAtom);
   const [jwt,setJwt] = useAtom(jwtAtom);
+  const setAdmin = useSetAtom(adminAtom);
 
 
   useEffect(
@@ -49,6 +50,8 @@ const Sign_in = () => {
       .then((response) => {
           setUserId(response.id);
           Cookies.set('id', response.id);
+          setAdmin(response.user.admin.toString());
+          Cookies.set('admin', response.user.admin.toString());
           navigate('/');
       })
     
