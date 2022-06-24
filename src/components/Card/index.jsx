@@ -6,24 +6,24 @@ const Card = ({city}) => {
     console.log(city);
     return (
         <div className="card">
-            <Link to={"/city/" + city.id}>
+            <Link to={"/city/" + city.city.id}>
 
 
             <div className="textElement">
             <div className="cardsFlex">
-                <p>{city.french_speaking ? "Yes" : "No"}</p>
-                <p>{city.internet}</p>
+                <p>{city.city.french_speaking ? "Yes" : "No"}</p>
+                <p>{city.city.internet}</p>
              </div>
              <div className="cardTexts">
-                 <p>{city.name}</p>
-                 <p className="cardTextCountry">Country</p>
+                 <p>{city.city.name}</p>
+                 <p className="cardTextCountry">{city.country.name}</p>
              </div>
             <div className="cardsFlex">
-                 <p>{city.lat}</p>
-                <p>{city.cost}</p>
+                 <p>{city.city.lat}</p>
+                <p>{city.city.cost}</p>
             </div>
             </div>
-            <img src={city.picture} className="cardPicture" alt="Image of our City"></img>
+            <img src={city.city.picture} className="cardPicture" alt="Image of our City"></img>
             </Link>
         </div>
 )

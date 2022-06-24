@@ -37,8 +37,8 @@ const City = () => {
             })
                 .then((response) => response.json())
                 .then((response) =>{
-                    setCity(response);
-                    setCityName(response.name.toLowerCase());
+                    setCity(response.city);
+                    setCityName(response.city.name.toLowerCase());
                     setIsLoading(false);
                 })
         }, []
