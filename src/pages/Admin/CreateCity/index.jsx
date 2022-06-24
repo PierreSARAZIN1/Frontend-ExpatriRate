@@ -93,110 +93,110 @@ const CreateCity = () => {
     <div>
       <h1>Create</h1>
 
-      <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
 
-        <input
-          type='text'
-          placeholder='nom de la ville'
-          id='name'
-          required
-        />
+          <input
+            type='text'
+            placeholder='nom de la ville'
+            id='name'
+            required
+          />
 
-        <input
-          type='number'
-          step = '0.000001'
-          placeholder='latitude'
-          id='lat'
-          required
-        />
+          <input
+            type='number'
+            step = '0.000001'
+            placeholder='latitude'
+            id='lat'
+            required
+          />
 
-        <input
-          type='number'
-          step = '0.000001'
-          placeholder='longitude'
-          id='long'
-          required
-        />
+          <input
+            type='number'
+            step = '0.000001'
+            placeholder='longitude'
+            id='long'
+            required
+          />
 
-        <input
-          type='text'
-          placeholder='image url'
-          id='picture'
-          required
-        />
+          <input
+            type='text'
+            placeholder='image url'
+            id='picture'
+            required
+          />
 
-        <input
-          type='number'
-          step = '0.01'
-          placeholder='note global /5'
-          id='overall'
-          pattern='[0-5]'
-          required
-        />
+          <input
+            type='number'
+            step = '0.01'
+            placeholder='note global /5'
+            id='overall'
+            pattern='[0-5]'
+            required
+          />
 
-        <input
-          type='number'
-          step = '0.01'
-          placeholder='note activité /5'
-          id='activities'
-          pattern='[0-5]'
-          required
-        />
+          <input
+            type='number'
+            step = '0.01'
+            placeholder='note activité /5'
+            id='activities'
+            pattern='[0-5]'
+            required
+          />
 
-        <input
-          type='number'
-          step = '0.01'
-          placeholder='cout de la vie en €'
-          id='cost'
-          required
-        />
+          <input
+            type='number'
+            step = '0.01'
+            placeholder='cout de la vie en €'
+            id='cost'
+            required
+          />
 
-        <input
-          type='number'
-          step = '0.01'
-          placeholder='note works places /5'
-          id='works_places'
-          pattern='[0-5]'
-          required
-        />
+          <input
+            type='number'
+            step = '0.01'
+            placeholder='note works places /5'
+            id='works_places'
+            pattern='[0-5]'
+            required
+          />
 
-        <input
-          type='number'
-          step = '0.01'
-          placeholder='note santé /5'
-          id='healthcare'
-          pattern='[0-5]'
-          required
-        />
+          <input
+            type='number'
+            step = '0.01'
+            placeholder='note santé /5'
+            id='healthcare'
+            pattern='[0-5]'
+            required
+          />
 
-        <input
-          type='number'
-          placeholder='internet speed (en Mbps)'
-          id='internet'
-          required
-        />
+          <input
+            type='number'
+            placeholder='internet speed (en Mbps)'
+            id='internet'
+            required
+          />
 
-        <input
-          type='number'
-          step = '0.01'
-          placeholder='note safety /5'
-          id='safety'
-          pattern='[0-5]'
-          required
-        />
+          <input
+            type='number'
+            step = '0.01'
+            placeholder='note safety /5'
+            id='safety'
+            pattern='[0-5]'
+            required
+          />
 
-        <label>Parle français?</label>
-        <input
-          type='checkbox'
-          id='french_speaking'
-        />
+          <label>Parle français?</label>
+          <input
+            type='checkbox'
+            id='french_speaking'
+          />
 
-        <select id="countriesList">
-          {countries.map(country => <option value={country.country.id}>{country.country.name}</option>) }
-        </select>
-              
-        <button type='submit'>Créer ville</button>
-      </form>
+          <select id="countriesList">
+            {countries.map(country => <option value={country.country.id}>{country.country.name}</option>) }
+          </select>
+                
+          <button type='submit'>Créer ville</button>
+        </form>
     </div>
   );
 };
