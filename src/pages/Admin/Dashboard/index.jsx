@@ -53,7 +53,7 @@ const Dashboard = () => {
       .then((response) => {
         console.log("Ville supprimée");
         console.log(response);
-        setCitiesList(citiesList.filter(element => element.id !== city))
+        setCitiesList(citiesList.filter(element => element.city.id !== city))
       })
 
 
@@ -70,13 +70,13 @@ const Dashboard = () => {
         : 
           citiesList.map(city => 
             {return (
-            <tr key={city.id}>
-              <td>{city.name}</td>
+            <tr key={city.city.id}>
+              <td>{city.city.name}</td>
               <td>
                 <div>
-                <Link to={"/city/"+ city.id}><i className="fa-solid fa-eye"></i></Link>&nbsp;
-                <Link to={"/admin/update/"+ city.id}><i className="fa-solid fa-pen"></i></Link>&nbsp;
-                <i className="fa-solid fa-trash-can" onClick={()=> deleteCity(city.id)}></i>
+                <Link to={"/city/"+ city.city.id}><i className="fa-solid fa-eye"></i></Link>&nbsp;
+                <Link to={"/admin/update/"+ city.city.id}><i className="fa-solid fa-pen"></i></Link>&nbsp;
+                <i className="fa-solid fa-trash-can" onClick={()=> deleteCity(city.city.id)}></i>
                 </div>
               </td>
             </tr>

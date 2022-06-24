@@ -6,7 +6,8 @@ import { useParams } from "react-router-dom";
 import {jwtAtom} from "../../stores/user";
 import {useAtomValue} from "jotai";
 import {useNavigate} from "react-router-dom";
-import useFetchCityInformations from "../../services/useFetchCityInformations";
+import {API_COST} from "../../stores/api_cost";
+import TableCost from "../../components/TableCost";
 
 const City = () => {
 
@@ -15,10 +16,9 @@ const City = () => {
     const navigate = useNavigate();
 
     const [city, setCity] = useState(" ");
-    const [cityInfo, setCityInfo] = useState(" ");
     const [isLoading, setIsLoading] = useState(true);
     const [cityName, setCityName] = useState(" ");
-    const fetchCityInfo = useFetchCityInformations(cityName);
+    const [cost, setCost] = useState([]);
     useEffect(
         () => {
             if(jwt == ""){
@@ -39,14 +39,65 @@ const City = () => {
                 .then((response) =>{
                     setCity(response.city);
                     setCityName(response.city.name.toLowerCase());
-                    setIsLoading(false);
+                    fetch(API_COST + response.city.name, {
+                    })
+                        .then((response) => response.json())
+                        .then((response) => {
+                            console.log(response);
+                            setCost(response.costs);
+                            setIsLoading(false);
+                        })
+
+
                 })
         }, []
     )
+
+
     return (
+        <>
+        <div className="headerCity">
         <div>
             {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:<div>Hello</div>}
         </div>
+            <div className="imgShowCity" alt={"background image of" + cityName}>
+                <h1>{cityName}</h1>
+                <h3>Country name</h3>
+                <p>{city.overall}</p>
+            </div>
+        </div>
+
+        <div className="showRates">
+            <table className="Rates">
+                <tbody>
+                <tr>
+                    <td>Activities</td><td><progress value={city.activities} max="5" text-inside="true">{city.activities}</progress>{city.activities}</td>
+                </tr>
+                <tr>
+                    <td>Cost</td><td>{city.cost}</td>
+                </tr>
+                <tr>
+                    <td>Workplaces</td><td>{city.works_places}</td>
+                </tr>
+                <tr>
+                    <td>Healthcare</td><td>{city.healthcare}</td>
+                </tr>
+                <tr>
+                    <td>Internet</td><td>{city.internet}</td>
+                </tr>
+                <tr>
+                    <td>Safety</td><td>{city.safety}</td>
+                </tr>
+                <tr>
+                    <td>French Speaking</td><td>{city.french_speaking}</td>
+                </tr>
+                {cost.map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
+
+            </tbody>
+            </table>
+
+        </div>
+            </>
     );
 };
 
