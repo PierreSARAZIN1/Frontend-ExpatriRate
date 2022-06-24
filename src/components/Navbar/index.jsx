@@ -43,8 +43,6 @@ const Navbar = () => {
   const shownavabar = () => {
     setShow(!show);
   }
-  console.log("🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓");
-  console.log(admin)
   return (
     <nav>
       <div className={location.pathname == '/'? 'logoflexabsolute' : 'logoflex' } onClick={shownavabar}>
