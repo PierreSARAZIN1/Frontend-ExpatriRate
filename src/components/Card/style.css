@@ -5,30 +5,23 @@
     border-radius: 15px;
     color: white;
     text-shadow: black 1px 1px;
-    font-size: 30px;
+    font-size: 20px;
     position: relative;
 }
 
-.card .likeCity i {
-    color: #0AC710;
-}
 
 .likeCity {
     position: absolute;
-    right: 10px;
-    top: 5px;
+    right: 15px;
+    top: 10px;
     z-index: 8;
 }
 
-.likeCity:hover {
+.likeCity:hover i{
     cursor: pointer;
-    position: absolute;
-    right: 10px;
-    top: 5px;
-    z-index: 8;
 }
 
-.card img {
+.card .cardPicture {
     height: 100%;
     z-index: -1;
     position: absolute;
@@ -47,7 +40,7 @@
     display: flex;
     justify-content: space-between;
     margin: 5px 10px;
-    height: 40px;
+    height: 55px;
 }
 
 .cardTexts {
@@ -60,5 +53,54 @@
 }
 
 .cardTextCountry {
-    font-size: 35px;
+    font-size: 25px;
+}
+
+.wifitext{
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.wifitext span p{
+    font-size: 10px;
+    font-weight: 900;
+}
+.wifitext span {
+    margin-left: 10px;
+}
+
+.iconweather{
+    vertical-align: center;
+    width: 50px;
+    margin-top: -5px;
+    margin-left: -10px;
+}
+
+.tempeture{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+}
+
+.icon-heart{
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: red;
+}
+
+.icon-heart-full{
+    color: red;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: red;
+}
+
+.icon-heart:hover{
+    color: red;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: red;
 }
