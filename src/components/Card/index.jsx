@@ -6,7 +6,7 @@ import { jwtAtom, userIdAtom } from 'stores/user';
 import './style.css';
 
 const Card = ({city}) => {
-    
+
 
 
     const id = useAtomValue(userIdAtom);
@@ -20,11 +20,9 @@ const Card = ({city}) => {
     const[tempeture, setTempeture]= useState('')
 
 
-    const API_key = '52af23a1aaa4751fe5ba05fa2e169f05';
-
     useEffect(
         () => {
-          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${city.city.lat}&lon=${city.city.long}&appid=${API_key}&units=metric`)
+          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${city.city.lat}&lon=${city.city.long}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
           .then((response) => response.json())
           .then((responseData) => {
             setIcon(responseData.weather[0].icon);
