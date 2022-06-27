@@ -9,13 +9,15 @@ import City from "./pages/City";
 import Dashboard from 'pages/Admin/Dashboard';
 import CreateCity from 'pages/Admin/CreateCity';
 import UpdateCity from 'pages/Admin/UpdateCity';
+import Cookie from 'components/Cookie';
 
 const App = () => {
 
   return (
     <>
-    <Navbar/>
-      
+      <Navbar/>
+      <Cookie/>
+
       <Routes>
         <Route path="/" element={<Home/>}/> 
         <Route path="/login" element={<Login/>}/>
@@ -26,6 +28,7 @@ const App = () => {
         <Route path="/admin/create_city" element={<CreateCity/>}/>
         <Route path="/admin/update/:id" element={<UpdateCity/>}/>
       </Routes>
+
     </>
   );
 };
