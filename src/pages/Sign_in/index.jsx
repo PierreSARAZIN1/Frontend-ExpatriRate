@@ -3,13 +3,14 @@ import { useSetAtom, useAtom, useAtomValue } from 'jotai';
 import Cookies from 'js-cookie'
 import { userIdAtom, jwtAtom, adminAtom, cookieAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
-import { useNavigate } from 'react-router-dom';
 import style from './style.css';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Sign_in = () => {
+  const location = useLocation();
  
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(location.state !== null? location.state.email : "");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -90,7 +91,6 @@ const Sign_in = () => {
               />
             </div>
             
-
           <label htmlFor='password'> Password </label>
           <div className='inputstyle'>
             <input 
