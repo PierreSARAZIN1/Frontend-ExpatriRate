@@ -6,3 +6,78 @@
   display: flex;
   justify-content: center;
 }
+
+.searchBar{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.searchBar button{
+  margin: 0 15px;
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 7px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.searchBar button:hover{
+  background-color: var(--primary);
+  color: white ;
+  border: 1px solid var(--primary);
+}
+
+.filter{
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.filter i {
+  color: var(--primary);
+}
+
+.filter input{
+  border: none;
+  background-color: transparent;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.modal p {
+  cursor: pointer;
+  padding: 8px 15px;
+  margin: 8px 15px;
+  border: 1px dashed var(--primary);
+  color : var(--primary);
+  border-radius: 15px;
+}
+
+.modal p:hover {
+  background-color: var(--primary);
+  color : white;
+}
+
+.countryFiltered{
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 15px;
+  margin: 8px 15px;
+  border: 1px dashed var(--primary);
+  color : var(--primary);
+  border-radius: 15px;
+}

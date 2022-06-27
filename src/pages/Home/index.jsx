@@ -81,6 +81,11 @@ const Home = () => {
         setModal(false);
     }
 
+    const removeCountryFilter = () => {
+        setCityResult(citiesList);
+        setCountryFiltered("")
+    }
+
     return (
         <main>
             <HeroBanner/>
@@ -90,22 +95,25 @@ const Home = () => {
                     </button>
                     <div className="searchBarContent">
                         <div className='filter'>
-                            <input type="text" placeholder="Search City" onChange={filter}></input>
+                            <input type="text" placeholder="Search City..." onChange={filter}></input><i className="fa-solid fa-circle-plus"></i>
                         </div>
-                        {modal ?
+                    </div>
+
+                </div>
+                {modal ?
                             <div className="modal">
                                 {countries.map(country => {
-                                    return (<p className="countryFiltered"
+                                    return (<p
                                                onClick={filterByCountry}>{country.country.name}</p>)
                                 })}
                             </div>
                             :
                             null
                         }
-                        <p onClick={() => setCountryFiltered("")}>{countryFiltered}</p>
-                    </div>
-
-                </div>
+                        {countryFiltered !== ""?
+                            <p className="countryFiltered" onClick={() => removeCountryFilter()}>{countryFiltered} X</p>
+                        : null}
+                        
             </>
             {isLoading ?
                 null
