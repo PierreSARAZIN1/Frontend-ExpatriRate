@@ -4,6 +4,7 @@ import Cookies from 'js-cookie'
 import { userIdAtom, jwtAtom, adminAtom, cookieAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 import { useNavigate } from 'react-router-dom';
+import style from './style.css';
 
 
 const Sign_in = () => {
@@ -60,42 +61,65 @@ const Sign_in = () => {
       })
     
   }
+
+  const close = () => {
+    navigate("/")
+  }
  
 
   return (
-    <>
-      <form onSubmit={submitData}>
-        <label htmlFor='email'> Email </label>
-          <input 
-            type="email"
-            required
-            pattern='[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}' 
-            id='email'
-            onChange={(e) => setEmail(e.target.value)} 
-          />
+    <div className='loginform'>
+      <video className="background-video-form" autoPlay loop muted>
+          <source src="https://player.vimeo.com/external/330412624.sd.mp4?s=853ea7644708b7986c992689dd351b0413d7b3ca&profile_id=&oauth2_token_id=57447761" type="video/mp4"></source>
+      </video>
+      <i className="fa-solid fa-xmark" onClick={close}></i>
+      <div className='filterbackground' onClick={close}></div>
+      <div className='logincontent'>
+        <p className='emoji'>🗺️</p>
+        <h3>Sign up</h3>
+        <form onSubmit={submitData}>
+          <label htmlFor='email'> Email </label>
+            <div className='inputstyle'>
+              <input 
+                type="email"
+                placeholder='Email...'
+                required
+                pattern='[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}' 
+                id='email'
+                onChange={(e) => setEmail(e.target.value)} 
+              />
+            </div>
+            
 
-        <label htmlFor='password'> Mot de passe </label>
-          <input 
-            type="password" 
-            id='password'
-            required
-            onChange={(e) => setPassword(e.target.value)} 
-          />
+          <label htmlFor='password'> Password </label>
+          <div className='inputstyle'>
+            <input 
+              type="password" 
+              placeholder='Password...'
+              id='password'
+              required
+              onChange={(e) => setPassword(e.target.value)} 
+            />
+          </div>
 
-        <label htmlFor='passwordConfirmation'> Confirmez le mot de passe </label>
-          <input 
-            type="password" 
-            id='passwordConfirmation'
-            required
-            pattern={password}
-            onChange={(e) => setPasswordConfirmation(e.target.value)} 
-          />
-        <button className='btn btn-primary' type="submit">Submit</button>
-      </form>
-      {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:null}
-      <br />
-      {cookiechoice? null : <p>En acceptant les cookies avant votre connexion nous pourrons maintenir votre connexion même si vous fermez la page web</p> }
-    </>
+          <label htmlFor='passwordConfirmation'> Confirme password </label>
+          <div className='inputstyle'>
+            <input 
+              type="password" 
+              id='passwordConfirmation'
+              placeholder='Confirme password...'
+              required
+              pattern={password}
+              onChange={(e) => setPasswordConfirmation(e.target.value)} 
+            />
+          </div>
+          <button className='btn btn-primary' type="submit">Sign up now</button>
+        </form>
+        {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:null}
+        <br />
+        {cookiechoice? <p>If you don't accept cookies before you log in, we won't be able to maintain your connection even if you close the web page</p> : <p>By accepting cookies before you log in we will be able to maintain your connection even if you close the web page</p> }
+        </div>
+    </div>
   );
 };
 
