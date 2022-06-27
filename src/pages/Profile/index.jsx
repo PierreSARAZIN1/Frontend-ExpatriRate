@@ -62,9 +62,9 @@ const Profile = () => {
       setJwt('');
       setId('');
       setAdmin("false");
-      Cookies.set('id', "");
-      Cookies.set('token', "");
-      Cookies.set('admin', "false");
+      Cookies.remove('id');
+      Cookies.remove('token');
+      Cookies.remove('admin');
       navigate('/')
     })
   }

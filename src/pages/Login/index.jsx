@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import { useSetAtom, useAtom } from 'jotai';
+import { useSetAtom, useAtom, useAtomValue } from 'jotai';
 import Cookies from 'js-cookie'
-import { userIdAtom, jwtAtom, adminAtom } from '../../stores/user';
+import { userIdAtom, jwtAtom, adminAtom, cookieAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 import { useNavigate } from 'react-router-dom';
 
@@ -15,15 +15,10 @@ const Login = () => {
   const setUserId = useSetAtom(userIdAtom);
   const [jwt, setJwt] = useAtom(jwtAtom);
   const setAdmin = useSetAtom(adminAtom);
+  const cookiechoice = useAtomValue(cookieAtom);
 
 
-  useEffect(
-    () =>{
-      if(jwt != ""){
-        navigate('/');
-      }
-    },[]
-  )
+
 
 
   const submitData = (e) => {
@@ -49,9 +44,12 @@ const Login = () => {
         })
       .then((response) => {
         setUserId(response.user.id);
-        Cookies.set('id', response.user.id);
         setAdmin(response.user.admin.toString());
-        Cookies.set('admin', response.user.admin.toString());
+        if(cookiechoice){
+          Cookies.set('id', response.user.id);
+          Cookies.set('admin', response.user.admin.toString());
+        }
+        
         navigate('/');
       })
     
@@ -82,7 +80,8 @@ const Login = () => {
       </form>
       {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:null}
       <br />
-      <p>En vous connectant vous acceptez les cookies</p>
+      {cookiechoice? null : <p>En acceptant les cookies avant votre connexion nous pourrons maintenir votre connexion même si vous fermez la page web</p> }
+      
     </>
   );
 };

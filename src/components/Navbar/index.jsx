@@ -33,9 +33,12 @@ const Navbar = () => {
       setJwt('');
       setId('');
       setAdmin("false");
-      Cookies.set('id', "")
-      Cookies.set('token', "")
-      Cookies.set('admin', "false")
+      if(Cookies.get('id') != undefined){
+        Cookies.remove('id')
+        Cookies.remove('token')
+        Cookies.remove('admin')
+      }
+     
       navigate('/')
     })
   }
