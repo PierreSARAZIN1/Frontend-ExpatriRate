@@ -57,35 +57,35 @@ const Navbar = () => {
       <div className='modalquit' onClick={shownavabar}></div>
         <ul className={location.pathname == '/'? 'absolute' : '' }>
           <li onClick={shownavabar}>
-            <Link to="/">🗺️ &nbsp;Accueil</Link>
+            <Link to="/">🗺️ &nbsp;Home</Link>
           </li>
     {id == ""?
       <>
         <li onClick={shownavabar}>
-          <Link to="/sign_in">🎒 &nbsp;S'inscrire</Link>
+          <Link to="/sign_in">🎒 &nbsp;Sign up</Link>
         </li>
         <li onClick={shownavabar}>
-          <Link to="/login">✈️ &nbsp;Se connecter</Link>
+          <Link to="/login">✈️ &nbsp;Sign in</Link>
         </li>
       </>
     :
       <>
       <li onClick={shownavabar}>
-          <Link to={"/profile/" + id}>📒 Profil</Link>
+          <Link to={"/profile/" + id}>📒 Profile</Link>
         </li>
-        <li onClick={logout}>❤️‍🩹 &nbsp;Deconnexion</li>
+        <li onClick={logout}>❤️‍🩹 &nbsp;Logout</li>
       </>
     }
 
-        <p>Top 3 des Villes pour s'expatrier</p>
+        <p>Top 3 Cities to Expatriate</p>
         <li onClick={shownavabar}>
-          <Link to="/city/1">🥖 &nbsp;Paris</Link>
+          <Link to="/city/26">🥖 &nbsp;Paris</Link>
         </li>
         <li onClick={shownavabar}>
-          <Link to="/city/2">💂 &nbsp;Londres</Link>
+          <Link to="/city/28">💂 &nbsp;London</Link>
         </li>
         <li onClick={shownavabar}>
-          <Link to="/city/4">⛩ &nbsp;Seoul</Link>
+          <Link to="/city/30">⛩ &nbsp;Seoul</Link>
         </li>
 
     {admin == "true"? 

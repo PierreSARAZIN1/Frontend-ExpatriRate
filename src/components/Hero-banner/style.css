@@ -1,5 +1,5 @@
 .background-video {
-    height: clamp(700px, 50vh, 1200px);
+    height: clamp(700px, 50vh, 1500px);
     width: 100%;
     position: absolute;
     object-fit: cover;
@@ -8,15 +8,27 @@
 }
 
 .text-banner {
+    margin: 0 25px;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     position: relative;
+    height: 100%;
+    color: white;
+    text-shadow: black 1px 1px;
+}
+
+.text-banner h1{
+    margin-bottom: 15px;
+    font-size: 50px;
 }
 
 svg {
     position: absolute;
-    bottom: 0;
+    bottom: 0;    
+    margin-bottom: -5px;
+
 }
 
 .divSVG {
@@ -27,4 +39,100 @@ svg {
     height: clamp(700px, 50vh, 1200px);
     overflow: hidden;
     position: relative;
+}
+
+
+
+@media only screen and (min-width: 1105px) {
+    
+.modalregistration{
+    background-color: white;
+    border-radius: 20px;
+    max-width: 650px;
+    margin-left: 25px;
+    height: fit-content;
+    padding: 25px 35px 25px 35px;
+    z-index: 3;
+    text-align: center;
+}
+
+.modalregistration img{
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.text-content{
+    margin-right: 25px;
+    max-width: 600px;
+}
+
+.registrationinputhome{
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 13px -10px #000000; 
+    box-shadow: 0px 0px 13px -10px #000000;
+}
+
+.modalregistration input{
+    border: none;
+    width: 100%;
+    margin-left: 8px;
+}
+
+.modalregistration button{
+    border:none;
+    background-color: var(--primary);
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.modalregistration button:hover{
+    background-color: #09960e;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.modalregistration p {
+    text-shadow: none;
+    color: gray;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.modalregistration a {
+    color: var(--primary);
+}
+
+}
+
+@media only screen and (max-width: 1104px) {
+    .modalregistration{
+        display: none;
+    }
+
+    .text-banner{
+        text-align: center;
+    }
+}
+
+.typewriter{
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.typewriterlike{
+    margin-top: 10px;
 }
