@@ -3,12 +3,13 @@ import { useSetAtom, useAtom, useAtomValue } from 'jotai';
 import Cookies from 'js-cookie'
 import { userIdAtom, jwtAtom, adminAtom, cookieAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Sign_in = () => {
+  const location = useLocation();
  
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(location.state !== null? location.state.email : "");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -64,11 +65,13 @@ const Sign_in = () => {
 
   return (
     <>
+      {email !== ""? <h2>PLus qu'une toute petite étape pour finaliser votre inscription!</h2> : null}
       <form onSubmit={submitData}>
         <label htmlFor='email'> Email </label>
           <input 
             type="email"
             required
+            value={email}
             pattern='[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}' 
             id='email'
             onChange={(e) => setEmail(e.target.value)} 

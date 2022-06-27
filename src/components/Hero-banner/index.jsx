@@ -1,7 +1,26 @@
-import React from 'react';
-import style from './style.css';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './style.css';
+
+import {Typewriter} from 'react-simple-typewriter';
 
 const HeroBanner = () => {
+
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+
+  const Register = (e) => {
+    e.preventDefault();
+    console.log(email)
+    if(email !== ""){
+      navigate('/sign_in', {
+        state:{
+          email: email
+        }
+      })
+    }
+  }
+
   return (
     <>
     <div className='heroBanner'>
@@ -9,7 +28,37 @@ const HeroBanner = () => {
           <source src="https://player.vimeo.com/external/330412624.sd.mp4?s=853ea7644708b7986c992689dd351b0413d7b3ca&profile_id=&oauth2_token_id=57447761" type="video/mp4"></source>
         </video>
         <div className='text-banner'>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae praesentium similique ea. Temporibus repellat sit culpa accusamus labore vel, libero, ad tenetur autem, sint quaerat dicta dolorum adipisci? Quibusdam, repellat!</p>
+          <div className='text-content'>
+            <h1>✈️ No more surprises for expatriates</h1>
+            <h2>🌎 Join an international expat community to discover incridible thing about your new home </h2><h2 className='typewriterlike'>like 
+            <span className='typewriter'><Typewriter
+              loopcursor
+              loop
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+              words={["coffee price", "cost of restaurant for 2", "price of rent", "life cost"]}
+            /></span></h2>
+          </div>
+          
+          <div className="modalregistration">
+            <img src='https://datasprk.com/dsp-file/uploads/2019/05/travel-1.png'></img>
+            <form onSubmit={Register}>
+              <div className='registrationinputhome' >
+                <input 
+                  type="text" 
+                  placeholder='Type your email...'
+                  pattern='[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}' 
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                </div>        
+              <button type='submit'>Join Expatrirate Community</button>
+            </form>
+            <p>Already a member? <Link to="/login">Log in</Link></p>
+            
+
+          </div>
         </div>
         <div className='divSVG'>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
