@@ -13,7 +13,7 @@ const Footer = () => {
         <footer>
             <div className="container">
             <div className="title-footer">
-                <h3>Your next <span>place deserve</span> a good grade right?</h3>
+                <h3>Your <span>next place</span> deserve a good grade right?</h3>
             </div>
             <div id="container-footer">
                 <div className="team">
