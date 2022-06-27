@@ -20,16 +20,16 @@ const Card = ({city}) => {
     const[tempeture, setTempeture]= useState('')
 
 
-    useEffect(
-        () => {
-          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${city.city.lat}&lon=${city.city.long}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
-          .then((response) => response.json())
-          .then((responseData) => {
-            setIcon(responseData.weather[0].icon);
-            setTempeture(responseData.main.temp)
-          })
-        },[]
-    )
+    // useEffect(
+    //     () => {
+    //       fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${city.city.lat}&lon=${city.city.long}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
+    //       .then((response) => response.json())
+    //       .then((responseData) => {
+    //         setIcon(responseData.weather[0].icon);
+    //         setTempeture(responseData.main.temp)
+    //       })
+    //     },[]
+    // )
 
 
     const likeACity = () => {
