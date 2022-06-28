@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Frontend-ExpatriRate/static/css/main.c9297a7f.css",
+    "main.js": "/Frontend-ExpatriRate/static/js/main.aa0a2899.js",
+    "static/media/logo.png": "/Frontend-ExpatriRate/static/media/logo.52719f56e7eb40dade34.png",
+    "index.html": "/Frontend-ExpatriRate/index.html",
+    "main.c9297a7f.css.map": "/Frontend-ExpatriRate/static/css/main.c9297a7f.css.map",
+    "main.aa0a2899.js.map": "/Frontend-ExpatriRate/static/js/main.aa0a2899.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9297a7f.css",
+    "static/js/main.aa0a2899.js"
+  ]
+}
