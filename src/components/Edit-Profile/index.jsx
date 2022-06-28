@@ -16,7 +16,6 @@ const EditProfile = () => {
     e.preventDefault();
     const data = {
       "user": {
-        // "current_password": initialPassword,
         "password": newPassword,
         "password_confirmation": newPasswordConfirmation
       }
@@ -39,7 +38,7 @@ const EditProfile = () => {
   return (
     <>
       <form onSubmit={submitData}>
-        <label htmlFor='password'> Ancien mot de passe </label>
+        <label htmlFor='password'> Previous password </label>
           <input 
             type="password"
             required
@@ -47,7 +46,7 @@ const EditProfile = () => {
             onChange={(e) => setInitialPassword(e.target.value)} 
           />
 
-        <label htmlFor='password'> Mot de passe </label>
+        <label htmlFor='password'> New password </label>
           <input 
             type="password" 
             id='newPassword'
@@ -55,7 +54,7 @@ const EditProfile = () => {
             onChange={(e) => setNewPassword(e.target.value)} 
           />
 
-        <label htmlFor='passwordConfirmation'> Confirmez le mot de passe </label>
+        <label htmlFor='passwordConfirmation'> Confirme new password </label>
           <input 
             type="password" 
             id='newPasswordConfirmation'

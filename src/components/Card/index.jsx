@@ -82,7 +82,7 @@ const Card = ({city}) => {
             <Link to={"/city/" + city.city.id}>
             <div className="textElement">
                 <div className="cardsFlex">
-                    <p className='wifitext'><i className="fa-solid fa-wifi"></i> <span>{city.city.internet}<br></br><p>Mbps</p></span></p>
+                    <div className='wifitext'><i className="fa-solid fa-wifi"></i> <span>{city.city.internet}<br></br><p>Mbps</p></span></div>
                 </div>
                 <div className="cardTexts">
                     <p>{city.city.name}</p>
