@@ -1,3 +1,7 @@
+.profile{
+  min-height: 62vh;
+}
+
 .profilbackground{
   filter: brightness(50%);
   z-index: -2;

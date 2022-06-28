@@ -3,7 +3,6 @@ import Card from '../../components/Card';
 import HeroBanner from 'components/Hero-banner';
 import {API_URL} from "../../stores/api_url";
 import style from './style.css';
-import Footer from "../../components/Footer";
 
 
 const Home = () => {
@@ -134,7 +133,6 @@ const Home = () => {
                 </>
 
             }
-            <Footer/>
         </main>
 
     );
