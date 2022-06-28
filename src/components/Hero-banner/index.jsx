@@ -43,7 +43,7 @@ const HeroBanner = () => {
           </div>
           
           <div className="modalregistration">
-            <img src='https://datasprk.com/dsp-file/uploads/2019/05/travel-1.png'></img>
+            <img src='https://www.tyntec.com/drimage/920/0/1037/d_travel02.png'></img>
             <form onSubmit={Register}>
               <div className='registrationinputhome' >
                 <input 
