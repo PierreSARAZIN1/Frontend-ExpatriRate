@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/city/:id" element={<City/>}/>
         <Route path="/admin/dashboard" element={<Dashboard/>}/>
         <Route path="/admin/create_city" element={<CreateCity/>}/>
-        <Route path="/admin/update/:id" element={<UpdateCity/>}/>
+        <Route path="/admin/update_city/:id" element={<UpdateCity/>}/>
       </Routes>
 
       <Footer/>
