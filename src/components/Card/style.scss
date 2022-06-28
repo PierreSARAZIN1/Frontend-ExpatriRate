@@ -7,6 +7,34 @@
     text-shadow: black 1px 1px;
     font-size: 20px;
     position: relative;
+
+    &:hover {
+        .textElement{
+            display: none;
+
+        };
+
+        .cardPicture {
+            filter: brightness(30%);
+        }
+
+        .hoverCardInfo {
+            margin-top: 7%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            color: white;
+            height: 80%;
+            font-size: 1rem;
+            gap: 5px;
+        }
+        .categories {
+            align-items: flex-end;
+            text-align: start;
+
+        }
+    }
 }
 
 
@@ -29,12 +57,12 @@
     left: 50%;
     transform: translateX(-50%);
 }
-
-.card:hover {
-    filter: blur(1px);
-    filter: brightness(80%);
-    transition: all 0.5s;
-}
+//
+//.card:hover {
+//    filter: blur(1px);
+//    filter: brightness(80%);
+//    transition: all 0.5s;
+//}
 
 .cardsFlex {
     display: flex;
@@ -86,6 +114,9 @@
     justify-content: center;
     margin-top: -30px;
 }
+.costMessage {
+    display: inline-block;
+}
 
 .icon-heart{
     color: white;
@@ -104,3 +135,6 @@
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: red;
 }
+
+
+

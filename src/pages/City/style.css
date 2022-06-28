@@ -25,9 +25,11 @@ table{
 }
 
 .progress{
-    width: 150px;
+    width: 180px;
     background-color:rgb(255, 255, 255);
     border-radius: 25px;
+    height: 30px;
+    position: relative;
 }
 
 table td span{
@@ -69,4 +71,10 @@ table td span{
 
 .overallscore{
     text-align: center;
+}
+
+.costMessage {
+    position: absolute;
+    top: 3px;
+    right: 10px;
 }
