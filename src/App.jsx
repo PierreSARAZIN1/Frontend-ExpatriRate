@@ -10,6 +10,7 @@ import Dashboard from 'pages/Admin/Dashboard';
 import CreateCity from 'pages/Admin/CreateCity';
 import UpdateCity from 'pages/Admin/UpdateCity';
 import Cookie from 'components/Cookie';
+import Footer from 'components/Footer';
 
 const App = () => {
 
@@ -28,6 +29,9 @@ const App = () => {
         <Route path="/admin/create_city" element={<CreateCity/>}/>
         <Route path="/admin/update/:id" element={<UpdateCity/>}/>
       </Routes>
+
+      <Footer/>
+
 
     </>
   );
