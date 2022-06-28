@@ -98,3 +98,7 @@ nav ul {
         opacity: 100;
     }
 }
+
+.Logout:hover {
+    cursor: pointer;
+}

@@ -73,7 +73,7 @@ const Navbar = () => {
       <li onClick={shownavabar}>
           <Link to={"/profile/" + id}>📒 Profile</Link>
         </li>
-        <li onClick={logout}>❤️‍🩹 &nbsp;Logout</li>
+        <li onClick={logout} className="Logout" >❤️‍🩹 &nbsp;Logout</li>
       </>
     }
 

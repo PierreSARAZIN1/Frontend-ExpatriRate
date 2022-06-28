@@ -1,0 +1,124 @@
+.admin-table {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.admin-table table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.admin-table table tr th {
+    text-align: center;
+}
+
+.admin-table table tr td tr {
+    padding: 5px 0px 5px 0px;
+}
+
+.admin-table table td,
+.admin-table table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.admin-table .cities-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-table .delete-country {
+    text-align: center;
+}
+
+.admin-table .delete-city:hover {
+    cursor: pointer;
+}
+
+.admin-table .delete-country i:hover {
+    cursor: pointer;
+}
+
+.admin-table table tr:nth-child(even) {
+    background-color: #e0dddd;
+}
+
+.admin-table table tr:hover {
+    background-color: #0AC710;
+}
+
+.admin-table .delete-country {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.admin-table table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0AC710;
+    color: white;
+}
+
+.pop-up-edit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
+
+.pop-up-edit i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    z-index: 7;
+    font-size: 40px;
+}
+
+.filter-modal {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(47, 46, 46, 0.849);
+}
+
+.content-edit {
+    position: absolute;
+    padding: 25px 20px;
+    border-radius: 20px;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    background-color: rgb(255, 255, 255);
+}
+
+.content-edit h1 {
+    margin-bottom: 15px;
+}
+
+.content-edit form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-edit-city {
+    width: fit-content;
+    margin-bottom: 12px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #f7f4f4;
+}
+
+.input-edit-city input {
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
