@@ -83,7 +83,7 @@ const City = () => {
                     <tr>
                         <td>💵 Cost</td>
                         <td>{city.cost > 2500? "🥵": null}</td>
-                        <td><div className='progress'><ProgressBarCost width={(city.cost * 100 / 5000)}>{city.cost}<span>$/mo</span></ProgressBarCost></div></td>
+                        <td><div className='progress'><ProgressBarCost width={(city.cost * 100 / 5000)}>{city.cost > 2500 ? <>{city.cost}<span>$/mo</span> </> : " " }</ProgressBarCost>{city.cost <= 2500 ? <p className="costMessage"> {city.cost}<span>$/mo</span> </p> : null}</div></td>
                     </tr>
                     <tr>
                         <td>💻 Workplaces</td>
@@ -95,15 +95,16 @@ const City = () => {
                         <td>{city.healthcare < 3? "🤕": null}</td>
                         <td><div className='progress'><ProgressBar width={(city.healthcare * 100 / 5)}>{city.healthcare}/5</ProgressBar></div></td>
                     </tr>
-                    <tr>
-                        <td>📡 Internet</td>
-                        <td>{city.internet > 30? "🚀" : null}</td>
-                        <td><i className="fa-solid fa-wifi"></i> {city.internet} Mbps</td>
-                    </tr>
+
                     <tr>
                         <td>👌 Safety</td>
                         <td>{city.safety < 3? "😨" : null}</td>
                         <td><div className='progress'><ProgressBar width={(city.safety * 100 / 5)}>{city.safety}/5</ProgressBar></div></td>
+                    </tr>
+                    <tr>
+                        <td>📡 Internet</td>
+                        <td>{city.internet > 30? "🚀" : null}</td>
+                        <td><i className="fa-solid fa-wifi"></i> {city.internet} Mbps</td>
                     </tr>
                     <tr>
                         <td>🗣️ French Speaking</td>
