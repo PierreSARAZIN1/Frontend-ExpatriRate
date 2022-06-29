@@ -16,7 +16,8 @@ const Login = () => {
   const [jwt, setJwt] = useAtom(jwtAtom);
   const setAdmin = useSetAtom(adminAtom);
   const cookiechoice = useAtomValue(cookieAtom);
-
+  const [error, setError] = useState("");
+  const regex = new RegExp('[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}');
 
 
 
@@ -59,6 +60,28 @@ const Login = () => {
     navigate("/")
   }
 
+  const resetpassword = () => {
+    console.log('ici')
+    if(regex.test(email)){
+      const data = {
+        "user": {
+          "email": email
+        }
+      };
+      fetch(API_URL + '/users/password', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+        .then((response) => response.json())
+        .then((response) => console.log(response))
+    } else {
+      setError("Please enter a valid email in email field before try again for reset your password.")
+    }
+  }
+
   return (
     <div className='loginform'>
       <video className="background-video-form" autoPlay loop muted>
@@ -96,7 +119,8 @@ const Login = () => {
         <button className='btn btn-primary' type="submit">Submit</button>
       </form>
       <p className='alreadymember'>Don't have an account yet? <Link to="/sign_up">Signup</Link></p>
-
+      <p className='alreadymember'>Forgot password? please click <span onClick={() => resetpassword()}>here</span></p>
+      <p className='error'>{error}</p>
       {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:null}
       <br />
       {cookiechoice? <p>If you don't accept cookies before you log in, we won't be able to maintain your connection even if you close the web page</p> : <p>By accepting cookies before you log in we will be able to maintain your connection even if you close the web page</p> }</div>
