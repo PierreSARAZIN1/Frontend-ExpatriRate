@@ -1,0 +1,115 @@
+.create-city {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.create-city .create-city-form {
+    background-color: #cfcfcf;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 50%;
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.create-city-form .classic-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+}
+
+.create-city-form label {
+    margin: 10px 10px 10px 0px;
+}
+
+.create-city-form .french-speaking-input {
+    background-color: black;
+    margin: 10px 10px 10px 0px;
+}
+
+.create-city-form button {
+    width: 100%;
+    font-size: 20px;
+}
+
+
+/*  */
+
+.pop-up-edit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
+
+.pop-up-edit i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #0AC710;
+    z-index: 7;
+    font-size: 40px;
+}
+
+.filter-modal {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.content-edit {
+    position: absolute;
+    padding: 25px 20px;
+    border-radius: 20px;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    background-color: rgb(255, 255, 255);
+}
+
+.content-edit h1 {
+    margin-bottom: 15px;
+}
+
+.content-edit form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-edit-city {
+    width: fit-content;
+    margin-bottom: 12px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #f7f4f4;
+}
+
+.input-edit-city input {
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
