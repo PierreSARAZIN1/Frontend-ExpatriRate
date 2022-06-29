@@ -17,7 +17,7 @@ const NewPassword = () => {
       }
     };
     fetch(API_URL + '/users/password', {
-      method: 'put',
+      method: 'patch',
       headers: {
           'Content-Type': 'application/json'
       },
@@ -25,6 +25,7 @@ const NewPassword = () => {
     })
       .then((response) => response.json())
       .then((response) => console.log(response))
+      .catch((err) => console.error(err));
   }
 
   return(
