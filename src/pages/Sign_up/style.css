@@ -96,3 +96,15 @@ z-index: 2;
   text-decoration: none;
 }
 
+.alreadymember span{
+  color: var(--primary);
+  cursor: pointer;
+  z-index: 5;
+}
+
+.error{
+  color:red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
