@@ -12,6 +12,7 @@ import UpdateCity from 'pages/Admin/UpdateCity';
 import Cookie from 'components/Cookie';
 import Footer from 'components/Footer';
 import NewPassword from 'pages/NewPassword';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/admin/create_city" element={<CreateCity/>}/>
         <Route path="/admin/update_city/:id" element={<UpdateCity/>}/>
         <Route path="/new-password/reset_token=:token" element={<NewPassword/>}/>
+        <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>
       </Routes>
 
       {location == "/login" || location == "/sign_up"? null:<Footer/>}

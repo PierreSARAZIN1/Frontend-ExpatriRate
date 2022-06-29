@@ -49,7 +49,8 @@ const Footer = () => {
             </div>
         </footer>
     <div className="copyright">
-        <p>Copyright ©  2022 ExpatriRate - Tous droits réservés</p>
+        <p>Copyright ©  2022 ExpatriRate - All Rigths Reserved</p>
+        <Link to='/policy_privacy'>Policy Privacy</Link>
     </div>
     </>
     );
