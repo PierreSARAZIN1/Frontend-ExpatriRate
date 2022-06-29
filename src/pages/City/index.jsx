@@ -73,7 +73,7 @@ const City = () => {
             <h2 className='overallscore'><Overallborder score={city.overall}>Overall: <Overall score={city.overall}>{city.overall}</Overall>/5</Overallborder></h2>
 
             <div className="showRates">
-                <table className="Rates">
+                <table className="rates">
                     <tbody>
                     <tr>
                         <td>😝 Activities</td>

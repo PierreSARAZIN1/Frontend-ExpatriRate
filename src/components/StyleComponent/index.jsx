@@ -10,7 +10,7 @@ export const ProgressBar = styled.div`
   display: flex;
   align-item:center;
   justify-content: end;
-  font-size:18px;
+  font-size: 18px;
   height: 100%;
 `
 
@@ -25,7 +25,7 @@ export const ProgressBarCost = styled.div`
   display: flex;
   align-item:center;
   justify-content: end;
-  font-size:18px;
+  font-size: 18px;
   height: 100%;
 `
 export const Overall = styled.span`
