@@ -1,7 +1,3 @@
-table{
-    margin: 0 25px 80px 25px;
-}
-
 table h2{
     margin-top: 20px;
     text-decoration: underline;
@@ -20,7 +16,14 @@ td:nth-child(2n) {
     text-align:end;
 }
 
-table{
+.showRates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rates {
+    margin: 0 25px 80px 25px;
     border-spacing: 10px;
 }
 
@@ -71,6 +74,7 @@ table td span{
 
 .overallscore{
     text-align: center;
+    padding: 20px;
 }
 
 .costMessage {
@@ -92,4 +96,12 @@ table td span{
      margin-top: -30px;
 }
 
+
+@media only screen and (max-width: 470px){
+
+    .progress {
+        width: 135px;
+        font-size: 10px;
+    }
+}
 
