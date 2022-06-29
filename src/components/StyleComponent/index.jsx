@@ -28,3 +28,14 @@ export const ProgressBarCost = styled.div`
   font-size:18px;
   height: 100%;
 `
+export const Overall = styled.span`
+  color:${props => props.score > 3? "rgb(43, 223, 43)" : props => props.width < 2?"rgb(255, 0, 0)" : "rgb(251, 255, 0)"};
+  text-shadow:${props => props.score > 3? "none" : props => props.width < 2? "none" : "black 1px 1px;"}
+`
+
+export const Overallborder = styled.span`
+  border: 4px solid ${props => props.score > 3? "rgb(43, 223, 43)" : props => props.width < 2?"rgb(255, 0, 0)" : "rgb(251, 255, 0)"};;
+  padding: 10px 20px;
+  border-radius: 20px;
+`
+

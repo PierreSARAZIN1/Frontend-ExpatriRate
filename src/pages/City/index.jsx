@@ -8,7 +8,7 @@ import {useAtomValue} from "jotai";
 import {useNavigate} from "react-router-dom";
 import {API_COST} from "../../stores/api_cost";
 import TableCost from "../../components/TableCost";
-import { ProgressBar, ProgressBarCost } from 'components/StyleComponent';
+import { Overall, ProgressBar, ProgressBarCost,Overallborder } from 'components/StyleComponent';
 
 const City = () => {
 
@@ -24,7 +24,7 @@ const City = () => {
     useEffect(
         () => {
             if(jwt == ""){
-                navigate("/sign_in");
+                navigate("/sign_up");
             }
         }, []
     )
@@ -60,7 +60,7 @@ const City = () => {
 
     return (
         <>
-        {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:
+        {isLoading? <div className='loading'><p>Loading...</p><i className="fas fa-circle-notch fa-spin"></i></div>:
         <>
             <div className="headerCity">   
                 <img src={city.picture} alt={"picture" + city.name}></img>
@@ -70,7 +70,7 @@ const City = () => {
                 </div>
             </div>
 
-            <h2 className='overallscore'>{city.overall}</h2>
+            <h2 className='overallscore'><Overallborder score={city.overall}>Overall: <Overall score={city.overall}>{city.overall}</Overall>/5</Overallborder></h2>
 
             <div className="showRates">
                 <table className="Rates">

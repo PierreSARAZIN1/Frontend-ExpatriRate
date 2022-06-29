@@ -25,7 +25,7 @@ const Profile = () => {
   useEffect(
     () => {
       if(jwt == ""){
-        navigate('/sign_in')
+        navigate('/sign_up')
       }else if (id !== idParams) {
         navigate('/profile/'+ id)
       }

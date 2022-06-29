@@ -55,7 +55,7 @@ const Card = ({city}) => {
                     setLike(true)
                 })
         } else {
-            navigate('/sign_in')
+            navigate('/sign_up')
         }
     }
 
@@ -73,13 +73,16 @@ const Card = ({city}) => {
 
     return (
         <div className="card">
-            {like ?
+            {jwt == ""?  <p className='likeCity' onClick={() => likeACity()}><i className="fa-solid fa-heart icon-heart"></i></p> 
+            : 
+            like ?
                 <p className='likeCity' onClick={() => unlikeACity()}><i
                     className="fa-solid fa-heart icon-heart-full"></i></p>
 
                 :
                 <p className='likeCity' onClick={() => likeACity()}><i className="fa-solid fa-heart icon-heart"></i>
-                </p>}
+                </p>
+            }
 
             <Link to={"/city/" + city.city.id}>
                 <div className="textElement">

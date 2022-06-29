@@ -3,7 +3,7 @@ import { useSetAtom, useAtom, useAtomValue } from 'jotai';
 import Cookies from 'js-cookie'
 import { userIdAtom, jwtAtom, adminAtom, cookieAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -95,6 +95,8 @@ const Login = () => {
 
         <button className='btn btn-primary' type="submit">Submit</button>
       </form>
+      <p className='alreadymember'>Don't have an account yet? <Link to="/sign_up">Signup</Link></p>
+
       {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:null}
       <br />
       {cookiechoice? <p>If you don't accept cookies before you log in, we won't be able to maintain your connection even if you close the web page</p> : <p>By accepting cookies before you log in we will be able to maintain your connection even if you close the web page</p> }</div>

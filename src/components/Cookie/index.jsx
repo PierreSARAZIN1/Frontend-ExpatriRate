@@ -26,10 +26,10 @@ const Cookie = () => {
   return(
     <div className="cookie" ref={cookiepopup}>
       <div className="cookiecontent">
-        <p> Ce site utilise des cookies qui nous permettent de vous proposer une navigation optimale. </p>
+        <p> This site uses cookies that allow us to provide you with an optimal browsing experience, such as maintaining your connection when you close the web page. </p>
         <div className="cookiechoice">
-          <button className="btn btn-primary" onClick={() => acceptcookie()}>Accepter</button>
-          <button className="btn btn-primary" onClick={() => refusecookie()}>Refuser</button>
+          <button className="btn btn-primary" onClick={() => acceptcookie()}>Allow</button>
+          <button className="btn btn-primary" onClick={() => refusecookie()}>Decline</button>
         </div>
       </div>
     </div>

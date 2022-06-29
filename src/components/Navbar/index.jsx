@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo/logo.png';
 import style from './style.css';
@@ -16,9 +16,25 @@ const Navbar = () => {
   const [admin, setAdmin] = useAtom(adminAtom);
   const navigate = useNavigate();
   const location = useLocation();
-  
-
   const[show, setShow] = useState(false);
+  const[cityarray, setCityarray] = useState([]);
+
+
+  useEffect(
+    ()=>{
+      fetch(API_URL + '/cities', {
+        method: 'get',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then((response) => response.json())
+        .then((response) => {
+          setCityarray(response.sort((a,b) => parseFloat(b.city.overall) - parseFloat(a.city.overall)))
+        })
+
+    }
+  )
 
   const logout = () =>{
     fetch(API_URL + '/users/sign_out', {
@@ -46,6 +62,8 @@ const Navbar = () => {
   const shownavabar = () => {
     setShow(!show);
   }
+
+
   return (
     <nav>
       <div className={location.pathname == '/'? 'logoflexabsolute' : 'logoflex' } onClick={shownavabar}>
@@ -62,7 +80,7 @@ const Navbar = () => {
     {id == ""?
       <>
         <li onClick={shownavabar}>
-          <Link to="/sign_in">🎒 &nbsp;Sign up</Link>
+          <Link to="/sign_up">🎒 &nbsp;Sign up</Link>
         </li>
         <li onClick={shownavabar}>
           <Link to="/login">✈️ &nbsp;Sign in</Link>
@@ -78,15 +96,13 @@ const Navbar = () => {
     }
 
         <p>Top 3 Cities to Expatriate</p>
-        <li onClick={shownavabar}>
-          <Link to="/city/26">🥖 &nbsp;Paris</Link>
-        </li>
-        <li onClick={shownavabar}>
-          <Link to="/city/28">💂 &nbsp;London</Link>
-        </li>
-        <li onClick={shownavabar}>
-          <Link to="/city/30">⛩ &nbsp;Seoul</Link>
-        </li>
+        {cityarray.slice(0,3).map((city,index) => {
+          return(
+            <li onClick={shownavabar}>
+              <Link to={"/city/" + city.city.id}>{index === 0?"🏅": index === 1 ?"🥈":"🥉"} &nbsp;{city.city.name}</Link>
+            </li>
+          )
+        })}
 
     {admin == "true"? 
     <>

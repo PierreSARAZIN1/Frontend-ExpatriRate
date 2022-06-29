@@ -4,10 +4,10 @@ import Cookies from 'js-cookie'
 import { userIdAtom, jwtAtom, adminAtom, cookieAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 import style from './style.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 
 
-const Sign_in = () => {
+const Sign_up = () => {
   const location = useLocation();
  
   const [email, setEmail] = useState(location.state !== null? location.state.email : "");
@@ -115,6 +115,7 @@ const Sign_in = () => {
           </div>
           <button className='btn btn-primary' type="submit">Sign up now</button>
         </form>
+        <p className='alreadymember'>Already a member? <Link to="/login">Log in</Link></p>
         {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:null}
         <br />
         {cookiechoice? <p>If you don't accept cookies before you log in, we won't be able to maintain your connection even if you close the web page</p> : <p>By accepting cookies before you log in we will be able to maintain your connection even if you close the web page</p> }
@@ -123,4 +124,4 @@ const Sign_in = () => {
   );
 };
 
-export default Sign_in;
+export default Sign_up;

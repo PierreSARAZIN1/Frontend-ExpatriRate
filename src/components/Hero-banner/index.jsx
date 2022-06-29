@@ -13,7 +13,7 @@ const HeroBanner = () => {
     e.preventDefault();
     console.log(email)
     if(email !== ""){
-      navigate('/sign_in', {
+      navigate('/sign_up', {
         state:{
           email: email
         }

@@ -1,9 +1,9 @@
 import React from 'react';
 import Navbar from 'components/Navbar';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from 'pages/Home';
 import Login from 'pages/Login';
-import Sign_in from 'pages/Sign_in';
+import Sign_up from 'pages/Sign_up';
 import Profile from 'pages/Profile';
 import City from "./pages/City";
 import Dashboard from 'pages/Admin/Dashboard';
@@ -14,6 +14,8 @@ import Footer from 'components/Footer';
 
 const App = () => {
 
+  const location = useLocation().pathname;
+
   return (
     <>
       <Navbar/>
@@ -22,7 +24,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>}/> 
         <Route path="/login" element={<Login/>}/>
-        <Route path="/sign_in" element={<Sign_in/>}/>
+        <Route path="/sign_up" element={<Sign_up/>}/>
         <Route path="/profile/:id" element={<Profile/>}/>
         <Route path="/city/:id" element={<City/>}/>
         <Route path="/admin/dashboard" element={<Dashboard/>}/>
@@ -30,7 +32,8 @@ const App = () => {
         <Route path="/admin/update_city/:id" element={<UpdateCity/>}/>
       </Routes>
 
-      <Footer/>
+      {location == "/login" || location == "/sign_up"? null:<Footer/>}
+      
 
 
     </>
