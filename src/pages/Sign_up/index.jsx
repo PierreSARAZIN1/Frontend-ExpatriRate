@@ -96,6 +96,7 @@ const Sign_up = () => {
             <input 
               type="password" 
               placeholder='Password...'
+              pattern="/^[a-zA-Z0-9]{6,30}$/"
               id='password'
               required
               onChange={(e) => setPassword(e.target.value)} 
