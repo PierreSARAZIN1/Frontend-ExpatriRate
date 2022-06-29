@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import './style.css';
 import { API_URL } from '../../stores/api_url'
 
 const NewPassword = () => {
-
+  const navigate = useNavigate();
   const token = useParams().token;
   const [password, setPassword] = useState("");
 
@@ -24,7 +24,7 @@ const NewPassword = () => {
       body: JSON.stringify(data)
     })
       .then((response) => response.json())
-      .then((response) => console.log(response))
+      .then(() => navigate('/'))
       .catch((err) => console.error(err));
   }
 
@@ -35,6 +35,7 @@ const NewPassword = () => {
         <div className="inputstyle"><input 
         type="text"
         placeholder="New Password..."
+        onChange={(e)=>setPassword(e.target.value)}
         ></input>
           </div>
         <button type="submit" className="btn btn-primary">Modify password</button>

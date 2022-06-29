@@ -76,7 +76,7 @@ const Login = () => {
         body: JSON.stringify(data)
       })
         .then((response) => response.json())
-        .then((response) => console.log(response))
+        .then((response) => navigate('/'))
     } else {
       setError("Please enter a valid email in email field before try again for reset your password.")
     }
@@ -119,7 +119,7 @@ const Login = () => {
         <button className='btn btn-primary' type="submit">Submit</button>
       </form>
       <p className='alreadymember'>Don't have an account yet? <Link to="/sign_up">Signup</Link></p>
-      <p className='alreadymember'>Forgot password? please click <span onClick={() => resetpassword()}>here</span></p>
+      <p className='alreadymember'>Forgot password? For receive an email with password reset link, please click <span onClick={() => resetpassword()}>here</span></p>
       <p className='error'>{error}</p>
       {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:null}
       <br />
