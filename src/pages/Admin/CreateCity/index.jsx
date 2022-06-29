@@ -3,6 +3,7 @@ import { useAtomValue } from 'jotai';
 import { adminAtom, jwtAtom } from 'stores/user';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from 'stores/api_url';
+import './style.css';
 
 // http://api.openweathermap.org/geo/1.0/direct?q=%7B{city name},{state code},{country code}&limit={limit}&appid={API key}
 const CreateCity = () => {
@@ -14,6 +15,7 @@ const CreateCity = () => {
   const [countrySelected, setCountrySelected] = useState("")
   const [countrySelectedLat, setCountrySelectedLat] = useState("")
   const [countrySelectedLong, setCountrySelectedLong] = useState("")
+  const [editCountry, setEditCountry] = useState(true);
   const [modalLatLong, setModalLatLong] = useState(false)
   const datalist = useRef(null)
 
@@ -67,6 +69,7 @@ const CreateCity = () => {
         .then((response) => {
             setCountries([...countries, {country: response}])
             setCountrySelected(response.id)
+            setEditCountry(false)
         })
 
     }else{
@@ -148,40 +151,52 @@ const CreateCity = () => {
     })
       .then((response) => {return response.json()})
       .then((response) => {
-        console.log(response)
-          navigate('/');
+        navigate('/');
       })
   }
 
 
   return (
     <div>
-      <h1>Dans quel pays souhaitez vous ajouter une ville ?</h1>
-      <br /><br />
-      <form onSubmit={onCountrySubmit}>
-      <input 
-      type="text" 
-      id="newCountry" 
-      list="browsers"
-      required />
-          <datalist id="browsers" ref={datalist}>
-          {countries.map(country => <option value={country.country.name} id={country.country.id}></option>) }
-          </datalist>
-      <button type='submit'>Valider le pays</button>
-      </form>
-      <h1>Ajout d'une nouvelle ville</h1>
-
-        <form onSubmit={onSubmit}>
+      {editCountry?
+      <div className='pop-up-edit'>
+        <div className='filter-modal'></div>
+        <i className="fa-solid fa-house" onClick={()=> navigate ('/')}></i>
+        <div className='content-edit'>
+        <h1>Select or Create a country </h1>
+        <form onSubmit={onCountrySubmit}>
+          <div className='input-edit-city'>
+            <input 
+              type="text" 
+              id="newCountry" 
+              list="browsers"
+              required />
+            <datalist id="browsers" ref={datalist}>
+            {countries.map(country => <option value={country.country.name} id={country.country.id}></option>) }
+            </datalist>
+          </div>
+        <button type='submit' className='btn btn-primary'>Submit Country</button>
+        </form>
+        </div>
+      </div>
+      :
+      null
+      }
+      <h1 className='title'>Create a new City</h1>
+      <div className='create-city'>
+        <form onSubmit={onSubmit} className="create-city-form">
 
           <input
+            className='classic-input'
             type='text'
-            placeholder='nom de la ville'
+            placeholder='City Name'
             id='name'
             required
           />
           {modalLatLong? 
           <>
               <input
+              className='classic-input'
               type='number'
               step = '0.000001'
               placeholder='latitude'
@@ -190,6 +205,7 @@ const CreateCity = () => {
             />
 
             <input
+              className='classic-input'
               type='number'
               step = '0.000001'
               placeholder='longitude'
@@ -204,6 +220,7 @@ const CreateCity = () => {
 
 
           <input
+            className='classic-input'
             type='text'
             placeholder='image url'
             id='picture'
@@ -211,74 +228,83 @@ const CreateCity = () => {
           />
 
           <input
+            className='classic-input'
             type='number'
             step = '0.01'
-            placeholder='note global /5'
+            placeholder='Score : Overall /5'
             id='overall'
             pattern='[0-5]'
             required
           />
 
           <input
+            className='classic-input'
             type='number'
             step = '0.01'
-            placeholder='note activité /5'
+            placeholder='Score : Activities /5'
             id='activities'
             pattern='[0-5]'
             required
           />
 
           <input
+            className='classic-input'
             type='number'
             step = '0.01'
-            placeholder='cout de la vie en €'
+            placeholder='cost of living en €'
             id='cost'
             required
           />
 
           <input
+            className='classic-input'
             type='number'
             step = '0.01'
-            placeholder='note works places /5'
+            placeholder='Score : works places /5'
             id='works_places'
             pattern='[0-5]'
             required
           />
 
           <input
+            className='classic-input'
             type='number'
             step = '0.01'
-            placeholder='note santé /5'
+            placeholder='Score : Healthcare /5'
             id='healthcare'
             pattern='[0-5]'
             required
           />
 
           <input
+            className='classic-input'
             type='number'
-            placeholder='internet speed (en Mbps)'
+            placeholder='internet speed (Mbps)'
             id='internet'
             required
           />
 
           <input
+            className='classic-input'
             type='number'
             step = '0.01'
-            placeholder='note safety /5'
+            placeholder='Score : Safety /5'
             id='safety'
             pattern='[0-5]'
             required
           />
 
-          <label>Parle français?</label>
+          <label>French Speaking ?</label>
           <input
+            className='french-speaking-input'
             type='checkbox'
             id='french_speaking'
           />
 
 
-          <button type='submit'>Créer la ville</button>
+          <button type='submit' className='btn btn-primary'>Create City</button>
         </form>
+        </div>
     </div>
   );
 };
