@@ -32,7 +32,7 @@ const Navbar = () => {
           setCityarray(response.sort((a,b) => parseFloat(b.city.overall) - parseFloat(a.city.overall)))
         })
 
-    }
+    }, []
   )
 
   const logout = () =>{
