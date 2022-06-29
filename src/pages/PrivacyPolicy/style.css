@@ -1,0 +1,12 @@
+.privacy{
+  margin: 10px 40px 30px 40px;
+  text-align: justify;
+}
+
+.privacy ul{
+  margin-left: 60px;
+}
+
+.privacy h1, .privacy h2{
+  margin-top: 15px;
+}
