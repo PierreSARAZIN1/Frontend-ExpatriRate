@@ -157,7 +157,7 @@ const CreateCity = () => {
 
 
   return (
-    <div>
+    <div className='create-city-page'>
       {editCountry?
       <div className='pop-up-edit'>
         <div className='filter-modal'></div>

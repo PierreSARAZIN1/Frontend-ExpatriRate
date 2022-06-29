@@ -49,10 +49,7 @@
     font-size: 20px;
 }
 
-
-/*  */
-
-.pop-up-edit {
+.create-city-page .pop-up-edit {
     position: absolute;
     top: 0;
     left: 0;
@@ -61,7 +58,7 @@
     z-index: 5;
 }
 
-.pop-up-edit i {
+.create-city-page .pop-up-edit i {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -70,14 +67,14 @@
     font-size: 40px;
 }
 
-.filter-modal {
+.create-city-page .filter-modal {
     position: relative;
     height: 100%;
     width: 100%;
     background-color: rgb(255, 255, 255);
 }
 
-.content-edit {
+.create-city-page .content-edit {
     position: absolute;
     padding: 25px 20px;
     border-radius: 20px;
@@ -88,18 +85,18 @@
     background-color: rgb(255, 255, 255);
 }
 
-.content-edit h1 {
+.create-city-page .content-edit h1 {
     margin-bottom: 15px;
 }
 
-.content-edit form {
+.create-city-page .content-edit form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.input-edit-city {
+.create-city-page .input-edit-city {
     width: fit-content;
     margin-bottom: 12px;
     padding: 5px 10px;
@@ -107,7 +104,7 @@
     background-color: #f7f4f4;
 }
 
-.input-edit-city input {
+.create-city-page .input-edit-city input {
     padding: 5px 10px;
     text-decoration: none;
     background-color: transparent;
