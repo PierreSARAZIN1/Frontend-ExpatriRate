@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../assets/logo/logo.png';
 import style from './style.css';
 import { useAtom } from 'jotai';
 import { userIdAtom, jwtAtom, adminAtom } from '../../stores/user';
