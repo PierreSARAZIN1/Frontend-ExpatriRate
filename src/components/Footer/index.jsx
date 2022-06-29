@@ -42,7 +42,7 @@ const Footer = () => {
                 </div>
                 <div className="Account-footer">
                     <h4>Account</h4>
-                    <p>{id ? <Link to={"/profile/" + id}>Profile</Link> : <Link to="/sign_in/">SignUp</Link>}</p>
+                    <p>{id ? <Link to={"/profile/" + id}>Profile</Link> : <Link to="/sign_up">SignUp</Link>}</p>
                 </div>
             </div>
 

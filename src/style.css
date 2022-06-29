@@ -21,14 +21,6 @@ body {
     background-color: var(--light-grey);
 }
 
-.gridCards {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-    row-gap: 20px;
-    justify-items: center;
-}
-
 .btn {
     height: 30px;
     min-width: 60px;

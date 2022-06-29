@@ -29,7 +29,6 @@ const Home = () => {
                     setCityResult(response);
                     setIsLoading(false);
                 })
-
         }, []
     )
 

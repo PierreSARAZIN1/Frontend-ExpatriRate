@@ -86,3 +86,13 @@ z-index: 2;
   margin-bottom: 20px;
 }
 
+.alreadymember{
+  margin-top: 5px;
+  color:rgb(143, 143, 143);
+}
+
+.alreadymember a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
