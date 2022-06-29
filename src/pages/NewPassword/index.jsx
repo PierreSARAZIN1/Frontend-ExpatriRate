@@ -33,7 +33,6 @@ const NewPassword = () => {
       <form onSubmit={setNewpassword}>
         <div className="inputstyle"><input 
         type="text"
-        pattern="/^[a-zA-Z0-9]{6,30}$/"
         placeholder="New Password..."
         ></input>
           </div>
