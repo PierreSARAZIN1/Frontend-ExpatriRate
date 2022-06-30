@@ -9,7 +9,8 @@ const NewPassword = () => {
   const [password, setPassword] = useState("");
 
 
-  const setNewpassword = () => {
+  const setNewpassword = (e) => {
+    e.preventDefault();
     const data = {
       "user": {
         "reset_password_token": token,
