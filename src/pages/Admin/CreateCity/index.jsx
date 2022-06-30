@@ -12,10 +12,9 @@ const CreateCity = () => {
   const navigate = useNavigate();
   const admin = useAtomValue(adminAtom);
   const jwt = useAtomValue(jwtAtom);
+  const [isLoading, setIsLoading] = useState(false)
   const [countries, setCountries]= useState([])
   const [countrySelected, setCountrySelected] = useState("")
-  const [countrySelectedLat, setCountrySelectedLat] = useState("")
-  const [countrySelectedLong, setCountrySelectedLong] = useState("")
   const [editCountry, setEditCountry] = useState(true);
   const [modalLatLong, setModalLatLong] = useState(false);
   const datalist = useRef(null);
@@ -75,54 +74,57 @@ const CreateCity = () => {
         })
 
     }else{
-      
+      //This code allows us to have the id of the country selected in the Datalist input to use it for the city creation
       setCountrySelected(Number(array.filter(element => element[1].value == e.target.elements.newCountry.value.toLowerCase().split(" ").map(word => word[0].toUpperCase()+word.slice(1, word.length)).join(" "))[0][1].id))
+      setEditCountry(false)
     }
   }
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true)
     const form = e.currentTarget;
 
 
 
       if(modalLatLong === false){
+
         //`http://api.openweathermap.org/geo/1.0/direct?q=${data.city.name}&limit=1&appid=${process.env.REACT_APP_API_KEY}`
         //http://api.openweathermap.org/geo/1.0/direct?q='+ form.elements.name.value +'&limit=1&appid=52af23a1aaa4751fe5ba05fa2e169f05
         fetch('http://api.openweathermap.org/geo/1.0/direct?q='+ form.elements.name.value +'&limit=1&appid=52af23a1aaa4751fe5ba05fa2e169f05')
         .then((response) => response.json())
         .then((response) =>{
+          console.log(response.length)
           if(response.length === 0){
             setModalLatLong(true)
+            setIsLoading(false)
           }else{
-            setCountrySelectedLat(response[0].lat)
-            setCountrySelectedLong(response[0].lon)
+            validinformationcity(form, response[0].lat, response[0].lon)
+
           }
         })
-        .then( () => {
-          if(countrySelectedLat !== ""){
-            validinformationcity(form)
-          }
-        })
-      }else{validinformationcity(form)}
+       
+      }else{validinformationcity(form, 0, 0)}
   
     
 
   }
 
-  const validinformationcity = (form) => {
+  const validinformationcity = (form, lat ,long) => {
     fetch(API_COST + form.elements.name.value.toLowerCase().split(" ").map(word => word[0].toUpperCase()+word.slice(1, word.length)).join(" "))
         .then((response) => response.json())
         .then((response) =>{
           if(response.costs.length > 0){
-            createCity(form)
+
+            createCity(form, lat, long)
           } else {
             setError("Sorry, we don't have enough information about this city to create it as a base.")
+            setIsLoading(false)
           }
         })
   }
 
-  const createCity =(form) => {
+  const createCity =(form, lat, long) => {
     
 
     const name = form.elements.name.value;
@@ -140,9 +142,9 @@ const CreateCity = () => {
     const data = {
       "city":{
         "name": name.toLowerCase().split(" ").map(word => word[0].toUpperCase()+word.slice(1, word.length)).join(" "),
-        "lat": modalLatLong? Number(form.elements.lat.value) : countrySelectedLat,
-        "long": modalLatLong? Number(form.elements.long.value) : countrySelectedLong,
-        "picture" : picture, // === ""? "https://cdn.futura-sciences.com/buildsv6/images/wide1920/b/5/f/b5f08f3f32_50172797_city-2278497-1920.jpg" : picture
+        "lat": modalLatLong? Number(form.elements.lat.value) : lat,
+        "long": modalLatLong? Number(form.elements.long.value) : long,
+        "picture" : picture, 
         "overall" : overall,
         "activities": activities,
         "cost": cost,
@@ -196,7 +198,9 @@ const CreateCity = () => {
       :
       null
       }
-      <h1 className='title'>Create a new City</h1>
+
+      <div>
+              <h1 className='title'>Create a new City</h1>
       <div className='create-city'>
         <form onSubmit={onSubmit} className="create-city-form">
 
@@ -318,9 +322,17 @@ const CreateCity = () => {
 
           <button type='submit' className='btn btn-primary'>Create City</button>
           <p className='error'>{error}</p>
-
+          {isLoading?
+          <i className="fas fa-circle-notch fa-spin"></i> 
+          :
+          null
+          }
+          
         </form>
         </div>
+
+      </div>
+
     </div>
   );
 };

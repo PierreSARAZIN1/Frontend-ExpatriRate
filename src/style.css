@@ -2,9 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 :root {
     --primary: #0AC710;
-    --light-grey: #f3f4f5;
-    --info: #0abbd6;
+    --primary-dark: #08830C;
+    --success: #28A745;
+    --info: #17A2B8;
+    --warning: #FFC107;
     --danger: #d60a0d;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --rgba-gray-900: #212529cb;
+    --black: #000;
+    --rgba-black: rgba(0, 0, 0, 0.665);
+    --white: #fff;
 }
 
 *,
@@ -18,7 +33,7 @@
 body {
     margin: 0;
     font-family: 'Varela Round', sans-serif;
-    background-color: var(--light-grey);
+    background-color: var(--gray-100);
 }
 
 .btn {
@@ -36,11 +51,11 @@ body {
 
 .btn-primary {
     background-color: var(--primary);
-    color: var(--light-grey);
+    color: var(--gray-100);
 }
 
 .btn-primary:hover {
-    background-color: var(--light-grey);
+    background-color: var(--gray-100);
     color: var(--primary);
     border: solid;
     cursor: pointer;
@@ -48,7 +63,7 @@ body {
 }
 
 .btn-secondary {
-    background-color: var(--light-grey);
+    background-color: var(--gray-100);
     color: var(--primary);
     border: solid;
     border-color: var(--primary);
@@ -56,17 +71,17 @@ body {
 
 .btn-secondary:hover {
     background-color: var(--primary);
-    color: var(--light-grey);
+    color: var(--gray-100);
     cursor: pointer;
 }
 
 .btn-info {
     background-color: var(--info);
-    color: var(--light-grey);
+    color: var(--gray-100);
 }
 
 .btn-info:hover {
-    background-color: var(--light-grey);
+    background-color: var(--gray-100);
     color: var(--info);
     cursor: context-menu;
     border-color: #0abbd6;
@@ -75,11 +90,11 @@ body {
 
 .btn-danger {
     background-color: var(--danger);
-    color: var(--light-grey);
+    color: var(--gray-100);
 }
 
 .btn-danger:hover {
-    background-color: var(--light-grey);
+    background-color: var(--gray-100);
     color: var(--danger);
     cursor: pointer;
     border-color: var(--danger);
