@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './style.css';
-
+import background from '../../../public/backgroundvideo.mp4';
 import {Typewriter} from 'react-simple-typewriter';
 
 const HeroBanner = () => {
@@ -25,7 +25,7 @@ const HeroBanner = () => {
     <>
     <section className='hero-banner'>
         <video className="background-video" autoPlay loop muted>
-          <source src="https://player.vimeo.com/external/330412624.sd.mp4?s=853ea7644708b7986c992689dd351b0413d7b3ca&profile_id=&oauth2_token_id=57447761" type="video/mp4"></source>
+          <source src={background} type="video/mp4"></source>
         </video>
         <div className='text-banner'>
           <div className='text-content'>
