@@ -98,7 +98,7 @@ const Profile = () => {
       </button>
      </div>
      
-     {modifyProfile? <EditProfile/> : null}
+     {modifyProfile? <EditProfile user={user}/> : null}
 
 
       <h3><u>My Favorite City :</u></h3>
