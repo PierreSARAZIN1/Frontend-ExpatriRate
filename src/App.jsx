@@ -13,6 +13,7 @@ import Cookie from 'components/Cookie';
 import Footer from 'components/Footer';
 import NewPassword from 'pages/NewPassword';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import PageNotFound from "./components/PageNotFound";
 
 const App = () => {
 
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/admin/update_city/:id" element={<UpdateCity/>}/>
         <Route path="/new-password/reset_token=:token" element={<NewPassword/>}/>
         <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>
+          <Route path="*" element={<PageNotFound/>}/>
       </Routes>
 
       {location == "/login" || location == "/sign_up"? null:<Footer/>}
