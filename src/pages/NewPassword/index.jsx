@@ -23,7 +23,6 @@ const NewPassword = () => {
       },
       body: JSON.stringify(data)
     })
-      .then((response) => response.json())
       .then(() => navigate('/'))
       .catch((err) => console.error(err));
   }
