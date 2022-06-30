@@ -17,7 +17,7 @@ const Login = () => {
   const setAdmin = useSetAtom(adminAtom);
   const cookiechoice = useAtomValue(cookieAtom);
   const [error, setError] = useState("");
-  const regex = new RegExp('[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}');
+  const regex = new RegExp('[a-zA-Z0-9.-+]+@[a-zA-Z]+.[a-zA-Z]{2,3}');
 
 
 
@@ -97,7 +97,7 @@ const Login = () => {
             type="email"
             required
             placeholder='Email...'
-            pattern='[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}' 
+            pattern='[a-zA-Z0-9.-+]+@[a-zA-Z]+.[a-zA-Z]{2,3}' 
             id='email'
             onChange={(e) => setEmail(e.target.value)} 
           />
