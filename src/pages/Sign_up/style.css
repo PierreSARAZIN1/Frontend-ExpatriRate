@@ -1,110 +1,111 @@
-.loginform{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.loginform {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
-.loginform i{
-  z-index: 4;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
+.loginform i {
+    z-index: 4;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
 }
 
-.filterbackground{
-  background-color: rgba(32, 32, 32, 0.753);
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+.filterbackground {
+    background-color: rgba(32, 32, 32, 0.753);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.logincontent{
-background-color: rgb(238, 238, 238);
-padding: 25px;
-border-radius: 15px;
-margin-left: 50%;
-transform: translateX(-50%);
-z-index: 2;
+.logincontent {
+    background-color: rgb(238, 238, 238);
+    padding: 25px;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    width: clamp(300px, 80%, 350px);
+    transform: translateX(-50%);
+    z-index: 2;
 }
 
-.loginform form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: center;
-  max-width: 350px;
+.loginform form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    max-width: 350px;
 }
 
-.loginform label{
-  margin-bottom: 5px;
+.loginform label {
+    margin-bottom: 5px;
 }
 
-.loginform p{
-  font-size: 12px;
-  max-width: 350px;
-  text-align: center;
+.loginform p {
+    font-size: 12px;
+    max-width: 350px;
+    text-align: center;
 }
 
-.background-video-form{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  object-fit: cover;
-  top: 0;
-  z-index: -2;
+.background-video-form {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    z-index: -2;
 }
 
 .logincontent .inputstyle input {
-  border: none;
+    border: none;
 }
 
-.inputstyle{
-  background-color: white;
-  padding: 8px 10px;
-  border-radius: 15px;
-  margin-bottom: 8px;
+.inputstyle {
+    background-color: white;
+    padding: 8px 10px;
+    border-radius: 15px;
+    margin-bottom: 8px;
 }
 
-.logincontent .emoji{
-  font-size: 100px;
+.logincontent .emoji {
+    font-size: 100px;
 }
 
-.logincontent h3{
-  text-align: center;
-  font-size: 45px;
-  margin-bottom: 20px;
+.logincontent h3 {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 20px;
 }
 
-.alreadymember{
-  margin-top: 5px;
-  color:rgb(143, 143, 143);
+.alreadymember {
+    margin-top: 5px;
+    color: rgb(143, 143, 143);
 }
 
 .alreadymember a {
-  color: var(--primary);
-  text-decoration: none;
+    color: var(--primary);
+    text-decoration: none;
 }
 
-.alreadymember span{
-  color: var(--primary);
-  cursor: pointer;
-  z-index: 5;
+.alreadymember span {
+    color: var(--primary);
+    cursor: pointer;
+    z-index: 5;
 }
 
-.error{
-  color:red;
-  font-size: 12px;
-  margin-top: 5px;
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
 }
-
