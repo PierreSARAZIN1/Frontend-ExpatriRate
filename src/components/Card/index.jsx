@@ -103,28 +103,28 @@ const Card = ({city}) => {
                 <div className="hoverCardInfo">
                         <div className="categories">
                           <p>😝 Activities</p>
-                            <div className='progress'><ProgressBar
+                            <div className='progresscard'><ProgressBar
                                 width={(city.city.activities * 100 / 5)}></ProgressBar></div>
                         </div>
                     <div className="categories">
                             <p>💵 Cost</p>
-                                <div className='progress'><ProgressBarCost
+                                <div className='progresscard'><ProgressBarCost
                                     width={(city.city.cost * 100 / 5000)}></ProgressBarCost>
                                 </div>
                     </div>
                     <div className="categories">
                             <p>💻 Workplaces</p>
-                                <div className='progress'><ProgressBar
+                                <div className='progresscard'><ProgressBar
                                     width={(city.city.works_places * 100 / 5)}></ProgressBar></div>
                     </div>
                     <div className="categories">
                             <p>🚑 Healthcare</p>
-                                <div className='progress'><ProgressBar
+                                <div className='progresscard'><ProgressBar
                                     width={(city.city.healthcare * 100 / 5)}></ProgressBar></div>
                     </div>
                     <div className="categories">
                             <p>👌 Safety</p>
-                                <div className='progress'><ProgressBar
+                                <div className='progresscard'><ProgressBar
                                     width={(city.city.safety * 100 / 5)}></ProgressBar></div>
                     </div>
                 </div>

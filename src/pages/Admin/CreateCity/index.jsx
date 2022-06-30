@@ -4,6 +4,7 @@ import { adminAtom, jwtAtom } from 'stores/user';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from 'stores/api_url';
 import './style.css';
+import { API_COST } from 'stores/api_cost';
 
 // http://api.openweathermap.org/geo/1.0/direct?q=%7B{city name},{state code},{country code}&limit={limit}&appid={API key}
 const CreateCity = () => {
@@ -16,8 +17,9 @@ const CreateCity = () => {
   const [countrySelectedLat, setCountrySelectedLat] = useState("")
   const [countrySelectedLong, setCountrySelectedLong] = useState("")
   const [editCountry, setEditCountry] = useState(true);
-  const [modalLatLong, setModalLatLong] = useState(false)
-  const datalist = useRef(null)
+  const [modalLatLong, setModalLatLong] = useState(false);
+  const datalist = useRef(null);
+  const [error, setError] = useState('');
 
 
   useEffect(
@@ -99,13 +101,25 @@ const CreateCity = () => {
         })
         .then( () => {
           if(countrySelectedLat !== ""){
-            createCity(form)
+            validinformationcity(form)
           }
         })
-      }else{createCity(form)}
+      }else{validinformationcity(form)}
   
     
 
+  }
+
+  const validinformationcity = (form) => {
+    fetch(API_COST + form.elements.name.value.toLowerCase().split(" ").map(word => word[0].toUpperCase()+word.slice(1, word.length)).join(" "))
+        .then((response) => response.json())
+        .then((response) =>{
+          if(response.costs.length > 0){
+            createCity(form)
+          } else {
+            setError("Sorry, we don't have enough information about this city to create it as a base.")
+          }
+        })
   }
 
   const createCity =(form) => {
@@ -125,7 +139,7 @@ const CreateCity = () => {
 
     const data = {
       "city":{
-        "name": name,
+        "name": name.toLowerCase().split(" ").map(word => word[0].toUpperCase()+word.slice(1, word.length)).join(" "),
         "lat": modalLatLong? Number(form.elements.lat.value) : countrySelectedLat,
         "long": modalLatLong? Number(form.elements.long.value) : countrySelectedLong,
         "picture" : picture, // === ""? "https://cdn.futura-sciences.com/buildsv6/images/wide1920/b/5/f/b5f08f3f32_50172797_city-2278497-1920.jpg" : picture
@@ -303,6 +317,8 @@ const CreateCity = () => {
 
 
           <button type='submit' className='btn btn-primary'>Create City</button>
+          <p className='error'>{error}</p>
+
         </form>
         </div>
     </div>

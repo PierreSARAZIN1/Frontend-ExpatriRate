@@ -9,8 +9,7 @@ import { useLocation, useNavigate, Link } from 'react-router-dom';
 
 const Sign_up = () => {
   const location = useLocation();
- 
-  const [email, setEmail] = useState(location.state !== null? location.state.email : "");
+  const [email, setEmail] = useState(location.state === null? "" : location.state.email);
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -85,6 +84,7 @@ const Sign_up = () => {
                 type="email"
                 placeholder='Email...'
                 required
+                value={email}
                 pattern='[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}' 
                 id='email'
                 onChange={(e) => setEmail(e.target.value)} 
