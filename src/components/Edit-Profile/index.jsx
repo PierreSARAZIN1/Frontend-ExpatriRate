@@ -3,7 +3,7 @@ import { useAtomValue } from 'jotai';
 import { userIdAtom, jwtAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 
-const EditProfile = () => {
+const EditProfile = ({user}) => {
 
   const [initialPassword, setInitialPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -16,11 +16,12 @@ const EditProfile = () => {
     e.preventDefault();
     const data = {
       "user": {
+        "email": user.email,
+        "current_password" : initialPassword,
         "password": newPassword,
-        "password_confirmation": newPasswordConfirmation
       }
     };
-    fetch(API_URL + '/users/auth/password', {
+    fetch(API_URL + '/users', {
       method: 'put',
       headers: {
         'Authorization': jwt,
@@ -30,6 +31,7 @@ const EditProfile = () => {
     })
       .then((response) => response.json())
       .then((response) => {
+        console.log("mot de passe modifié")
         console.log(response)
 
       })
