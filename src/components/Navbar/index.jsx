@@ -76,7 +76,7 @@ const Navbar = () => {
           <li onClick={shownavabar}>
             <Link to="/">🗺️ &nbsp;Home</Link>
           </li>
-    {jwt == ""?
+    {jwt == "" && id == ""?
       <>
         <li onClick={shownavabar}>
           <Link to="/sign_up">🎒 &nbsp;Sign up</Link>

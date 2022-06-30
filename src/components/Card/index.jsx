@@ -73,7 +73,7 @@ const Card = ({city}) => {
 
     return (
         <div className="card">
-            {jwt == ""?  <p className='like-city' onClick={() => likeACity()}><i className="fa-solid fa-heart icon-heart"></i></p>
+            {jwt == "" && id == ""?  <p className='like-city' onClick={() => likeACity()}><i className="fa-solid fa-heart icon-heart"></i></p>
             : 
             like ?
                 <p className='like-city' onClick={() => unlikeACity()}><i

@@ -23,7 +23,7 @@ const City = () => {
     const [country, setCountry] = useState([]);
     useEffect(
         () => {
-            if(jwt == ""){
+            if(jwt == "" && id == ""){
                 navigate("/sign_up");
             }
         }, []
