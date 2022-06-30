@@ -65,7 +65,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className={location.pathname == '/'? 'logoflexabsolute' : 'logoflex' } onClick={shownavabar}>
+      <div className={location.pathname == '/' || location.pathname == '/admin/create_city'? 'logoflexabsolute' : 'logoflex' } onClick={shownavabar}>
          <img src="https://cliply.co/wp-content/uploads/2021/02/392102850_EARTH_EMOJI_400px.gif" alt="planet earth turning on itself" />
          <i className="fa-solid fa-angle-down"></i>
       </div> 

@@ -144,9 +144,9 @@ const Dashboard = () => {
                     <tr className="cities-list" key={city.id}>
                       {city.name}
                       <div>
-                      <Link to={"/city/"+ city.id}><i className="fa-solid fa-eye"></i></Link>&nbsp;
-                      <Link to={"/admin/update_city/"+ city.id}><i className="fa-solid fa-pen"></i></Link>&nbsp;
-                      <i className="delete-city fa-solid fa-trash-can" onClick={()=> deleteCity(city.id)}></i>&nbsp;
+                      <Link to={"/city/"+ city.id}><i className="show-city-icon fa-solid fa-eye"></i></Link>&nbsp;
+                      <Link to={"/admin/update_city/"+ city.id}><i className="update-city-icon fa-solid fa-pen"></i></Link>&nbsp;
+                      <i className="delete-city-icon fa-solid fa-trash-can" onClick={() => {if(window.confirm(" 🚫 Are you sure you want to delete this City (it's forever) ? 🚫 ")){deleteCity(city.id)}}}></i>&nbsp;
                       </div>
                     </tr>
                   )}
@@ -154,8 +154,8 @@ const Dashboard = () => {
               </td>
               <td>
                 <div className='delete-country'>
-                <i className="fa-solid fa-trash-can" onClick={()=> deleteCountry(country.country.id)}></i>&nbsp;
-                <i className="fa-solid fa-pen" onClick={()=> {setEditCountry(true); setNewName(country.country.name); setNewId(country.country.id)}}></i>        
+                <i className="delete-city-icon fa-solid fa-trash-can" onClick={() => {if(window.confirm(" 🚫 Are you sure you want to delete this Country (it's forever) ? 🚫 ")){deleteCountry(country.country.id)}}}></i>&nbsp;
+                <i className="update-city-icon fa-solid fa-pen" onClick={()=> {setEditCountry(true); setNewName(country.country.name); setNewId(country.country.id)}}></i>        
                 </div>
               </td>
             </tr>

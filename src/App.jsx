@@ -38,7 +38,7 @@ const App = () => {
           <Route path="*" element={<PageNotFound/>}/>
       </Routes>
 
-      {location == "/login" || location == "/sign_up"? null:<Footer/>}
+      {location == "/login" || location == "/sign_up" ||location.includes("admin") ? null:<Footer/>}
       
 
 
