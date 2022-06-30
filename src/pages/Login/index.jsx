@@ -61,7 +61,6 @@ const Login = () => {
   }
 
   const resetpassword = () => {
-    console.log('ici')
     if(regex.test(email)){
       const data = {
         "user": {
@@ -75,8 +74,7 @@ const Login = () => {
         },
         body: JSON.stringify(data)
       })
-        .then((response) => response.json())
-        .then((response) => navigate('/'))
+        .then(() => navigate('/'))
     } else {
       setError("Please enter a valid email in email field before try again for reset your password.")
     }
