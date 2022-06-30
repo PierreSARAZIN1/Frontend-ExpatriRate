@@ -31,9 +31,7 @@
     background-color: rgb(238, 238, 238);
     padding: 25px;
     border-radius: 15px;
-    position: absolute;
-    left: 50%;
-    width: clamp(300px, 80%, 350px);
+    margin-left: 50%;
     transform: translateX(-50%);
     z-index: 2;
 }

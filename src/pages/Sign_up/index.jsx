@@ -85,7 +85,8 @@ const Sign_up = () => {
                 placeholder='Email...'
                 required
                 value={email}
-                pattern='[a-zA-Z0-9.-+]+@[a-zA-Z]+.[a-zA-Z]{2,3}' 
+                pattern='[a-zA-Z0-9.+-]+@[a-zA-Z]+.[a-zA-Z]{2,3}' 
+                title="Please respect email format : email@email.com"
                 id='email'
                 onChange={(e) => setEmail(e.target.value)} 
               />
@@ -96,7 +97,8 @@ const Sign_up = () => {
             <input 
               type="password" 
               placeholder='Password...'
-              pattern="[a-zA-Z0-9.-+]{6,30}"
+              pattern="[a-zA-Z0-9.+-]{6,30}"
+              title='Please enter a password between 6 and 30 character'
               id='password'
               required
               onChange={(e) => setPassword(e.target.value)} 
@@ -109,6 +111,7 @@ const Sign_up = () => {
               type="password" 
               id='passwordConfirmation'
               placeholder='Confirme password...'
+              title='Please enter the same password'
               required
               pattern={password}
               onChange={(e) => setPasswordConfirmation(e.target.value)} 
