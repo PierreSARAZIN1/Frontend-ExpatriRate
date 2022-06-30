@@ -106,7 +106,7 @@ const Profile = () => {
       <div className='flexminicard'>
         {favoritecity.map(city => 
           <div className='minicard' onClick={() => redirect(city.id)}>
-            <img src={city.picture} alt="paris"></img>
+            <img src={city.picture} alt={city.name}></img>
             <h5>{city.name}</h5>
           </div>
         )}

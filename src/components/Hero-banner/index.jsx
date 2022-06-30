@@ -43,7 +43,11 @@ const HeroBanner = () => {
           </div>
           
           <div className="modalregistration">
-            <img src='https://www.tyntec.com/drimage/920/0/1037/d_travel02.png'></img>
+            <img
+                src='https://www.tyntec.com/drimage/920/0/1037/d_travel02.png'
+                alt="logo with travelers"
+            >
+            </img>
             <form onSubmit={Register}>
               <div className='registrationinputhome' >
                 <input 
