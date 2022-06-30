@@ -5,7 +5,8 @@ import { userIdAtom, jwtAtom, adminAtom, cookieAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 import style from './style.css';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
-import background from '../../../public/backgroundvideo.mp4';
+import background from '../../assets/video/backgroundvideo.mp4';
+
 
 
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './style.css';
-import background from '../../../public/backgroundvideo.mp4';
+import background from '../../assets/video/backgroundvideo.mp4';
 import {Typewriter} from 'react-simple-typewriter';
 
 const HeroBanner = () => {
