@@ -16,9 +16,11 @@ const EditProfile = ({user}) => {
     e.preventDefault();
     const data = {
       "user": {
+        "admin": user.admin,
         "email": user.email,
         "current_password" : initialPassword,
         "password": newPassword,
+        "password_confirmation": newPassword
       }
     };
     fetch(API_URL + '/users', {

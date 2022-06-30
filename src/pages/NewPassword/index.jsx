@@ -13,8 +13,10 @@ const NewPassword = () => {
     e.preventDefault();
     const data = {
       "user": {
+        "admin":false,
         "reset_password_token": token,
-        "password": password
+        "password": password,
+        "password_confirmation": password
       }
     };
     fetch(API_URL + '/users/password', {
