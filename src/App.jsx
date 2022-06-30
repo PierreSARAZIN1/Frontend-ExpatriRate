@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Navbar from 'components/Navbar';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from 'pages/Home';
@@ -19,8 +19,22 @@ const App = () => {
 
   const location = useLocation().pathname;
 
+
+
   return (
     <>
+
+    
+    <section className='loadingmain'>
+      <div className='loadingviewcontent' >
+        <img className='loadingscreen' src="https://cliply.co/wp-content/uploads/2021/02/392102850_EARTH_EMOJI_400px.gif" alt="planet earth turning on itself" />
+        <h1>Expatrirate</h1>
+
+      </div>
+    </section>
+
+
+    <section className='appmain'>
       <Navbar/>
       <Cookie/>
 
@@ -42,7 +56,8 @@ const App = () => {
       
 
 
-    </>
+    </section>
+</>
   );
 };
 
