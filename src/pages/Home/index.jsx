@@ -43,7 +43,7 @@ const Home = () => {
                 .then((response) => response.json())
                 .then((response) => {
                     console.log(response)
-                    setCountries(response)
+                    setCountries(response.filter(country => country.cities.length > 0))
                 })
         }, []
     )

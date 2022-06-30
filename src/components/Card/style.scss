@@ -20,6 +20,7 @@
 
         .hoverCardInfo {
             margin-top: 7%;
+            /*flex-direction: column;*/
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,6 +36,14 @@
 
         }
     }
+}
+
+.progresscard{
+    width: 180px;
+    background-color:rgb(255, 255, 255);
+    border-radius: 25px;
+    height: 30px;
+    position: relative;
 }
 
 
@@ -72,6 +81,7 @@
 }
 
 .cardTexts {
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
