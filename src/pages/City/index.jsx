@@ -62,9 +62,9 @@ const City = () => {
         <>
         {isLoading? <div className='loading'><p>Loading...</p><i className="fas fa-circle-notch fa-spin"></i></div>:
         <>
-            <div className="headerCity">   
+            <div className="header-city">
                 <img src={city.picture} alt={"picture" + city.name}></img>
-                <div className="imgShowCity" alt={"background image of" + cityName}>
+                <div className="img-show-city" alt={"background image of" + cityName}>
                     <h1>{cityName}</h1>
                     <h3>{country.name}</h3>
                 </div>
@@ -72,7 +72,7 @@ const City = () => {
 
             <h2 className='overallscore'><Overallborder score={city.overall}>Overall: <Overall score={city.overall}>{city.overall}</Overall>/5</Overallborder></h2>
 
-            <div className="showRates">
+            <div className="show-rates">
                 <table className="rates">
                     <tbody>
                     <tr>
@@ -83,7 +83,7 @@ const City = () => {
                     <tr>
                         <td>💵 Cost</td>
                         <td>{city.cost > 2500? "🥵": null}</td>
-                        <td><div className='progress'><ProgressBarCost width={(city.cost * 100 / 5000)}>{city.cost > 2500 ? <>{city.cost}<span>$/mo</span> </> : " " }</ProgressBarCost>{city.cost <= 2500 ? <p className="costMessage"> {city.cost}<span>$/mo</span> </p> : null}</div></td>
+                        <td><div className='progress'><ProgressBarCost width={(city.cost * 100 / 5000)}>{city.cost > 2500 ? <>{city.cost}<span>$/mo</span> </> : " " }</ProgressBarCost>{city.cost <= 2500 ? <p className="cost-message"> {city.cost}<span>$/mo</span> </p> : null}</div></td>
                     </tr>
                     <tr>
                         <td>💻 Workplaces</td>

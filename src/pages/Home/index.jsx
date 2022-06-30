@@ -89,10 +89,10 @@ const Home = () => {
         <main>
             <HeroBanner/>
             <>
-                <div className="searchBar">
-                    <button type="submit" className="searchByCountry" onClick={openModal}>Filter by Country
+                <div className="search-bar">
+                    <button type="submit" className="search-by-country" onClick={openModal}>Filter by Country
                     </button>
-                    <div className="searchBarContent">
+                    <div className="search-bar-content">
                         <div className='filter'>
                             <input type="text" placeholder="Search City..." onChange={filter}></input><i className="fa-solid fa-circle-plus"></i>
                         </div>
@@ -110,7 +110,7 @@ const Home = () => {
                             null
                         }
                         {countryFiltered !== ""?
-                            <p className="countryFiltered" onClick={() => removeCountryFilter()}>{countryFiltered} X</p>
+                            <p className="country-filtered" onClick={() => removeCountryFilter()}>{countryFiltered} X</p>
                         : null}
                         
             </>
@@ -118,7 +118,7 @@ const Home = () => {
                 null
                 :
                 <>
-                    <div className="gridCards">
+                    <div className="grid-cards">
                         {cityResult.slice(0, page).map(city => <Card city={city} key={city.city.id}/>)}
                     </div>
 

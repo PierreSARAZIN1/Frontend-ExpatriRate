@@ -31,11 +31,11 @@ svg {
 
 }
 
-.divSVG {
+.div-svg {
     height: 10vh;
 }
 
-.heroBanner {
+.hero-banner {
     height: clamp(700px, 50vh, 1200px);
     overflow: hidden;
     position: relative;

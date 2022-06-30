@@ -9,18 +9,17 @@
     position: relative;
 
     &:hover {
-        .textElement{
+        .text-element{
             display: none;
 
         };
 
-        .cardPicture {
+        .card-picture {
             filter: brightness(30%);
         }
 
-        .hoverCardInfo {
+        .hover-card-info {
             margin-top: 7%;
-            /*flex-direction: column;*/
             display: flex;
             justify-content: center;
             align-items: center;
@@ -47,18 +46,18 @@
 }
 
 
-.likeCity {
+.like-city {
     position: absolute;
     right: 15px;
     top: 10px;
     z-index: 3;
 }
 
-.likeCity:hover i{
+.like-city:hover i{
     cursor: pointer;
 }
 
-.card .cardPicture {
+.card .card-picture {
     height: 100%;
     z-index: -1;
     position: absolute;
@@ -66,21 +65,16 @@
     left: 50%;
     transform: translateX(-50%);
 }
-//
-//.card:hover {
-//    filter: blur(1px);
-//    filter: brightness(80%);
-//    transition: all 0.5s;
-//}
 
-.cardsFlex {
+
+.cards-flex {
     display: flex;
     justify-content: space-between;
     margin: 5px 10px;
     height: 55px;
 }
 
-.cardTexts {
+.card-texts {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -90,7 +84,7 @@
     font-size: 50px;
 }
 
-.cardTextCountry {
+.card-text-country {
     font-size: 25px;
 }
 
@@ -124,7 +118,7 @@
     justify-content: center;
     margin-top: -30px;
 }
-.costMessage {
+.cost-message {
     display: inline-block;
 }
 

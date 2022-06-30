@@ -73,35 +73,35 @@ const Card = ({city}) => {
 
     return (
         <div className="card">
-            {jwt == ""?  <p className='likeCity' onClick={() => likeACity()}><i className="fa-solid fa-heart icon-heart"></i></p> 
+            {jwt == ""?  <p className='like-city' onClick={() => likeACity()}><i className="fa-solid fa-heart icon-heart"></i></p>
             : 
             like ?
-                <p className='likeCity' onClick={() => unlikeACity()}><i
+                <p className='like-city' onClick={() => unlikeACity()}><i
                     className="fa-solid fa-heart icon-heart-full"></i></p>
 
                 :
-                <p className='likeCity' onClick={() => likeACity()}><i className="fa-solid fa-heart icon-heart"></i>
+                <p className='like-city' onClick={() => likeACity()}><i className="fa-solid fa-heart icon-heart"></i>
                 </p>
             }
 
             <Link to={"/city/" + city.city.id}>
-                <div className="textElement">
-                    <div className="cardsFlex">
+                <div className="text-element">
+                    <div className="cards-flex">
                         <div className='wifitext'><i className="fa-solid fa-wifi"></i>
                             <span>{city.city.internet}<br></br><p>Mbps</p></span></div>
                     </div>
-                    <div className="cardTexts">
+                    <div className="card-texts">
                         <p>{city.city.name}</p>
-                        <p className="cardTextCountry">{city.country.name}</p>
+                        <p className="card-text-country">{city.country.name}</p>
                     </div>
-                    <div className="cardsFlex">
+                    <div className="cards-flex">
                         <p className='tempeture'>{icon == "" ? null : <><img className="iconweather"
                                                                              alt="image of temperature"
                                                                              src={"http://openweathermap.org/img/wn/" + icon + "@2x.png"}></img>{Number(tempeture).toFixed(1)}°C</>}</p>
                         <p>${city.city.cost} / mo</p>
                     </div>
                 </div>
-                <div className="hoverCardInfo">
+                <div className="hover-card-info">
                         <div className="categories">
                           <p>😝 Activities</p>
                             <div className='progresscard'><ProgressBar
@@ -129,7 +129,7 @@ const Card = ({city}) => {
                                     width={(city.city.safety * 100 / 5)}></ProgressBar></div>
                     </div>
                 </div>
-                <img src={city.city.picture} className="cardPicture" alt="Image of our City"></img>
+                <img src={city.city.picture} className="card-picture" alt="Image of our City"></img>
             </Link>
         </div>
     )

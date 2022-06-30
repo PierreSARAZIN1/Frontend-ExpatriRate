@@ -7,14 +7,14 @@
   justify-content: center;
 }
 
-.searchBar{
+.search-bar{
   margin-top: 40px;
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
 
-.searchBar button{
+.search-bar button{
   margin: 0 15px;
   background-color: transparent;
   color: var(--primary);
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-.searchBar button:hover{
+.search-bar button:hover{
   background-color: var(--primary);
   color: white ;
   border: 1px solid var(--primary);
@@ -73,7 +73,7 @@ textarea:focus, input:focus{
   color : white;
 }
 
-.countryFiltered{
+.country-filtered{
   display: inline-block;
   cursor: pointer;
   padding: 8px 15px;
@@ -87,7 +87,7 @@ main{
   margin-bottom: 60px;
 }
 
-.gridCards {
+.grid-cards {
   margin: 30px 20px 0 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));

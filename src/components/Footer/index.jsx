@@ -40,7 +40,7 @@ const Footer = () => {
                     <h4>Contact</h4>
                     <p id="mail-adress">mailtosend</p>
                 </div>
-                <div className="Account-footer">
+                <div className="account-footer">
                     <h4>Account</h4>
                     <p>{id ? <Link to={"/profile/" + id}>Profile</Link> : <Link to="/sign_up">SignUp</Link>}</p>
                 </div>
