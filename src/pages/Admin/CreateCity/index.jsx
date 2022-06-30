@@ -91,7 +91,7 @@ const CreateCity = () => {
 
         //`http://api.openweathermap.org/geo/1.0/direct?q=${data.city.name}&limit=1&appid=${process.env.REACT_APP_API_KEY}`
         //http://api.openweathermap.org/geo/1.0/direct?q='+ form.elements.name.value +'&limit=1&appid=52af23a1aaa4751fe5ba05fa2e169f05
-        fetch('http://api.openweathermap.org/geo/1.0/direct?q='+ form.elements.name.value +'&limit=1&appid=52af23a1aaa4751fe5ba05fa2e169f05')
+        fetch('https://api.openweathermap.org/geo/1.0/direct?q='+ form.elements.name.value +'&limit=1&appid=52af23a1aaa4751fe5ba05fa2e169f05')
         .then((response) => response.json())
         .then((response) =>{
           console.log(response.length)
