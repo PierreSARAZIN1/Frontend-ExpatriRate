@@ -97,7 +97,7 @@ const Card = ({city}) => {
                     <div className="cards-flex">
                         <p className='tempeture'>{icon == "" ? null : <><img className="iconweather"
                                                                              alt="image of temperature"
-                                                                             src={"http://openweathermap.org/img/wn/" + icon + "@2x.png"}></img>{Number(tempeture).toFixed(1)}°C</>}</p>
+                                                                             src={"https://openweathermap.org/img/wn/" + icon + "@2x.png"}></img>{Number(tempeture).toFixed(1)}°C</>}</p>
                         <p>${city.city.cost} / mo</p>
                     </div>
                 </div>
