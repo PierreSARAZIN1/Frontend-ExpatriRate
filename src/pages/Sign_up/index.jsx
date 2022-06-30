@@ -46,7 +46,9 @@ const Sign_up = () => {
     })
       .then((response) => {
         setJwt([...response.headers.get('authorization')].join(''));
-        Cookies.set('token', [...response.headers.get('authorization')].join(''));
+        if(cookiechoice){
+          Cookies.set('token', [...response.headers.get('authorization')].join(''));
+        }
         return response.json()
         })
       .then((response) => {

@@ -1,3 +1,8 @@
+.create-city-form-page {
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
 .create-city {
     align-items: center;
     display: flex;
@@ -6,11 +11,11 @@
 }
 
 .create-city .create-city-form {
-    background-color: #cfcfcf;
+    background-color: var(--gray-300);
     border-radius: 20px;
     box-sizing: border-box;
     padding: 20px;
-    width: 50%;
+    width: clamp(300px, 70%, 600px);
 }
 
 .title {
@@ -23,7 +28,7 @@
 .create-city-form .classic-input {
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -40,13 +45,17 @@
 }
 
 .create-city-form .french-speaking-input {
-    background-color: black;
+    background-color: var(--black);
     margin: 10px 10px 10px 0px;
 }
 
 .create-city-form button {
     width: 100%;
     font-size: 20px;
+}
+
+.create-city-page {
+    position: relative;
 }
 
 .create-city-page .pop-up-edit {
@@ -62,7 +71,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    color: #0AC710;
+    color: var(--primary);
     z-index: 7;
     font-size: 40px;
 }
@@ -71,18 +80,19 @@
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
 }
 
 .create-city-page .content-edit {
     position: absolute;
+    text-align: center;
     padding: 25px 20px;
     border-radius: 20px;
-    top: 40%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 6;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
 }
 
 .create-city-page .content-edit h1 {
@@ -101,12 +111,12 @@
     margin-bottom: 12px;
     padding: 5px 10px;
     border-radius: 15px;
-    background-color: #f7f4f4;
+    background-color: var(--gray-500);
 }
 
 .create-city-page .input-edit-city input {
     padding: 5px 10px;
     text-decoration: none;
-    background-color: transparent;
+    color: var(--black);
     border: none;
 }

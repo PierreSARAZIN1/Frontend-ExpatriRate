@@ -199,7 +199,7 @@ const CreateCity = () => {
       null
       }
 
-      <div>
+      <div className='create-city-form-page'>
               <h1 className='title'>Create a new City</h1>
       <div className='create-city'>
         <form onSubmit={onSubmit} className="create-city-form">

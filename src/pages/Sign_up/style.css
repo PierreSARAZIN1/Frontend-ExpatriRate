@@ -31,7 +31,9 @@
     background-color: rgb(238, 238, 238);
     padding: 25px;
     border-radius: 15px;
-    margin-left: 50%;
+    position: absolute;
+    left: 50%;
+    width: clamp(340px, 80%, 300px);
     transform: translateX(-50%);
     z-index: 2;
 }
@@ -67,6 +69,10 @@
 
 .logincontent .inputstyle input {
     border: none;
+}
+
+.logincontent input {
+    width: 200px;
 }
 
 .inputstyle {

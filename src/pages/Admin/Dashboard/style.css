@@ -19,7 +19,7 @@
 
 .admin-table table td,
 .admin-table table th {
-    border: 1px solid #ddd;
+    border: 1px solid var(--white);
     padding: 8px;
 }
 
@@ -41,11 +41,11 @@
 }
 
 .admin-table table tr:nth-child(even) {
-    background-color: #e0dddd;
+    background-color: var(--gray-400);
 }
 
 .admin-table table tr:hover {
-    background-color: #0AC710;
+    background-color: var(--primary);
 }
 
 .admin-table .delete-country {
@@ -57,8 +57,8 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #0AC710;
-    color: white;
+    background-color: var(--primary);
+    color: var(--white);
 }
 
 .pop-up-edit {
@@ -74,7 +74,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    color: white;
+    color: var(--white);
     z-index: 7;
     font-size: 40px;
 }
@@ -83,7 +83,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: rgba(47, 46, 46, 0.849);
+    background-color: var(--rgba-black);
 }
 
 .content-edit {
@@ -94,7 +94,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 6;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
 }
 
 .content-edit h1 {
@@ -113,7 +113,7 @@
     margin-bottom: 12px;
     padding: 5px 10px;
     border-radius: 15px;
-    background-color: #f7f4f4;
+    background-color: var(--white);
 }
 
 .input-edit-city input {
@@ -121,4 +121,17 @@
     text-decoration: none;
     background-color: transparent;
     border: none;
+}
+
+.admin-table .show-city-icon {
+    color: var(--info);
+}
+
+.admin-table .update-city-icon {
+    color: var(--success);
+}
+
+.admin-table .delete-city-icon {
+    color: var(--danger);
+    cursor: pointer;
 }
