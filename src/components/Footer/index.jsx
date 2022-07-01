@@ -39,11 +39,14 @@ const Footer = () => {
                         </div>
                         <div className="Contact">
                             <h4>Contact</h4>
-                            <p id="mail-adress">mailtosend</p>
+                            <a id="mail-adress"
+                               href="mailto: expatrirate@gmail.com?subject=Any Questions?&body=Feel free to send us your question"
+                            >Our Mail</a>
                         </div>
                         <div className="account-footer">
                             <h4>Account</h4>
-                            <p>{id !== "" || jwt !== "" ? <Link to={"/profile/" + id}>Profile</Link> : <Link to="/sign_up">SignUp</Link>}</p>
+                            <p>{id !== "" || jwt !== "" ? <Link to={"/profile/" + id}>Profile</Link> :
+                                <Link to="/sign_up">SignUp</Link>}</p>
                         </div>
                     </div>
 
