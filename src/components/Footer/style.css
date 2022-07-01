@@ -61,7 +61,12 @@ footer span {
 .account-footer > h4 {
     padding-bottom: 1rem;
 }
-
+.Contact {
+    padding: 0 1rem;
+}
+.Contact h4 {
+    padding-bottom: 1rem;
+}
 #container-footer {
     display: flex;
     justify-content: space-around;
@@ -72,7 +77,7 @@ footer span {
 
 
 #mail-adress {
-    padding: 1rem;
+  padding-top: 20px;
 }
 
 @media (max-width: 500px){
