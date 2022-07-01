@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAtomValue } from 'jotai';
-import { userIdAtom, jwtAtom } from '../../stores/user';
+import { jwtAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 
 const EditProfile = ({user}) => {
@@ -12,15 +12,15 @@ const EditProfile = ({user}) => {
   const jwt = useAtomValue(jwtAtom)
 
   const submitData = (e) => {
-    setIsLoading(true);
     e.preventDefault();
+
+    setIsLoading(true);
     const data = {
       "user": {
         "admin": user.admin,
         "email": user.email,
         "current_password" : initialPassword,
         "password": newPassword,
-        "password_confirmation": newPassword
       }
     };
     fetch(API_URL + '/users', {
@@ -35,7 +35,6 @@ const EditProfile = ({user}) => {
       .then((response) => {
         console.log("mot de passe modifié")
         console.log(response)
-
       })
     }
 
@@ -68,7 +67,7 @@ const EditProfile = ({user}) => {
           />
         <button className='btn btn-primary' type="submit">Submit</button>
       </form>
-      </>
+    </>
   );
 };
 

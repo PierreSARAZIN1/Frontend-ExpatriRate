@@ -3,10 +3,9 @@ import { useAtomValue } from 'jotai';
 import { adminAtom, jwtAtom } from 'stores/user';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from 'stores/api_url';
-import './style.css';
 import { API_COST } from 'stores/api_cost';
+import './style.css';
 
-// http://api.openweathermap.org/geo/1.0/direct?q=%7B{city name},{state code},{country code}&limit={limit}&appid={API key}
 const CreateCity = () => {
 
   const navigate = useNavigate();
@@ -17,9 +16,8 @@ const CreateCity = () => {
   const [countrySelected, setCountrySelected] = useState("")
   const [editCountry, setEditCountry] = useState(true);
   const [modalLatLong, setModalLatLong] = useState(false);
-  const datalist = useRef(null);
   const [error, setError] = useState('');
-
+  const datalist = useRef(null);
 
   useEffect(
     () => {
@@ -82,10 +80,9 @@ const CreateCity = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
     setIsLoading(true)
     const form = e.currentTarget;
-
-
 
       if(modalLatLong === false){
 
@@ -100,14 +97,12 @@ const CreateCity = () => {
             setIsLoading(false)
           }else{
             validinformationcity(form, response[0].lat, response[0].lon)
-
           }
         })
        
-      }else{validinformationcity(form, 0, 0)}
-  
-    
-
+      }else{
+        validinformationcity(form, 0, 0)
+      }
   }
 
   const validinformationcity = (form, lat ,long) => {
@@ -126,7 +121,6 @@ const CreateCity = () => {
 
   const createCity =(form, lat, long) => {
     
-
     const name = form.elements.name.value;
     const picture = form.elements.picture.value;
     const overall = Number(form.elements.overall.value);
@@ -156,7 +150,7 @@ const CreateCity = () => {
         "country_id" : countrySelected
       }
     }
-    console.log(data)
+
     fetch(API_URL + '/cities', {
       method: 'post',
       headers: {
@@ -166,7 +160,7 @@ const CreateCity = () => {
       body: JSON.stringify(data)
     })
       .then((response) => {return response.json()})
-      .then((response) => {
+      .then(() => {
         navigate('/');
       })
   }
@@ -175,160 +169,163 @@ const CreateCity = () => {
   return (
     <div className='create-city-page'>
       {editCountry?
-      <div className='pop-up-edit'>
-        <div className='filter-modal'></div>
-        <i className="fa-solid fa-house" onClick={()=> navigate ('/')}></i>
-        <div className='content-edit'>
-        <h1>Select or Create a country </h1>
-        <form onSubmit={onCountrySubmit}>
-          <div className='input-edit-city'>
-            <input 
-              type="text" 
-              id="newCountry" 
-              list="browsers"
-              required />
-            <datalist id="browsers" ref={datalist}>
-            {countries.map(country => <option value={country.country.name} id={country.country.id}></option>) }
-            </datalist>
+        <div className='pop-up-edit'>
+          <div className='filter-modal'></div>
+          <i className="fa-solid fa-house" onClick={()=> navigate ('/')}></i>
+
+          <div className='content-edit'>
+            <h1>Select or Create a country </h1>
+
+            <form onSubmit={onCountrySubmit}>
+              <div className='input-edit-city'>
+                <input 
+                  type="text" 
+                  id="newCountry" 
+                  list="browsers"
+                  required 
+                />
+                <datalist id="browsers" ref={datalist}>
+                  {countries.map(country => <option value={country.country.name} id={country.country.id}></option>) }
+                </datalist>
+              </div>
+              <button type='submit' className='btn btn-primary'>Submit Country</button>
+            </form>
           </div>
-        <button type='submit' className='btn btn-primary'>Submit Country</button>
-        </form>
         </div>
-      </div>
       :
-      null
+        null
       }
 
       <div className='create-city-form-page'>
-              <h1 className='title'>Create a new City</h1>
-      <div className='create-city'>
-        <form onSubmit={onSubmit} className="create-city-form">
-
-          <input
-            className='classic-input'
-            type='text'
-            placeholder='City Name'
-            id='name'
-            required
-          />
-          {modalLatLong? 
-          <>
-              <input
+        <h1 className='title'>Create a new City</h1>
+        
+        <div className='create-city'>
+          <form onSubmit={onSubmit} className="create-city-form">
+            <input
               className='classic-input'
-              type='number'
-              step = '0.000001'
-              placeholder='latitude'
-              id='lat'
+              type='text'
+              placeholder='City Name'
+              id='name'
+              required
+            />
+
+            {modalLatLong? 
+              <>
+                  <input
+                  className='classic-input'
+                  type='number'
+                  step = '0.000001'
+                  placeholder='latitude'
+                  id='lat'
+                  required
+                />
+
+                <input
+                  className='classic-input'
+                  type='number'
+                  step = '0.000001'
+                  placeholder='longitude'
+                  id='long'
+                  required
+                />
+              </>
+            : 
+              null
+            }
+
+
+            <input
+              className='classic-input'
+              type='text'
+              placeholder='image url'
+              id='picture'
               required
             />
 
             <input
               className='classic-input'
               type='number'
-              step = '0.000001'
-              placeholder='longitude'
-              id='long'
+              step = '0.01'
+              placeholder='Score : Overall /5'
+              id='overall'
+              pattern='[0-5]'
               required
             />
-          </>
-          
-          : 
-          null
-          }
+
+            <input
+              className='classic-input'
+              type='number'
+              step = '0.01'
+              placeholder='Score : Activities /5'
+              id='activities'
+              pattern='[0-5]'
+              required
+            />
+
+            <input
+              className='classic-input'
+              type='number'
+              step = '0.01'
+              placeholder='cost of living en €'
+              id='cost'
+              required
+            />
+
+            <input
+              className='classic-input'
+              type='number'
+              step = '0.01'
+              placeholder='Score : works places /5'
+              id='works_places'
+              pattern='[0-5]'
+              required
+            />
+
+            <input
+              className='classic-input'
+              type='number'
+              step = '0.01'
+              placeholder='Score : Healthcare /5'
+              id='healthcare'
+              pattern='[0-5]'
+              required
+            />
+
+            <input
+              className='classic-input'
+              type='number'
+              placeholder='internet speed (Mbps)'
+              id='internet'
+              required
+            />
+
+            <input
+              className='classic-input'
+              type='number'
+              step = '0.01'
+              placeholder='Score : Safety /5'
+              id='safety'
+              pattern='[0-5]'
+              required
+            />
+
+            <label>French Speaking ?</label>
+            <input
+              className='french-speaking-input'
+              type='checkbox'
+              id='french_speaking'
+            />
 
 
-          <input
-            className='classic-input'
-            type='text'
-            placeholder='image url'
-            id='picture'
-
-          />
-
-          <input
-            className='classic-input'
-            type='number'
-            step = '0.01'
-            placeholder='Score : Overall /5'
-            id='overall'
-            pattern='[0-5]'
-            required
-          />
-
-          <input
-            className='classic-input'
-            type='number'
-            step = '0.01'
-            placeholder='Score : Activities /5'
-            id='activities'
-            pattern='[0-5]'
-            required
-          />
-
-          <input
-            className='classic-input'
-            type='number'
-            step = '0.01'
-            placeholder='cost of living en €'
-            id='cost'
-            required
-          />
-
-          <input
-            className='classic-input'
-            type='number'
-            step = '0.01'
-            placeholder='Score : works places /5'
-            id='works_places'
-            pattern='[0-5]'
-            required
-          />
-
-          <input
-            className='classic-input'
-            type='number'
-            step = '0.01'
-            placeholder='Score : Healthcare /5'
-            id='healthcare'
-            pattern='[0-5]'
-            required
-          />
-
-          <input
-            className='classic-input'
-            type='number'
-            placeholder='internet speed (Mbps)'
-            id='internet'
-            required
-          />
-
-          <input
-            className='classic-input'
-            type='number'
-            step = '0.01'
-            placeholder='Score : Safety /5'
-            id='safety'
-            pattern='[0-5]'
-            required
-          />
-
-          <label>French Speaking ?</label>
-          <input
-            className='french-speaking-input'
-            type='checkbox'
-            id='french_speaking'
-          />
-
-
-          <button type='submit' className='btn btn-primary'>Create City</button>
-          <p className='error'>{error}</p>
-          {isLoading?
-          <i className="fas fa-circle-notch fa-spin"></i> 
-          :
-          null
-          }
-          
-        </form>
+            <button type='submit' className='btn btn-primary'>Create City</button>
+            <p className='error'>{error}</p>
+            {isLoading?
+              <i className="fas fa-circle-notch fa-spin"></i> 
+            :
+              null
+            }
+            
+          </form>
         </div>
 
       </div>

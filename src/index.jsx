@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from 'App';
-import {
-    BrowserRouter,
-  } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
 import './style.css'
 
+
+const container = document.getElementById('root');
+const root = createRoot(container);
 
 const Index = () => {
     return (
@@ -14,4 +15,5 @@ const Index = () => {
     </BrowserRouter>   
 );
 }
-  ReactDOM.render(<Index />, document.getElementById('root'));
+
+root.render(<Index tab="home" />)

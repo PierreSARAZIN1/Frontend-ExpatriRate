@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_URL } from '../../stores/api_url';
 import './style.css';
-import { API_URL } from '../../stores/api_url'
+
 
 const NewPassword = () => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const NewPassword = () => {
 
   const setNewpassword = (e) => {
     e.preventDefault();
+
     const data = {
       "user": {
         "admin":false,
@@ -33,13 +35,15 @@ const NewPassword = () => {
   return(
     <div className="formnewpassword">
       <h1>Modify your Password :</h1>
+
       <form onSubmit={setNewpassword}>
-        <div className="inputstyle"><input 
-        type="text"
-        placeholder="New Password..."
-        onChange={(e)=>setPassword(e.target.value)}
-        ></input>
-          </div>
+        <div className="inputstyle">
+          <input 
+            type="text"
+            placeholder="New Password..."
+            onChange={(e)=>setPassword(e.target.value)}
+          />
+        </div>
         <button type="submit" className="btn btn-primary">Modify password</button>
       </form>
     </div>
