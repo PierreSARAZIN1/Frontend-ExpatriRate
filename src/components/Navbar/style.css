@@ -1,0 +1,99 @@
+nav img {
+    width: 70px;
+    height: 70px;
+}
+
+.card a {
+    text-decoration: none;
+    color: white;
+}
+
+.logoflexabsolute {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    z-index: 3;
+}
+
+.logoflex {
+    width: fit-content;
+    background-color: transparent;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.logoflex i,
+.logoflexabsolute i {
+    color: white;
+    text-shadow: black 1px 1px;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 8px 0;
+    padding: 3px 0 3px 15px;
+}
+
+nav ul li:hover {
+    background-color: #0AC710;
+    padding: 3px 20px 3px 15px;
+    border-radius: 25px;
+}
+
+nav ul p {
+    margin: 35px 0 0 0;
+    font-style: italic;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav ul {
+    position: absolute;
+    z-index: 3;
+    padding: 20px 35px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 10px);
+    -webkit-backdrop-filter: blur( 10px);
+    border-radius: 10px;
+    margin-left: 10px;
+    animation-fill-mode: forwards;
+    animation: showup 0.5s ease;
+}
+
+.modalquit {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.absolute {
+    margin-top: 65px;
+}
+
+.logout:hover {
+    cursor: pointer;
+}
+
+@keyframes showup {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 100;
+    }
+}

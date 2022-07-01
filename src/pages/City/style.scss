@@ -1,0 +1,144 @@
+.tr-tbcost {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    border-spacing: 20px;
+}
+
+td {
+    font-size: 18px;
+    color: black;
+}
+
+td:nth-child(3n) {
+    text-align: center;
+}
+
+td:nth-child(2n) {
+    text-align: end;
+}
+
+.show-rates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rates {
+    margin: 0 25px 80px 25px;
+    border-spacing: 10px;
+}
+
+.progress {
+    width: 180px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    height: 30px;
+    position: relative;
+}
+
+table td span {
+    font-size: 12px;
+}
+
+.header-city {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 120px;
+    margin: 0 0 50px 0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-city img {
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: brightness(80%);
+}
+
+.img-show-city {
+    color: white;
+    text-align: center;
+    text-shadow: black 1px 1px;
+}
+
+.img-show-city h1 {
+    font-size: 60px;
+}
+
+.overallscore {
+    text-align: center;
+    padding: 20px;
+}
+
+.cost-message {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.overallscore {
+    margin-bottom: 30px;
+    margin-top: -30px;
+}
+
+.no-data-city-details {
+    text-align: end;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    &:hover {
+        i {
+            animation: headShake 1s ease-in-out;
+        }
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .progress {
+        width: 135px;
+        font-size: 10px;
+    }
+}
+
+@keyframes headShake {
+    0% {
+        transform: translateX(0);
+    }
+    6.5% {
+        transform: translateX(-6px) rotateY(-9deg);
+    }
+    18.5% {
+        transform: translateX(5px) rotateY(7deg);
+    }
+    31.5% {
+        transform: translateX(-3px) rotateY(-5deg);
+    }
+    43.5% {
+        transform: translateX(2px) rotateY(3deg);
+    }
+    50% {
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,21 @@
+.privacy{
+  margin: 10px 40px 30px 40px;
+  text-align: justify;
+  font-size: 1rem;
+}
+
+.privacy ul{
+  margin-left: 60px;
+  color: #7f8c8d;
+}
+.privacy a {
+  color: var(--primary);
+}
+
+.privacy h1, .privacy h2{
+  padding: 1.5rem 0;
+}
+
+.privacy p {
+  color: #7f8c8d;
+}

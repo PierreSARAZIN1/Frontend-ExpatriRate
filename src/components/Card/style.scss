@@ -1,0 +1,144 @@
+.card {
+    width: 275px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 15px;
+    color: white;
+    text-shadow: black 1px 1px;
+    font-size: 20px;
+    position: relative;
+
+    &:hover {
+        .text-element{
+            display: none;
+
+        };
+
+        .card-picture {
+            filter: brightness(30%);
+        }
+
+        .hover-card-info {
+            margin-top: 7%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            color: white;
+            height: 80%;
+            font-size: 1rem;
+            gap: 5px;
+        }
+        .categories {
+            align-items: flex-end;
+            text-align: start;
+
+        }
+    }
+}
+
+.progresscard{
+    width: 180px;
+    background-color:rgb(255, 255, 255);
+    border-radius: 25px;
+    height: 30px;
+    position: relative;
+}
+
+
+.like-city {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    z-index: 3;
+}
+
+.like-city:hover i{
+    cursor: pointer;
+}
+
+.card .card-picture {
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.cards-flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px;
+    height: 55px;
+}
+
+.card-texts {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(320px - 50px - 50px);
+    font-size: 50px;
+}
+
+.card-text-country {
+    font-size: 25px;
+}
+
+.wifitext{
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.wifitext span p{
+    font-size: 10px;
+    font-weight: 900;
+}
+.wifitext span {
+    margin-left: 10px;
+}
+
+.iconweather{
+    vertical-align: center;
+    width: 50px;
+    margin-top: -5px;
+    margin-left: -10px;
+}
+
+.tempeture{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+}
+.cost-message {
+    display: inline-block;
+}
+
+.icon-heart{
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: red;
+}
+
+.icon-heart-full{
+    color: red;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: red;
+}
+
+.icon-heart:hover{
+    color: red;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: red;
+}
+
+
+

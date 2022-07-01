@@ -1,0 +1,96 @@
+.showmore{
+  margin: 40px 0;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar{
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.search-bar button{
+  margin: 0 15px;
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 7px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.search-bar button:hover{
+  background-color: var(--primary);
+  color: white ;
+  border: 1px solid var(--primary);
+}
+
+.filter{
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.filter i {
+  color: var(--primary);
+}
+
+.filter input{
+  border: none;
+  background-color: transparent;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.modal p {
+  cursor: pointer;
+  padding: 8px 15px;
+  margin: 8px 15px;
+  border: 1px dashed var(--primary);
+  color : var(--primary);
+  border-radius: 15px;
+}
+
+.modal p:hover {
+  background-color: var(--primary);
+  color : white;
+}
+
+.country-filtered{
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 15px;
+  margin: 8px 15px;
+  border: 1px dashed var(--primary);
+  color : var(--primary);
+  border-radius: 15px;
+}
+
+main{
+  margin-bottom: 60px;
+}
+
+.grid-cards {
+  margin: 30px 20px 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}

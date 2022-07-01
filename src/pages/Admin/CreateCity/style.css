@@ -1,0 +1,122 @@
+.create-city-form-page {
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
+.create-city {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.create-city .create-city-form {
+    background-color: var(--gray-300);
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    width: clamp(300px, 70%, 600px);
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.create-city-form .classic-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+}
+
+.create-city-form label {
+    margin: 10px 10px 10px 0px;
+}
+
+.create-city-form .french-speaking-input {
+    background-color: var(--black);
+    margin: 10px 10px 10px 0px;
+}
+
+.create-city-form button {
+    width: 100%;
+    font-size: 20px;
+}
+
+.create-city-page {
+    position: relative;
+}
+
+.create-city-page .pop-up-edit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
+
+.create-city-page .pop-up-edit i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--primary);
+    z-index: 7;
+    font-size: 40px;
+}
+
+.create-city-page .filter-modal {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: var(--white);
+}
+
+.create-city-page .content-edit {
+    position: absolute;
+    text-align: center;
+    padding: 25px 20px;
+    border-radius: 20px;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    background-color: var(--white);
+}
+
+.create-city-page .content-edit h1 {
+    margin-bottom: 15px;
+}
+
+.create-city-page .content-edit form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-city-page .input-edit-city {
+    width: fit-content;
+    margin-bottom: 12px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: var(--gray-500);
+}
+
+.create-city-page .input-edit-city input {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: var(--black);
+    border: none;
+}

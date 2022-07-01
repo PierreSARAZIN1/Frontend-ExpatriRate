@@ -1,0 +1,70 @@
+.update-city-form-page {
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
+.update-city {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.update-city .update-city-form {
+    background-color: var(--gray-300);
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    width: clamp(300px, 70%, 600px);
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.update-city-form .classic-input {
+    margin: 10px 10px 10px 10px;
+    background-color: var(--white);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: var(--black);
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 15px 0;
+    width: 100%;
+    align-items: end;
+}
+
+.update-city-form label {
+    border-radius: 12px;
+    color: var(--black);
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 45%;
+}
+
+.update-city-form label {
+    margin: 10px 10px 10px 0px;
+}
+
+.update-city-form .french-speaking-input {
+    background-color: var(--black);
+    margin: 10px 10px 10px 0px;
+}
+
+.update-city-form button {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.update-city-form td:nth-child(2n) {
+    text-align: start;
+}

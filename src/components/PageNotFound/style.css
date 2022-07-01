@@ -1,0 +1,21 @@
+.page-not-found {
+    padding: 100px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-not-found p {
+    padding: 50px;
+    font-size: 1.5rem;
+}
+
+.page-not-found span {
+    color: var(--primary);
+}
+
+#link-from-not-found {
+    color: var(--primary);
+}
