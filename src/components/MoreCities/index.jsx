@@ -3,6 +3,7 @@ import Card from 'components/Card';
 import useFetch from 'services/useFetch';
 import { API_URL } from 'stores/api_url';
 import { useParams } from 'react-router-dom';
+import './style.css';
 
 const MoreCities = ({country, city}) => {
 
@@ -27,7 +28,7 @@ const MoreCities = ({country, city}) => {
       : cities.filter(element => element.country.name == country.name && element.city.name !== city.name).slice(0,3).length == 0? 
         <>
           <h2 className='h2marge'>❤️ Ces autres villes devraient vous plaire :</h2>
-          <div  className="grid-cards">
+          <div  className="more-cities-cards">
             {cities.filter(element => element.city.overall > city.overall - 0.5 && element.city.name !== city.name).slice(0,3).map(element => <Card city={element} key={element.city.id}/>)}
           </div>
           
@@ -35,7 +36,7 @@ const MoreCities = ({country, city}) => {
       :
         <>
           <h2 className='h2marge'>❤️ D'autres villes du même pays :</h2>
-          <div  className="grid-cards">
+          <div  className="more-cities-cards">
             {cities.filter(element => element.country.name == country.name && element.city.name !== city.name).slice(0,3).map(element => <Card city={element} key={element.city.id}/>)}
           </div>
         </>

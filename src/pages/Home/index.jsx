@@ -10,7 +10,7 @@ const Home = () => {
 
     const [citiesList, setCitiesList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [page, setPage] = useState(6);
+    const [page, setPage] = useState(8);
     const [cityResult, setCityResult] = useState([]);
     const [modal, setModal] = useState(false);
     const [countries] = (useFetch(API_URL + '/countries'));
@@ -110,7 +110,7 @@ const Home = () => {
 
                     {cityResult.length > page ?
                         <div className='wrapper'>
-                            <button className='btn btn-primary showmore' onClick={() => setPage(page + 6)}>Show more
+                            <button className='btn btn-primary showmore' onClick={() => setPage(page + 8)}>Show more
                             </button>
                         </div>
 
