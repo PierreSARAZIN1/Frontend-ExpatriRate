@@ -55,7 +55,6 @@ const Profile = () => {
     )
 
 
-
     const deleteaccount = () => {
 
         fetch(API_URL + '/users', {
@@ -87,7 +86,7 @@ const Profile = () => {
 
     return (
         <div className="profile">
-            <img className="profilbackground" src="https://image.cermati.com/q_70/p9zdndvbwtaudt0hzhev"
+            <img className="profilbackground" src={background}
                  alt="background image for profile"></img>
             <h1>Welcome Young Expat' !</h1>
             <div className='flexbuttonprofile'>

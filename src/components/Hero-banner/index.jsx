@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
-
 import {Typewriter} from 'react-simple-typewriter';
 import background from '../../assets/video/backgroundvideo.mp4';
 import picturemodale from '../../assets/images/modalregister.png';
@@ -28,7 +27,7 @@ const HeroBanner = () => {
         <>
             <section className='hero-banner'>
                 <video className="background-video" autoPlay loop muted>
-                    <source src={background} type="video/mp4"></source>
+                    <source src={background}></source>
                 </video>
                 <div className='text-banner'>
                     <div className='text-content'>
@@ -48,7 +47,7 @@ const HeroBanner = () => {
 
                     <div className="modalregistration">
                         <img
-                            src='https://www.tyntec.com/drimage/920/0/1037/d_travel02.png'
+                            src={picturemodale}
                             alt="logo with travelers"
                         >
                         </img>

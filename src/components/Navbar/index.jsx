@@ -6,6 +6,7 @@ import {userIdAtom, jwtAtom, adminAtom} from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 import Cookies from 'js-cookie';
 import {useLocation} from 'react-router-dom';
+import logo from "../../assets/images/logo.gif";
 
 const Navbar = () => {
 
@@ -73,7 +74,7 @@ const Navbar = () => {
             <div
                 className={location.pathname == '/' || location.pathname == '/admin/create_city' ? 'logoflexabsolute' : 'logoflex'}
                 onClick={shownavabar}>
-                <img src="https://cliply.co/wp-content/uploads/2021/02/392102850_EARTH_EMOJI_400px.gif"
+                <img src={logo}
                      alt="planet earth turning on itself"/>
                 <i className="fa-solid fa-angle-down"></i>
             </div>
@@ -84,7 +85,7 @@ const Navbar = () => {
                         <li onClick={shownavabar}>
                             <Link to="/">🗺️ &nbsp;Home</Link>
                         </li>
-                        {jwt == "" && id == "" ?
+                        {jwt == "" || id == "" ?
                             <>
                                 <li onClick={shownavabar}>
                                     <Link to="/sign_up">🎒 &nbsp;Sign up</Link>
@@ -105,7 +106,7 @@ const Navbar = () => {
                         <p>Top 3 Cities to Expatriate</p>
                         {cityarray.slice(0, 3).map((city, index) => {
                             return (
-                                <li onClick={shownavabar}>
+                                <li key={index} onClick={shownavabar}>
                                     <Link
                                         to={"/city/" + city.city.id}>{index === 0 ? "🏅" : index === 1 ? "🥈" : "🥉"} &nbsp;{city.city.name}</Link>
                                 </li>

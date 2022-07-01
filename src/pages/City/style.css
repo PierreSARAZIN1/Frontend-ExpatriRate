@@ -1,7 +1,10 @@
-table h2{
-    margin-top: 20px;
+.tr-tbcost{
+    font-size: 1.5rem;
     text-decoration: underline;
+    border-spacing: 20px;
 }
+
+
 
 td {
     font-size: 18px;

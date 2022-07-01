@@ -43,7 +43,7 @@ const Footer = () => {
                         </div>
                         <div className="account-footer">
                             <h4>Account</h4>
-                            <p>{id ? <Link to={"/profile/" + id}>Profile</Link> : <Link to="/sign_up">SignUp</Link>}</p>
+                            <p>{id !== "" || jwt !== "" ? <Link to={"/profile/" + id}>Profile</Link> : <Link to="/sign_up">SignUp</Link>}</p>
                         </div>
                     </div>
 

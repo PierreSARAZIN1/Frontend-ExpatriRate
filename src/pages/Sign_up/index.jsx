@@ -16,7 +16,7 @@ const Sign_up = () => {
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
-    const setUserId = useSetAtom(userIdAtom);
+    const [userId, setUserId] = useAtom(userIdAtom);
     const [jwt, setJwt] = useAtom(jwtAtom);
     const setAdmin = useSetAtom(adminAtom);
     const cookiechoice = useAtomValue(cookieAtom);
@@ -24,7 +24,7 @@ const Sign_up = () => {
 
     useEffect(
         () => {
-            if (jwt != "") {
+            if (jwt !== "" && userId !== "") {
                 navigate('/');
             }
         }, []
