@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './style.css'
 import {useParams, useNavigate} from "react-router-dom";
-import {jwtAtom} from "../../stores/user";
+import {jwtAtom, userIdAtom} from "../../stores/user";
 import {useAtomValue} from "jotai";
 import {API_COST} from "../../stores/api_cost";
 import {API_URL} from "../../stores/api_url";
@@ -19,10 +19,11 @@ const City = () => {
     const [cityName, setCityName] = useState(" ");
     const [cost, setCost] = useState([]);
     const [country, setCountry] = useState([]);
+    const userId = useAtomValue(userIdAtom);
 
     useEffect(
         () => {
-            if (jwt == "" || id == "") {
+            if (jwt == "" || userId == "") {
                 navigate("/sign_up");
             }
         }, []
@@ -30,7 +31,7 @@ const City = () => {
 
     useEffect(
         () => {
-            fetch(API_URL + '/cities/' + id, {
+            fetch(API_URL + /cities/ + id, {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json',
@@ -44,15 +45,12 @@ const City = () => {
                     setCountry(response.country)
                     setCityName(response.city.name.toLowerCase());
                     fetch(API_COST + response.city.name, {})
-
                         .then((response) => response.json())
                         .then((response) => {
                             setCost(response.costs);
                             setIsLoading(false);
                         })
                         .catch((err) => console.error(err));
-
-
                 })
         }, [id]
     )
@@ -151,7 +149,7 @@ const City = () => {
                             {cost.slice(53, 54).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
                             {cost.slice(54, 55).map((cost, index) =>
 
-                                <tr>
+                                <tr key={index}>
                                     <td>{cost.item}</td>
                                     <td></td>
                                     <td>{cost.cost}</td>

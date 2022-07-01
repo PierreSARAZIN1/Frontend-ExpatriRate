@@ -23,7 +23,7 @@ const Login = () => {
 
     useEffect(
         () => {
-            if (jwt != "" || userId != "") {
+            if (jwt != "" && userId != "") {
                 navigate('/');
             }
         }, []
