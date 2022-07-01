@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './style.css';
-import background from '../../assets/video/backgroundvideo.mp4';
 import {Typewriter} from 'react-simple-typewriter';
+import background from '../../assets/video/backgroundvideo.mp4';
+import picturemodale from '../../assets/images/modalregister.png';
+import './style.css';
+
 
 const HeroBanner = () => {
 
@@ -22,32 +24,30 @@ const HeroBanner = () => {
   }
 
   return (
-    <>
     <section className='hero-banner'>
         <video className="background-video" autoPlay loop muted>
           <source src={background} type="video/mp4"></source>
         </video>
+
         <div className='text-banner'>
           <div className='text-content'>
             <h1>✈️ No more surprises for expatriates</h1>
-            <h2>🌎 Join an international expat community to discover incridible thing about your new home </h2><h2 className='typewriterlike'>like 
-            <span className='typewriter'><Typewriter
-              loopcursor
-              loop
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-              words={["coffee price", "cost of restaurant for 2", "price of rent", "life cost"]}
-            /></span></h2>
+            <h2>🌎 Join an international expat community to discover incridible thing about your new home </h2>
+            <h2 className='typewriterlike'>like <span className='typewriter'>
+              <Typewriter
+                loopcursor
+                loop
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+                words={["coffee price", "cost of restaurant for 2", "price of rent", "life cost"]}
+              /></span>
+            </h2>
           </div>
           
           <div className="modalregistration">
-            <img
-                src='https://www.tyntec.com/drimage/920/0/1037/d_travel02.png'
-                alt="logo with travelers"
-            >
-            </img>
+            <img src={picturemodale} alt="logo with travelers"/>
             <form onSubmit={Register}>
               <div className='registrationinputhome' >
                 <input 
@@ -60,17 +60,13 @@ const HeroBanner = () => {
               <button type='submit'>Join Expatrirate Community</button>
             </form>
             <p>Already a member? <Link to="/login">Log in</Link></p>
-            
-
           </div>
         </div>
-        <div className='div-svg'>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#f8f9fa" fillOpacity="1" d="M0,224L80,213.3C160,203,320,181,480,192C640,203,800,245,960,261.3C1120,277,1280,267,1360,261.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-          </svg>
-        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#f8f9fa" fillOpacity="1" d="M0,224L80,213.3C160,203,320,181,480,192C640,203,800,245,960,261.3C1120,277,1280,267,1360,261.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        </svg>
       </section>
-    </>
   );
 };
 

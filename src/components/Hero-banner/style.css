@@ -31,10 +31,6 @@ svg {
 
 }
 
-.div-svg {
-    height: 10vh;
-}
-
 .hero-banner {
     height: clamp(700px, 50vh, 1200px);
     overflow: hidden;

@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import { useSetAtom, useAtom, useAtomValue } from 'jotai';
-import Cookies from 'js-cookie'
 import { userIdAtom, jwtAtom, adminAtom, cookieAtom } from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
-import style from './style.css';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
+import Cookies from 'js-cookie'
 import background from '../../assets/video/backgroundvideo.mp4';
-
+import './style.css';
 
 
 
@@ -32,14 +31,16 @@ const Sign_up = () => {
   )
 
   const submitData = (e) => {
-    setIsLoading(true);
     e.preventDefault();
+
+    setIsLoading(true);
     const data = {
       "user": {
         "email": email,
         "password": password
       }
     };
+
     fetch(API_URL + '/users', {
       method: 'post',
       headers: {
@@ -53,7 +54,7 @@ const Sign_up = () => {
           Cookies.set('token', [...response.headers.get('authorization')].join(''));
         }
         return response.json()
-        })
+      })
       .then((response) => {
           setUserId(response.id);          
           setAdmin(response.user.admin.toString());
@@ -61,10 +62,8 @@ const Sign_up = () => {
             Cookies.set('id', response.id);
             Cookies.set('admin', response.user.admin.toString());
           }
-          
           navigate('/');
       })
-    
   }
 
   const close = () => {
@@ -79,9 +78,11 @@ const Sign_up = () => {
       </video>
       <i className="fa-solid fa-xmark" onClick={close}></i>
       <div className='filterbackground' onClick={close}></div>
+
       <div className='logincontent'>
         <p className='emoji'>🗺️</p>
         <h3>Sign up</h3>
+
         <form onSubmit={submitData}>
           <label htmlFor='email'> Email </label>
             <div className='inputstyle'>
@@ -124,11 +125,13 @@ const Sign_up = () => {
           </div>
           <button className='btn btn-primary' type="submit">Sign up now</button>
         </form>
+
         <p className='alreadymember'>Already a member? <Link to="/login">Log in</Link></p>
+
         {isLoading? <i className="fas fa-circle-notch fa-spin"></i>:null}
         <br />
         {cookiechoice? <p>If you don't accept cookies before you log in, we won't be able to maintain your connection even if you close the web page</p> : <p>By accepting cookies before you log in we will be able to maintain your connection even if you close the web page</p> }
-        </div>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useRef} from "react";
 import './style.css';
 import Cookies from "js-cookie";
 import { cookieAtom } from "stores/user";
@@ -15,8 +15,6 @@ const Cookie = () => {
   const jwt = useAtomValue(jwtAtom);
 
 
-
-
   const acceptcookie = () =>{
     cookiepopup.current.classList.add("translateout");
     setCookieChoice(true);
@@ -31,20 +29,20 @@ const Cookie = () => {
 
 
   return(
-      jwt !==  "" ?
-          null
-          :
-  <div className="cookie" ref={cookiepopup}>
-    <div className="cookiecontent">
-      <p> This site uses cookies that allow us to provide you with an optimal browsing experience, such as maintaining
-        your connection when you close the web page. Please refer to our <Link to="/privacy_policy">Privacy
-          Policy</Link> for more information.</p>
-      <div className="cookiechoice">
-        <button className="btn btn-primary" onClick={() => acceptcookie()}>Allow</button>
-        <button className="btn btn-primary" onClick={() => refusecookie()}>Decline</button>
+    jwt !==  "" ? null :
+
+    <div className="cookie" ref={cookiepopup}>
+      <div className="cookiecontent">
+        <p> This site uses cookies that allow us to provide you with an optimal browsing experience, such as maintaining
+          your connection when you close the web page. Please refer to our <Link to="/privacy_policy">Privacy
+            Policy</Link> for more information.</p>
+        <div className="cookiechoice">
+          <button className="btn btn-primary" onClick={() => acceptcookie()}>Allow</button>
+          <button className="btn btn-primary" onClick={() => refusecookie()}>Decline</button>
+        </div>
       </div>
     </div>
-  </div>)
+  )
 }
 
 export default Cookie;
