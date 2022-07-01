@@ -103,9 +103,7 @@ const Profile = () => {
 
       {modifyProfile ? <EditProfile user={user} /> : null}
 
-      <h3>
-        <u>My Favorite City :</u>
-      </h3>
+        <h3>❤️ My Favorite Cities</h3>
       {favoritecity.length === 0 ? (
         <p>
           You didn't have favorite city yet ! Go discover your{" "}
@@ -114,7 +112,7 @@ const Profile = () => {
       ) : (
         <div className="flexminicard">
           {favoritecity.map(city => (
-            <div className="minicard" onClick={() => redirect(city.id)}>
+            <div className="minicard" key={city.id} onClick={() => redirect(city.id)}>
               <img src={city.picture} alt={city.name}></img>
               <h5>{city.name}</h5>
             </div>

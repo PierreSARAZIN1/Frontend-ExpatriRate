@@ -127,23 +127,6 @@ const UpdateCity = () => {
         <div className="update-city">
           {isLoading ? null : (
             <form onSubmit={onSubmit} className="update-city-form">
-              <tr>
-                <td>
-                  <label>Latitude </label>
-                </td>
-                <td>
-                  <input
-                    className="classic-input"
-                    type="number"
-                    step="0.000001"
-                    id="lat"
-                    value={lat}
-                    onChange={e => setLat(e.target.value)}
-                    required
-                  />
-                </td>
-              </tr>
-
               <table>
                 <tr>
                   <td>
