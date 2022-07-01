@@ -106,7 +106,7 @@ const Navbar = () => {
                         <p>Top 3 Cities to Expatriate</p>
                         {cityarray.slice(0, 3).map((city, index) => {
                             return (
-                                <li onClick={shownavabar}>
+                                <li key={index} onClick={shownavabar}>
                                     <Link
                                         to={"/city/" + city.city.id}>{index === 0 ? "🏅" : index === 1 ? "🥈" : "🥉"} &nbsp;{city.city.name}</Link>
                                 </li>

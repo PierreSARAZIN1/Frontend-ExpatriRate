@@ -14,7 +14,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
-    const setUserId = useSetAtom(userIdAtom);
+    const [userId, setUserId] = useAtom(userIdAtom);
     const [jwt, setJwt] = useAtom(jwtAtom);
     const setAdmin = useSetAtom(adminAtom);
     const cookiechoice = useAtomValue(cookieAtom);
@@ -23,7 +23,7 @@ const Login = () => {
 
     useEffect(
         () => {
-            if (jwt != "") {
+            if (jwt != "" || userId != "") {
                 navigate('/');
             }
         }, []

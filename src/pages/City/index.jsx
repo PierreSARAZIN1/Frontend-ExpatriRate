@@ -22,7 +22,7 @@ const City = () => {
 
     useEffect(
         () => {
-            if (jwt == "" && id == "") {
+            if (jwt == "" || id == "") {
                 navigate("/sign_up");
             }
         }, []
@@ -51,7 +51,6 @@ const City = () => {
                             setIsLoading(false);
                         })
                         .catch((err) => console.error(err));
-
 
 
                 })
