@@ -45,6 +45,7 @@ const Home = () => {
                     console.log(response)
                     setCountries(response.filter(country => country.cities.length > 0))
                 })
+                .catch((err) => console.error(err));
         }, []
     )
 
@@ -94,25 +95,26 @@ const Home = () => {
                     </button>
                     <div className="search-bar-content">
                         <div className='filter'>
-                            <input type="text" placeholder="Search City..." onChange={filter}></input><i className="fa-solid fa-circle-plus"></i>
+                            <input type="text" placeholder="Search City..." onChange={filter}></input><i
+                            className="fa-solid fa-circle-plus"></i>
                         </div>
                     </div>
 
                 </div>
                 {modal ?
-                            <div className="modal">
-                                {countries.map(country => {
-                                    return (<p
-                                               onClick={filterByCountry}>{country.country.name}</p>)
-                                })}
-                            </div>
-                            :
-                            null
-                        }
-                        {countryFiltered !== ""?
-                            <p className="country-filtered" onClick={() => removeCountryFilter()}>{countryFiltered} X</p>
-                        : null}
-                        
+                    <div className="modal">
+                        {countries.map(country => {
+                            return (<p
+                                onClick={filterByCountry}>{country.country.name}</p>)
+                        })}
+                    </div>
+                    :
+                    null
+                }
+                {countryFiltered !== "" ?
+                    <p className="country-filtered" onClick={() => removeCountryFilter()}>{countryFiltered} X</p>
+                    : null}
+
             </>
             {isLoading ?
                 null
