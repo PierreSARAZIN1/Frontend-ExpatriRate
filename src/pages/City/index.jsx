@@ -78,32 +78,32 @@ const City = () => {
                             <tr>
                                 <td>😝 Activities</td>
                                 <td>{city.activities < 3 ? "🥱" : null}</td>
-                                <div className='progress'><ProgressBar
-                                    width={(city.activities * 100 / 5)}>{city.activities}/5</ProgressBar></div>
+                                <td className='progress'><ProgressBar
+                                    width={(city.activities * 100 / 5)}>{city.activities}/5</ProgressBar></td>
                             </tr>
                             <tr>
                                 <td>💵 Cost</td>
                                 <td>{city.cost > 2500 ? "🥵" : null}</td>
-                                <td>
-                                    <div className='progress'><ProgressBarCost
+                                <td className='progress'>
+                                    <ProgressBarCost
                                         width={(city.cost * 100 / 5000)}>{city.cost > 2500 ? <>{city.cost}<span>$/mo</span> </> : " "}</ProgressBarCost>{city.cost <= 2500 ?
-                                        <p className="cost-message"> {city.cost}<span>$/mo</span></p> : null}</div>
+                                        <p className="cost-message"> {city.cost}<span>$/mo</span></p> : null}
                                 </td>
                             </tr>
                             <tr>
                                 <td>💻 Workplaces</td>
                                 <td>{city.works_places < 3 ? "😟" : null}</td>
-                                <td>
-                                    <div className='progress'><ProgressBar
-                                        width={(city.works_places * 100 / 5)}>{city.works_places}/5</ProgressBar></div>
+                                <td className='progress'>
+                                    <ProgressBar
+                                        width={(city.works_places * 100 / 5)}>{city.works_places}/5</ProgressBar>
                                 </td>
                             </tr>
                             <tr>
                                 <td>🚑 Healthcare</td>
                                 <td>{city.healthcare < 3 ? "🤕" : null}</td>
-                                <td>
-                                    <div className='progress'><ProgressBar
-                                        width={(city.healthcare * 100 / 5)}>{city.healthcare}/5</ProgressBar></div>
+                                <td className='progress'>
+                                    <ProgressBar
+                                        width={(city.healthcare * 100 / 5)}>{city.healthcare}/5</ProgressBar>
                                 </td>
 
                             </tr>
@@ -111,9 +111,9 @@ const City = () => {
                             <tr>
                                 <td>👌 Safety</td>
                                 <td>{city.safety < 3 ? "😨" : null}</td>
-                                <td>
-                                    <div className='progress'><ProgressBar
-                                        width={(city.safety * 100 / 5)}>{city.safety}/5</ProgressBar></div>
+                                <td className='progress'>
+                                    <ProgressBar
+                                        width={(city.safety * 100 / 5)}>{city.safety}/5</ProgressBar>
                                 </td>
                             </tr>
                             <tr>
@@ -127,25 +127,45 @@ const City = () => {
                                 <td></td>
                                 <td>{city.french_speaking ? "Yes 🇫🇷" : "No 😥"}</td>
                             </tr>
-                            <h2>🍽️ Restaurants</h2>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr className="tr-tbcost">🍽️ Restaurants</tr>
                             {cost.slice(0, 8).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
-                            <h2>🛒 Markets</h2>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr className="tr-tbcost">🛒 Markets</tr>
                             {cost.slice(8, 27).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
-                            <h2>🚎 Transportation</h2>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr className="tr-tbcost">🚎 Transportation</tr>
                             {cost.slice(27, 35).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
-                            <h2>📩 Utilities(Monthly)</h2>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr className="tr-tbcost">📩 Utilities(Monthly)</tr>
                             {cost.slice(35, 38).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
-                            <h2>⚽ Sports and Leisure</h2>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr className="tr-tbcost">⚽ Sports and Leisure</tr>
                             {cost.slice(38, 41).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
-                            <h2>🧸 Childcare</h2>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr className="tr-tbcost">🧸 Childcare</tr>
                             {cost.slice(41, 43).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
-                            <h2>👗 Clothing and Shoes</h2>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr className="tr-tbcost">👗 Clothing and Shoes</tr>
                             {cost.slice(43, 47).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
-                            <h2>🛏️ Rent per Month</h2>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr className="tr-tbcost">🛏️ Rent per Month</tr>
                             {cost.slice(47, 51).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
-                            <h2>🏠 Buy apartment price</h2>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr className="tr-tbcost">🏠 Buy apartment price</tr>
                             {cost.slice(51, 53).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
-                            <h2>🤑 Salaries and Financing</h2>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr className="tr-tbcost">🤑 Salaries and Financing</tr>
                             {cost.slice(53, 54).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
                             {cost.slice(54, 55).map((cost, index) =>
 
@@ -155,7 +175,6 @@ const City = () => {
                                     <td>{cost.cost}</td>
                                 </tr>
                             )}
-
 
                             </tbody>
                         </table>
