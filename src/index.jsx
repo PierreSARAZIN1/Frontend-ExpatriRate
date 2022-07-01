@@ -1,17 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom'
-import App from 'App';
-import {BrowserRouter} from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "App";
+import { BrowserRouter } from "react-router-dom";
 
-import './style.css'
-
+import "./style.css";
 
 const Index = () => {
-    return (
-        <BrowserRouter>
-            <App/>
-        </BrowserRouter>
-    );
-}
-ReactDOM.render(<Index/>, document.getElementById('root'));
-
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+};
+ReactDOM.render(<Index />, document.getElementById("root"));

@@ -37,14 +37,14 @@ body {
 }
 
 @keyframes show {
-    to{
+    to {
         visibility: visible;
-      }
+    }
 }
 
-.appmain{
+.appmain {
     visibility: hidden;
-    animation: show 0.9s ease forwards 3s;
+    animation: show 0.9s ease forwards 1.5s;
 }
 
 .btn {
