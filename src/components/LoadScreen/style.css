@@ -1,27 +1,26 @@
-.loadingmain{
-  position: absolute;
-  z-index: 20;
-  width: 100%;
-  height: 100vh;
-  background-color: var(--gray-100);
-  animation: translate 0.9s ease forwards 3s;
+.loadingmain {
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--gray-100);
+    animation: translate 0.9s ease forwards 1.5s;
 }
 
-.loadingviewcontent{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.loadingviewcontent {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.loadingscreen{
-  width: 100px;
+.loadingscreen {
+    width: 100px;
 }
 
 @keyframes translate {
-  to{
-      transform: translateY(-100vh);
-      display: none;
+    to {
+        transform: translateY(-100vh);
+        display: none;
     }
 }
-
