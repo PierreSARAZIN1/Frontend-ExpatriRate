@@ -66,8 +66,8 @@ Le site est en live ici 👉 [ExpatriRate](https://www.expatrirate.cf/)
 
 ## Database
 
-![Database online](https://miro.com/app/board/uXjVOrso5wk=/?share_link_id=244700507329)
-<!--Rajouter screenshot Database-->
+[Database online](https://miro.com/app/board/uXjVOrso5wk=/?share_link_id=244700507329)
+![Image of our Tables](https://user-images.githubusercontent.com/97439623/176930434-b0dd25fa-96cd-4353-b77c-c599a1a30f7e.png)
 
 ## User Flow
 
