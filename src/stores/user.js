@@ -1,4 +1,4 @@
-import { atom } from 'jotai';
+import {atom} from 'jotai';
 import Cookies from 'js-cookie'
 
 export const userIdAtom = atom(Cookies.get('id') ? Cookies.get('id') : "");

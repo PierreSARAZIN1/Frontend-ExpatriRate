@@ -1,7 +1,9 @@
 import React from 'react';
 import App from 'App';
-import { BrowserRouter } from 'react-router-dom';
-import { createRoot } from 'react-dom/client';
+import {
+    BrowserRouter,
+} from 'react-router-dom';
+
 import './style.css'
 
 
@@ -10,10 +12,10 @@ const root = createRoot(container);
 
 const Index = () => {
     return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>   
-);
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    );
 }
+ReactDOM.render(<Index/>, document.getElementById('root'));
 
-root.render(<Index tab="home" />)

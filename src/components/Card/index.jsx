@@ -53,6 +53,7 @@ const Card = ({city}) => {
                     setLikeId(response.id)
                     setLike(true)
                 })
+                .catch((err) => console.error(err));
         } else {
             navigate('/sign_up')
         }
@@ -66,20 +67,27 @@ const Card = ({city}) => {
                 'Authorization': jwt
             }
         })
-            .then(() => setLike(false))
+
+            .then((response) => setLike(false))
+            .catch((err) => console.error(err));
     }
 
     return (
         <div className="card">
-            {jwt == "" && id == ""?  
-            <p className='like-city' onClick={() => likeACity()}><i className="fa-solid fa-heart icon-heart"></i></p>
-            : 
-            like ?
-                <p className='like-city' onClick={() => unlikeACity()}><i
-                    className="fa-solid fa-heart icon-heart-full"></i></p>
-                :
+
+            {jwt == "" && id == "" ?
+
                 <p className='like-city' onClick={() => likeACity()}><i className="fa-solid fa-heart icon-heart"></i>
                 </p>
+                :
+                like ?
+                    <p className='like-city' onClick={() => unlikeACity()}><i
+                        className="fa-solid fa-heart icon-heart-full"></i></p>
+
+                    :
+                    <p className='like-city' onClick={() => likeACity()}><i
+                        className="fa-solid fa-heart icon-heart"></i>
+                    </p>
             }
 
             <Link to={"/city/" + city.city.id}>
@@ -105,36 +113,34 @@ const Card = ({city}) => {
                 <div className="hover-card-info">
                     <div className="categories">
                         <p>😝 Activities</p>
-                        <div className='progresscard'>
-                            <ProgressBar width={(city.city.activities * 100 / 5)}></ProgressBar>
-                        </div>
+                        <div className='progresscard'><ProgressBar
+                            width={(city.city.activities * 100 / 5)}></ProgressBar></div>
                     </div>
-
                     <div className="categories">
                         <p>💵 Cost</p>
-                        <div className='progresscard'>
-                            <ProgressBarCost width={(city.city.cost * 100 / 5000)}></ProgressBarCost>
+                        <div className='progresscard'><ProgressBarCost
+                            width={(city.city.cost * 100 / 5000)}></ProgressBarCost>
+
                         </div>
                     </div>
 
                     <div className="categories">
                         <p>💻 Workplaces</p>
-                        <div className='progresscard'>
-                            <ProgressBar width={(city.city.works_places * 100 / 5)}></ProgressBar>
-                        </div>
+                        <div className='progresscard'><ProgressBar
+                            width={(city.city.works_places * 100 / 5)}></ProgressBar></div>
+
                     </div>
 
                     <div className="categories">
                         <p>🚑 Healthcare</p>
-                        <div className='progresscard'>
-                            <ProgressBar width={(city.city.healthcare * 100 / 5)}></ProgressBar>
-                        </div>
+                        <div className='progresscard'><ProgressBar
+                            width={(city.city.healthcare * 100 / 5)}></ProgressBar></div>
                     </div>
                     <div className="categories">
                         <p>👌 Safety</p>
-                        <div className='progresscard'>
-                            <ProgressBar width={(city.city.safety * 100 / 5)}></ProgressBar>
-                        </div>
+                        <div className='progresscard'><ProgressBar
+                            width={(city.city.safety * 100 / 5)}></ProgressBar></div>
+
                     </div>
                     
                 </div>

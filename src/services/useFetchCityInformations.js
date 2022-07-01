@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 
 const useFetchCityInformations = (city) => {
 
@@ -6,11 +6,12 @@ const useFetchCityInformations = (city) => {
 
     useEffect(() => {
 
-        if(city !== " "){
+        if (city !== " ") {
 
-        fetch('https://apicost.herokuapp.com/' + city)
-            .then((response) => response.json())
-            .then((data) => setData(data)); }
+            fetch('https://apicost.herokuapp.com/' + city)
+                .then((response) => response.json())
+                .then((data) => setData(data));
+        }
     }, [city]);
 
 

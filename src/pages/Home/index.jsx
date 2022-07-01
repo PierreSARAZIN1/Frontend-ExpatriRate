@@ -33,6 +33,24 @@ const Home = () => {
         }, []
     )
 
+    useEffect(
+        () => {
+            fetch(API_URL + '/countries', {
+                method: 'get',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+                .then((response) => response.json())
+                .then((response) => {
+                    console.log(response)
+                    setCountries(response.filter(country => country.cities.length > 0))
+                })
+                .catch((err) => console.error(err));
+        }, []
+    )
+
+
     const filter = (e) => {
         setModal(false);
         if (e.target.value == undefined) {
@@ -79,8 +97,9 @@ const Home = () => {
 
                     <div className="search-bar-content">
                         <div className='filter'>
-                            <input type="text" placeholder="Search City..." onChange={filter}></input>
-                            <i className="fa-solid fa-circle-plus"></i>
+                            <input type="text" placeholder="Search City..." onChange={filter}></input><i
+                            className="fa-solid fa-circle-plus"></i>
+
                         </div>
                     </div>
 
@@ -88,15 +107,17 @@ const Home = () => {
 
                 {modal ?
                     <div className="modal">
-                        {countries.filter(country => country.cities.length > 0).map(country => 
-                            <p onClick={filterByCountry} key={country.country.id}>{country.country.name}</p>
-                        )}
+                        {countries.map(country => {
+                            return (<p
+                                onClick={filterByCountry}>{country.country.name}</p>)
+                        })}
                     </div>
-                : null}
-
-                {countryFiltered !== ""?
+                    :
+                    null
+                }
+                {countryFiltered !== "" ?
                     <p className="country-filtered" onClick={() => removeCountryFilter()}>{countryFiltered} X</p>
-                : null}
+                    : null}
 
 
             </>
