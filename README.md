@@ -12,8 +12,8 @@ ExpatriRate<br>
 <h4 align="center">Plus de surprise en tant qu'expatrié ! Découvrez toutes les informations essentielles de votre futur pays ! Projet final THP - Backend Rails API - Frontend React</h4>
 <br>
 
-![ExpatriRate]()
-<!--Rajouter screenshot de l'app-->
+
+![Image of Expatriate](https://user-images.githubusercontent.com/86610960/176898513-449ee40a-b5ff-465c-adb5-e7c54dedb730.jpg)
 
 ## Objectif 🎯
 
@@ -39,18 +39,18 @@ Le site est en live ici 👉 [ExpatriRate](https://www.expatrirate.cf/)
 
 ## WireFrame
 
-![WireFrame online](https://www.figma.com/file/1PyIzVsqXqLaNlXwaBVQP6/Expatrirate-Wireframe?node-id=0%3A1)
-<!--Rajouter screenshot WireFrame-->
+[WireFrame online](https://www.figma.com/file/1PyIzVsqXqLaNlXwaBVQP6/Expatrirate-Wireframe?node-id=0%3A1)
+![Wireframe Figma](https://user-images.githubusercontent.com/86610960/176898251-a9386cd9-8cab-4e25-ac18-82eedd8f898f.jpg)
 
 ## Kit UI
 
-![Kit UI online](https://www.figma.com/file/6vlFnTSVH3ij2y6UwV85LA/Expatrirate-Kit-ui?node-id=114%3A389)
-<!--Rajouter screenshot Kit UI-->
+[Kit UI online](https://www.figma.com/file/6vlFnTSVH3ij2y6UwV85LA/Expatrirate-Kit-ui?node-id=114%3A389)
+![Image of our Kit UI](https://user-images.githubusercontent.com/86610960/176898863-1e8df562-af8d-4cf0-af97-bfbb224620ad.jpg)
 
 ## Trello
 
-![Trello Online](https://trello.com/invite/b/91cNHVDl/56d78af0cced2936edf06928e4d08d1c/expatrirate)
-<!--Rajouter screenshot Trello-->
+[Trello Online](https://trello.com/invite/b/91cNHVDl/56d78af0cced2936edf06928e4d08d1c/expatrirate)
+![Image of our Trello](https://user-images.githubusercontent.com/86610960/176898930-73ffd870-6cd2-4561-bb23-042c0d6ddf8b.jpg)
 
 ## Database
 
@@ -59,13 +59,14 @@ Le site est en live ici 👉 [ExpatriRate](https://www.expatrirate.cf/)
 
 ## User Flow
 
-![User Flow online](https://miro.com/app/board/uXjVOrsHUj0=/?share_link_id=238286075743)
-<!--Rajouter screenshot User Flow-->
+[User Flow online](https://miro.com/app/board/uXjVOrsHUj0=/?share_link_id=238286075743)
+![Image of UserFlow](https://user-images.githubusercontent.com/86610960/176899024-7c3b7dd8-453b-4eaf-9fa6-7a00e2c464e8.jpg)
 
 ## Executive Summary
 
-![Executive Summary online]()
-<!--Rajouter link + screenshot Executive Summary-->
+[Executive Summary online](https://docs.google.com/presentation/d/10DfBVkfEFIHJvzscb8HmWblguA8KG0WW/edit?usp=sharing&ouid=104637632388846702474&rtpof=true&sd=true)
+
+![Image of Executive Summary](https://user-images.githubusercontent.com/86610960/176899106-7c2c67af-fc85-4aac-bc1d-41ceae430662.jpg)
 
 ## Technologies utilisées ⚙️
 
