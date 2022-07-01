@@ -31,6 +31,18 @@ Le backend du projet se trouve ici 👉 [Rails API](https://github.com/PierreSAR
 
 Le site est en live ici 👉 [ExpatriRate](https://www.expatrirate.cf/)
 
+## Identifiants de connexion
+
+### Compte classique
+
+1. email : a1@yopmail.com
+1. password : 123456
+
+### Compte admin
+
+1. email : admin@yopmail.com
+1. password : adminpassword
+
 ## Installation locale 📌
 
 1. `npm i`

@@ -10,6 +10,7 @@ const EditProfile = ({ user }) => {
   const [newPasswordConfirmation, setNewPasswordConfirmation] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const jwt = useAtomValue(jwtAtom);
+  const [message, setMessage] = useState("")
 
   const submitData = e => {
     setIsLoading(true);
@@ -32,6 +33,7 @@ const EditProfile = ({ user }) => {
       .then(response => response.json())
       .then(response => {
         console.log("mot de passe modifié");
+        setMessage("Your password has been modified")
       })
       .catch(err => console.error(err));
   };
@@ -66,6 +68,7 @@ const EditProfile = ({ user }) => {
       <button className="btn btn-primary" type="submit">
         Submit
       </button>
+      <p>{message}</p>
     </form>
   );
 };
