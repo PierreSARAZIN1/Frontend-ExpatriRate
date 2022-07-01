@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './style.css'
+import './style.scss'
 import {useParams, useNavigate} from "react-router-dom";
 import {jwtAtom, userIdAtom} from "../../stores/user";
 import {useAtomValue} from "jotai";
@@ -7,6 +7,7 @@ import {API_COST} from "../../stores/api_cost";
 import {API_URL} from "../../stores/api_url";
 import TableCost from "../../components/TableCost";
 import {Overall, ProgressBar, ProgressBarCost, Overallborder} from 'components/StyleComponent';
+import MoreCities from 'components/MoreCities';
 
 
 const City = () => {
@@ -31,7 +32,7 @@ const City = () => {
 
     useEffect(
         () => {
-            fetch(API_URL + /cities/ + id, {
+            fetch(API_URL + "/cities/" + id, {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,6 +59,10 @@ const City = () => {
 
     return (
         <>
+            <div className='back' onClick={() => navigate('/')}>
+                <i class="fa-solid fa-arrow-left"></i><h2>Home</h2>
+            </div>
+            
             {isLoading ?
                 <div className='loading'><p>Loading...</p><i className="fas fa-circle-notch fa-spin"></i></div> :
                 <>
@@ -180,7 +185,10 @@ const City = () => {
                         </table>
 
                     </div>
+                <MoreCities country={country} city={city}/>
+
                 </>
+
 
             }
         </>

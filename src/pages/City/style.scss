@@ -4,7 +4,10 @@
     border-spacing: 20px;
 }
 
-
+.h2marge{
+    margin: 0 20px;
+    text-decoration: underline;
+}
 
 td {
     font-size: 18px;
@@ -99,6 +102,22 @@ table td span{
      margin-top: -30px;
 }
 
+.back{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    &:hover{
+        i{
+            animation: headShake 1s ease-in-out;
+        }
+    }
+}
+
+
 
 @media only screen and (max-width: 470px){
     .progress {
@@ -106,4 +125,33 @@ table td span{
         font-size: 10px;
     }
 }
+
+
+@keyframes headShake {
+    0% {
+      transform: translateX(0);
+    }
+  
+    6.5% {
+      transform: translateX(-6px) rotateY(-9deg);
+    }
+  
+    18.5% {
+      transform: translateX(5px) rotateY(7deg);
+    }
+  
+    31.5% {
+      transform: translateX(-3px) rotateY(-5deg);
+    }
+  
+    43.5% {
+      transform: translateX(2px) rotateY(3deg);
+    }
+  
+    50% {
+      transform: translateX(0);
+    }
+  }
+  
+
 
