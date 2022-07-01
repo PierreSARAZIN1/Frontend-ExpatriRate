@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import style from './style.css';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import EditProfile from '../../components/Edit-Profile';
 import {useAtomValue, useAtom} from 'jotai';
 import {userIdAtom, jwtAtom, adminAtom} from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 import {Link, useNavigate, useParams} from 'react-router-dom';
+
 import Cookies from 'js-cookie';
-import Card from 'components/Card';
+import background from '../../assets/images/profilebackground.jpeg';
+import './style.css';
 
 
 const Profile = () => {
@@ -21,6 +23,7 @@ const Profile = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [favoritecity, setFavoritecity] = useState([]);
     const [citylike, setCitylike] = useState([]);
+
 
     useEffect(
         () => {
@@ -54,6 +57,7 @@ const Profile = () => {
     )
 
 
+
     const deleteaccount = () => {
 
         fetch(API_URL + '/users', {
@@ -81,6 +85,7 @@ const Profile = () => {
     const redirect = (e) => {
         navigate('/city/' + e)
     }
+
 
     return (
         <div className="profile">
@@ -124,6 +129,7 @@ const Profile = () => {
             }
         </div>
     );
+
 };
 
 export default Profile;

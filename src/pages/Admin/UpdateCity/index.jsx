@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import {adminAtom, jwtAtom} from 'stores/user';
 import {API_URL} from 'stores/api_url';
+
 import './style.css';
 
 
@@ -91,6 +92,7 @@ const UpdateCity = () => {
         const country_id = Number(form.elements.countriesList.value);
 
 
+
         const data = {
             "city": {
                 "name": name,
@@ -138,6 +140,23 @@ const UpdateCity = () => {
                     {isLoading ? null :
                         <form onSubmit={onSubmit} className="update-city-form">
 
+
+                <tr>
+                  <td>
+                    <label>Latitude </label>
+                  </td>
+                  <td>
+                    <input
+                      className='classic-input'
+                      type='number'
+                      step = '0.000001'
+                      id='lat'
+                      value={lat}
+                      onChange={(e) => setLat(e.target.value)}
+                      required
+                    />
+                  </td>
+                </tr>
 
                             <table>
                                 <tr>
@@ -338,6 +357,7 @@ const UpdateCity = () => {
             </div>
         </div>
     );
+
 };
 
 export default UpdateCity;

@@ -14,11 +14,11 @@ import Footer from 'components/Footer';
 import NewPassword from 'pages/NewPassword';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import PageNotFound from "./components/PageNotFound";
+import LoadScreen from 'components/LoadScreen';
 
 const App = () => {
 
     const location = useLocation().pathname;
-
 
     return (
         <>

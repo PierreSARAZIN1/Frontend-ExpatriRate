@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useRef} from "react";
 import './style.css';
 import Cookies from "js-cookie";
 import {cookieAtom} from "stores/user";
@@ -44,6 +44,7 @@ const Cookie = () => {
                     </div>
                 </div>
             </div>)
+
 }
 
 export default Cookie;

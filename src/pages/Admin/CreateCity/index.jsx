@@ -6,7 +6,7 @@ import {API_URL} from 'stores/api_url';
 import './style.css';
 import {API_COST} from 'stores/api_cost';
 
-// http://api.openweathermap.org/geo/1.0/direct?q=%7B{city name},{state code},{country code}&limit={limit}&appid={API key}
+
 const CreateCity = () => {
 
     const navigate = useNavigate();
@@ -28,6 +28,7 @@ const CreateCity = () => {
     }, [])
 
     useEffect(() => {
+
         fetch(API_URL + '/countries', {
             method: 'get', headers: {
                 'Content-Type': 'application/json',
@@ -168,6 +169,7 @@ const CreateCity = () => {
             })
             .catch((err) => console.error(err));
     }
+
 
 
     return (<div className='create-city-page'>

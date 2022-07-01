@@ -5,8 +5,9 @@ import {userIdAtom, jwtAtom, adminAtom, cookieAtom} from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 import style from './style.css';
 import {useLocation, useNavigate, Link} from 'react-router-dom';
-import background from '../../assets/video/backgroundvideo.mp4';
 
+import background from '../../assets/video/backgroundvideo.mp4';
+import './style.css';
 
 const Sign_up = () => {
     const location = useLocation();
@@ -59,6 +60,7 @@ const Sign_up = () => {
                     Cookies.set('id', response.id);
                     Cookies.set('admin', response.user.admin.toString());
                 }
+
 
                 navigate('/');
             })
@@ -134,6 +136,7 @@ const Sign_up = () => {
             </div>
         </div>
     );
+
 };
 
 export default Sign_up;

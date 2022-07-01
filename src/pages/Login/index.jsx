@@ -9,6 +9,7 @@ import background from '../../assets/video/backgroundvideo.mp4';
 
 const Login = () => {
 
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -69,6 +70,7 @@ const Login = () => {
     const close = () => {
         navigate("/")
     }
+
 
     const resetpassword = () => {
         if (regex.test(email)) {
@@ -139,6 +141,7 @@ const Login = () => {
                         close the web page</p>}</div>
         </div>
     );
+
 };
 
 export default Login;

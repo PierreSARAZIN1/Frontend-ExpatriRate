@@ -1,12 +1,13 @@
 import React from 'react';
-import './style.css';
-import {useAtom, useAtomValue} from 'jotai';
-import {userIdAtom} from "../../stores/user";
+import {useAtomValue} from 'jotai';
+import {userIdAtom, jwtAtom} from "../../stores/user";
 import {Link} from "react-router-dom";
+import './style.css';
 
 const Footer = () => {
 
     const id = useAtomValue(userIdAtom);
+    const jwt = useAtomValue(jwtAtom);
 
 
     return (<>
@@ -53,6 +54,7 @@ const Footer = () => {
                 <Link to='/privacy_policy'>Policy Privacy</Link>
             </div>
         </>
+
     );
 };
 

@@ -36,43 +36,15 @@ body {
     background-color: var(--gray-100);
 }
 
-
-@keyframes translate {
-    to{
-        transform: translateY(-100vh);
-        display: none;
-      }
-}
-
 @keyframes show {
     to{
         visibility: visible;
       }
 }
 
-.loadingmain{
-    position: absolute;
-    z-index: 20;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--gray-100);
-    animation: translate 0.9s ease forwards 3s;
-}
-
 .appmain{
     visibility: hidden;
     animation: show 0.9s ease forwards 3s;
-}
-
-.loadingviewcontent{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loadingscreen{
-    width: 100px;
 }
 
 .btn {

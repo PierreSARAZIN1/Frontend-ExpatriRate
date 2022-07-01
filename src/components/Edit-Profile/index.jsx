@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 import {useAtomValue} from 'jotai';
 import {userIdAtom, jwtAtom} from '../../stores/user';
@@ -38,6 +39,7 @@ const EditProfile = ({user}) => {
 
             })
             .catch((err) => console.error(err));
+
     }
 
     return (
@@ -71,6 +73,7 @@ const EditProfile = ({user}) => {
             </form>
         </>
     );
+
 };
 
 export default EditProfile;

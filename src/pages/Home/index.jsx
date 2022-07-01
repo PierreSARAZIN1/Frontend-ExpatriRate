@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import Card from '../../components/Card';
 import HeroBanner from 'components/Hero-banner';
 import {API_URL} from "../../stores/api_url";
-import style from './style.css';
+import useFetch from 'services/useFetch';
+import './style.css';
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
     const [page, setPage] = useState(6);
     const [cityResult, setCityResult] = useState([]);
     const [modal, setModal] = useState(false);
-    const [countries, setCountries] = useState([]);
+    const [countries] = (useFetch(API_URL + '/countries'));
     const [countryFiltered, setCountryFiltered] = useState("");
 
     useEffect(
@@ -48,6 +49,7 @@ const Home = () => {
                 .catch((err) => console.error(err));
         }, []
     )
+
 
     const filter = (e) => {
         setModal(false);
@@ -91,16 +93,18 @@ const Home = () => {
             <HeroBanner/>
             <>
                 <div className="search-bar">
-                    <button type="submit" className="search-by-country" onClick={openModal}>Filter by Country
-                    </button>
+                    <button type="submit" className="search-by-country" onClick={openModal}>Filter by Country</button>
+
                     <div className="search-bar-content">
                         <div className='filter'>
                             <input type="text" placeholder="Search City..." onChange={filter}></input><i
                             className="fa-solid fa-circle-plus"></i>
+
                         </div>
                     </div>
 
                 </div>
+
                 {modal ?
                     <div className="modal">
                         {countries.map(country => {
@@ -115,10 +119,11 @@ const Home = () => {
                     <p className="country-filtered" onClick={() => removeCountryFilter()}>{countryFiltered} X</p>
                     : null}
 
+
             </>
             {isLoading ?
-                null
-                :
+            null
+            :
                 <>
                     <div className="grid-cards">
                         {cityResult.slice(0, page).map(city => <Card city={city} key={city.city.id}/>)}
@@ -126,8 +131,7 @@ const Home = () => {
 
                     {cityResult.length > page ?
                         <div className='wrapper'>
-                            <button className='btn btn-primary showmore' onClick={() => setPage(page + 6)}>Show more
-                            </button>
+                            <button className='btn btn-primary showmore' onClick={() => setPage(page + 6)}>Show more</button>
                         </div>
 
                         : null}

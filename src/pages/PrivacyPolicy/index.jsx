@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.css'
+import './style.css';
 
 const PrivacyPolicy = () => {
     return (
@@ -135,5 +135,6 @@ const PrivacyPolicy = () => {
         </section>
     )
 }
+
 
 export default PrivacyPolicy;

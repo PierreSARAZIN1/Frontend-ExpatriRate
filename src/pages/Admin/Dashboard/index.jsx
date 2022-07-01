@@ -3,6 +3,7 @@ import React, {useEffect, useState, useRef} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {API_URL} from 'stores/api_url';
 import {adminAtom, jwtAtom} from 'stores/user';
+
 import './style.css';
 
 
@@ -203,6 +204,7 @@ const Dashboard = () => {
 
         </div>
     );
+
 };
 
 export default Dashboard;

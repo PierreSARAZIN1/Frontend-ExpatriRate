@@ -1,11 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from 'App';
 import {
     BrowserRouter,
 } from 'react-router-dom';
+
 import './style.css'
 
+
+const container = document.getElementById('root');
+const root = createRoot(container);
 
 const Index = () => {
     return (
@@ -15,3 +18,4 @@ const Index = () => {
     );
 }
 ReactDOM.render(<Index/>, document.getElementById('root'));
+

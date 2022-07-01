@@ -1,25 +1,28 @@
 import React, {useEffect, useState} from 'react';
+
 import {API_URL} from "../../stores/api_url";
 import './style.css'
 import {useParams} from "react-router-dom";
+
 import {jwtAtom} from "../../stores/user";
 import {useAtomValue} from "jotai";
-import {useNavigate} from "react-router-dom";
 import {API_COST} from "../../stores/api_cost";
+import {API_URL} from "../../stores/api_url";
 import TableCost from "../../components/TableCost";
 import {Overall, ProgressBar, ProgressBarCost, Overallborder} from 'components/StyleComponent';
+
 
 const City = () => {
 
     const id = useParams().id;
     const jwt = useAtomValue(jwtAtom);
     const navigate = useNavigate();
-
     const [city, setCity] = useState(" ");
     const [isLoading, setIsLoading] = useState(true);
     const [cityName, setCityName] = useState(" ");
     const [cost, setCost] = useState([]);
     const [country, setCountry] = useState([]);
+
     useEffect(
         () => {
             if (jwt == "" && id == "") {
@@ -27,6 +30,7 @@ const City = () => {
             }
         }, []
     )
+
     useEffect(
         () => {
             fetch(API_URL + '/cities/' + id, {
@@ -43,13 +47,14 @@ const City = () => {
                     setCountry(response.country)
                     setCityName(response.city.name.toLowerCase());
                     fetch(API_COST + response.city.name, {})
+
                         .then((response) => response.json())
                         .then((response) => {
-                            console.log(response);
                             setCost(response.costs);
                             setIsLoading(false);
                         })
                         .catch((err) => console.error(err));
+
 
 
                 })
@@ -106,6 +111,7 @@ const City = () => {
                                     <div className='progress'><ProgressBar
                                         width={(city.healthcare * 100 / 5)}>{city.healthcare}/5</ProgressBar></div>
                                 </td>
+
                             </tr>
 
                             <tr>
@@ -119,6 +125,7 @@ const City = () => {
                             <tr>
                                 <td>📡 Internet</td>
                                 <td>{city.internet > 30 ? "🚀" : null}</td>
+
                                 <td><i className="fa-solid fa-wifi"></i> {city.internet} Mbps</td>
                             </tr>
                             <tr>
@@ -147,6 +154,7 @@ const City = () => {
                             <h2>🤑 Salaries and Financing</h2>
                             {cost.slice(53, 54).map((cost, index) => <TableCost key={index} cost={cost}></TableCost>)}
                             {cost.slice(54, 55).map((cost, index) =>
+
                                 <tr>
                                     <td>{cost.item}</td>
                                     <td></td>
@@ -160,6 +168,7 @@ const City = () => {
 
                     </div>
                 </>
+
             }
         </>
     );

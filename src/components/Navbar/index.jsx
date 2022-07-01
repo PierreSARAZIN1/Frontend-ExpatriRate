@@ -43,6 +43,7 @@ const Navbar = () => {
                 'Authorization': jwt,
                 'Content-Type': 'application/json'
             }
+
         })
             .then((response) => {
                 return response.json()
@@ -131,6 +132,7 @@ const Navbar = () => {
             }
         </nav>
     );
+
 };
 
 export default Navbar;

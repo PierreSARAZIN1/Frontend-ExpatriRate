@@ -3,6 +3,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import './style.css';
 import {API_URL} from '../../stores/api_url'
 
+
 const NewPassword = () => {
     const navigate = useNavigate();
     const token = useParams().token;
@@ -44,6 +45,7 @@ const NewPassword = () => {
             </form>
         </div>
     )
+
 }
 
 export default NewPassword;
