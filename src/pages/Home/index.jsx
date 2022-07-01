@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Card from '../../components/Card';
 import HeroBanner from 'components/Hero-banner';
 import {API_URL} from "../../stores/api_url";
-import useFetch from 'services/useFetch';
 import './style.css';
 
 
@@ -13,8 +12,8 @@ const Home = () => {
     const [page, setPage] = useState(6);
     const [cityResult, setCityResult] = useState([]);
     const [modal, setModal] = useState(false);
-    const [countries] = (useFetch(API_URL + '/countries'));
     const [countryFiltered, setCountryFiltered] = useState("");
+    const [countries, setCountries] = useState([]);
 
     useEffect(
         () => {

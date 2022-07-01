@@ -1,9 +1,6 @@
 import React, {useEffect, useState} from 'react';
-
-import {API_URL} from "../../stores/api_url";
 import './style.css'
-import {useParams} from "react-router-dom";
-
+import {useParams, useNavigate} from "react-router-dom";
 import {jwtAtom} from "../../stores/user";
 import {useAtomValue} from "jotai";
 import {API_COST} from "../../stores/api_cost";
