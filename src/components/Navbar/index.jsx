@@ -6,6 +6,7 @@ import {userIdAtom, jwtAtom, adminAtom} from '../../stores/user';
 import {API_URL} from "../../stores/api_url";
 import Cookies from 'js-cookie';
 import {useLocation} from 'react-router-dom';
+import logo from "../../assets/images/logo.gif";
 
 const Navbar = () => {
 
@@ -73,7 +74,7 @@ const Navbar = () => {
             <div
                 className={location.pathname == '/' || location.pathname == '/admin/create_city' ? 'logoflexabsolute' : 'logoflex'}
                 onClick={shownavabar}>
-                <img src="https://cliply.co/wp-content/uploads/2021/02/392102850_EARTH_EMOJI_400px.gif"
+                <img src={logo}
                      alt="planet earth turning on itself"/>
                 <i className="fa-solid fa-angle-down"></i>
             </div>

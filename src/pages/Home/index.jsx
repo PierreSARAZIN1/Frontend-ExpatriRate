@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Card from '../../components/Card';
 import HeroBanner from 'components/Hero-banner';
 import {API_URL} from "../../stores/api_url";
+import useFetch from 'services/useFetch';
 import './style.css';
 
 
@@ -12,8 +13,8 @@ const Home = () => {
     const [page, setPage] = useState(6);
     const [cityResult, setCityResult] = useState([]);
     const [modal, setModal] = useState(false);
+    const [countries] = (useFetch(API_URL + '/countries'));
     const [countryFiltered, setCountryFiltered] = useState("");
-    const [countries, setCountries] = useState([]);
 
     useEffect(
         () => {
@@ -31,24 +32,6 @@ const Home = () => {
                 })
         }, []
     )
-
-    useEffect(
-        () => {
-            fetch(API_URL + '/countries', {
-                method: 'get',
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            })
-                .then((response) => response.json())
-                .then((response) => {
-                    console.log(response)
-                    setCountries(response.filter(country => country.cities.length > 0))
-                })
-                .catch((err) => console.error(err));
-        }, []
-    )
-
 
     const filter = (e) => {
         setModal(false);
@@ -96,9 +79,8 @@ const Home = () => {
 
                     <div className="search-bar-content">
                         <div className='filter'>
-                            <input type="text" placeholder="Search City..." onChange={filter}></input><i
-                            className="fa-solid fa-circle-plus"></i>
-
+                            <input type="text" placeholder="Search City..." onChange={filter}></input>
+                            <i className="fa-solid fa-circle-plus"></i>
                         </div>
                     </div>
 
@@ -106,14 +88,12 @@ const Home = () => {
 
                 {modal ?
                     <div className="modal">
-                        {countries.map(country => {
-                            return (<p
-                                onClick={filterByCountry}>{country.country.name}</p>)
-                        })}
+                        {countries.filter(country => country.cities.length > 0).map(country =>
+                            <p onClick={filterByCountry} key={country.country.id}>{country.country.name}</p>
+                        )}
                     </div>
-                    :
-                    null
-                }
+                    : null}
+
                 {countryFiltered !== "" ?
                     <p className="country-filtered" onClick={() => removeCountryFilter()}>{countryFiltered} X</p>
                     : null}
@@ -121,8 +101,8 @@ const Home = () => {
 
             </>
             {isLoading ?
-            null
-            :
+                null
+                :
                 <>
                     <div className="grid-cards">
                         {cityResult.slice(0, page).map(city => <Card city={city} key={city.city.id}/>)}
@@ -130,7 +110,8 @@ const Home = () => {
 
                     {cityResult.length > page ?
                         <div className='wrapper'>
-                            <button className='btn btn-primary showmore' onClick={() => setPage(page + 6)}>Show more</button>
+                            <button className='btn btn-primary showmore' onClick={() => setPage(page + 6)}>Show more
+                            </button>
                         </div>
 
                         : null}

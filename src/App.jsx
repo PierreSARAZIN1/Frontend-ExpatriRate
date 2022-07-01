@@ -23,17 +23,7 @@ const App = () => {
     return (
         <>
 
-
-            <section className='loadingmain'>
-                <div className='loadingviewcontent'>
-                    <img className='loadingscreen'
-                         src="https://cliply.co/wp-content/uploads/2021/02/392102850_EARTH_EMOJI_400px.gif"
-                         alt="planet earth turning on itself"/>
-                    <h1>Expatrirate</h1>
-
-                </div>
-            </section>
-
+            <LoadScreen/>
 
             <section className='appmain'>
                 <Navbar/>
@@ -54,8 +44,6 @@ const App = () => {
                 </Routes>
 
                 {location == "/login" || location == "/sign_up" || location.includes("admin") ? null : <Footer/>}
-
-
             </section>
         </>
     );
