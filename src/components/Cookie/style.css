@@ -22,9 +22,11 @@
 }
 
 @keyframes translateout {
-    to {
-        transform: translateY(22vh);
-        display: none;
+    99% {
+        transform: translateY(30vh);
+    }
+    100%{
+        opacity: 0;
     }
 }
 
