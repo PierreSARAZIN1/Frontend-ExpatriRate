@@ -72,7 +72,7 @@ Le site est en live ici 👉 [ExpatriRate](https://www.expatrirate.cf/)
 ## User Flow
 
 [User Flow online](https://miro.com/app/board/uXjVOrsHUj0=/?share_link_id=238286075743)
-![Image of UserFlow](https://user-images.githubusercontent.com/86610960/176899024-7c3b7dd8-453b-4eaf-9fa6-7a00e2c464e8.jpg)
+![Image of User Flow](https://user-images.githubusercontent.com/86610960/177103885-3c54f60f-4731-436f-b69d-0fcea86f980a.jpg)
 
 ## Executive Summary
 
